@@ -24,10 +24,23 @@
       </header>
       <div class="featuredTab">
         <div class="featuredTab__list">
-          <div class="list">
-            <NuxtLink to="/_template/focus"><span>关注</span></NuxtLink>
-            <NuxtLink to="/_template/demo" class="active"><span>推荐</span></NuxtLink>
-          </div>
+          <ul class="list">
+            <li>
+              <a href="/_template/focus" class="btn">
+                <span>關注</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="/_template/demo" class="btn">
+                <span>推薦</span>
+              </a>
+            </li>
+            <li v-for="n in 10">
+              <a href="#" class="btn">
+                <span>標籤</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <a href="#" class="featuredTab__btn">
           btn
@@ -81,7 +94,7 @@
       </section>
     </main>
     <van-tabbar v-model="active">
-      <van-tabbar-item icon="wap-home"></van-tabbar-item>
+      <van-tabbar-item icon="wap-home">精选</van-tabbar-item>
       <van-tabbar-item icon="diamond">发现</van-tabbar-item>
       <van-tabbar-item icon="add">上传</van-tabbar-item>
       <van-tabbar-item icon="comment">社区</van-tabbar-item>
@@ -91,12 +104,17 @@
 </template>
 
 <script>
+  import { ref } from 'vue';
   import { createApp } from 'vue';
   import { Image as VanImage } from 'vant';
-  import { Tabbar, TabbarItem } from 'vant';
 
   const app = createApp();
   app.use(VanImage);
-  app.use(Tabbar);
-  app.use(TabbarItem);
+
+  export default {
+    setup() {
+      const active = ref(0);
+      return { active };
+    },
+  };
 </script>

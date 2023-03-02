@@ -60,14 +60,17 @@ html {
       display: flex;
       flex-wrap: nowrap;
       overflow: auto;
-      > a {
+      li {
         white-space: nowrap;
-        color: #fff;
-        padding: 6px 6px;
-        span {
+        a {
           display: block;
-          border-radius: 6px;
-          padding: 4px 10px;
+          color: #fff;
+          padding: 4px;
+          span {
+            display: block;
+            border-radius: 6px;
+            padding: 4px 10px;
+          }
         }
         &.active {
           span {
