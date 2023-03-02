@@ -25,8 +25,8 @@
       <div class="featuredTab">
         <div class="featuredTab__list">
           <div class="list">
-            <NuxtLink to="/_template/focus"><span>关注</span></NuxtLink>
-            <NuxtLink to="/_template/demo" class="active"><span>推荐</span></NuxtLink>
+            <NuxtLink to="/_template/focus" class="active"><span>关注</span></NuxtLink>
+            <NuxtLink to="/_template/demo"><span>推荐</span></NuxtLink>
           </div>
         </div>
         <a href="#" class="featuredTab__btn">
@@ -35,25 +35,10 @@
       </div>
     </van-sticky>
     <main>
-      <section class="sectionMoney">
-        <van-swipe :height="170">
-          <van-swipe-item v-for="n in 2">{{ n }}</van-swipe-item>
-        </van-swipe>
-      </section>
-      <section class="sectionButton">
-        <div class="featuredPart">
-          <a href="#" class="btn">1</a>
-          <a href="#" class="btn">2</a>
-          <a href="#" class="btn">3</a>
-        </div>
-      </section>
-      <section class="sectionVideo">
-        <div class="featuredVideo">
+      <section class="sectionVideoFocus">
+        <div class="featuredVideoFocus">
           <div class="list">
             <div class="item" v-for="n in 20">
-              <div class="preview">
-                <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
-              </div>
               <div class="info">
                 <div class="avatar">
                   <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
@@ -61,19 +46,26 @@
                 <div class="title">
                   <div class="name">
                     <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
-                    <button class="btn">关注</button>
                   </div>
-                  <span>88888888关注<i class="dot"></i>2551视频</span>
+                  <span>2021-08-30</span>
                 </div>
-                <div class="interaction">
-                  <a href="#" class="btn">
-                    <i class="icon icon__message"></i>
-                    <span>1w</span>
-                  </a>
-                  <a href="#" class="btn">
-                    <i class="icon icon__share"></i>
-                  </a>
-                </div>
+              </div>
+              <div class="preview">
+                <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+              </div>
+              <div class="interaction">
+                <a href="#" class="btn">
+                  <i class="icon icon__love"></i>
+                  <span>14 132</span>
+                </a>
+                <a href="#" class="btn">
+                  <i class="icon icon__message"></i>
+                  <span>116</span>
+                </a>
+                <a href="#" class="btn">
+                  <i class="icon icon__share"></i>
+                  <span>分享</span>
+                </a>
               </div>
             </div>
           </div>

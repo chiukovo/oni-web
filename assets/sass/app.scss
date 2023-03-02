@@ -1,4 +1,9 @@
 // vars
-@import 'variables';
+@import 'theme/variables';
+
 // animations
 @import 'animations/transitions';
+
+// theme
+@import 'theme/main';
+@import 'theme/video';
