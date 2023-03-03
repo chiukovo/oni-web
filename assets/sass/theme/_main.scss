@@ -5,9 +5,13 @@ html, body {
 html {
   font-size: 14px;
   color: #fff;
-  background-color: #121117;
-  // background: #121117 url(/_nuxt/assets/img/bg.jpg) no-repeat;
+  background-color: #111117;
+  // background: #111117 url(/_nuxt/assets/img/bg.jpg) no-repeat;
   background-size: 100%;
+}
+
+img {
+  max-width: 100%;
 }
 
 .container {
@@ -19,26 +23,41 @@ html {
 
 .header .van-sticky--fixed {
   padding-top: env(safe-area-inset-top);
-  background-color: #121117;
+  background-color: #111117;
 }
 
 .searchHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  height: 50px;
+  gap: 2px;
+  height: 60px;
+  .searchHeader__everyday,
+  .searchHeader__recharge {
+    .btn {
+      display: block;
+      width: 40px;
+      &.everyday__btn {
+        padding-left: 10px;
+      }
+      &.recharge__btn {
+        padding: 0px 10px 0 8px;
+      }
+    }
+  }
   .searchHeader__search {
     flex: 1;
     .search__input {
       display: flex;
       align-items: center;
-      height: 30px;
-      background-color: #1b1e2f;
+      justify-content: space-between;
+      height: 36px;
+      background-color: #1C1D2E;
       border-radius: 30px;
       padding: 0 15px;
       img {
-        margin-right: 10px;
+        height: 100%;
+        margin-left: 10px;
       }
       span {
         font-size: 13px;
@@ -52,7 +71,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 4px;
   .featuredTab__list {
     width: 100%;
     overflow: hidden;
@@ -60,12 +79,15 @@ html {
       display: flex;
       flex-wrap: nowrap;
       overflow: auto;
+      gap: 6px;
+      height: 40px;
+      padding-left: 6px;
       li {
         white-space: nowrap;
+        padding-top: 6px;
         a {
           display: block;
-          color: #fff;
-          padding: 4px;
+          color: #5F6577;
           span {
             display: block;
             border-radius: 6px;
@@ -74,26 +96,47 @@ html {
         }
         &.active {
           span {
+            color: #fff;
             background: linear-gradient(90deg, #d22785, #a82dba);
           }
         }
       }
     }
   }
+  .featuredTab__btn {
+    width: 40px;
+    height: 40px;
+    padding-right: 6px;
+  }
 }
 
 .featuredPart {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  border: 1px solid red;
+  gap: 10px;
+  padding: 0 8px 10px 8px;
 }
 
+
+
 .van-tabbar {
+  .van-icon::before {
+    font-size: 24px;
+    color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  @for $var from 1 through 5 {
+    .van-tabbar-item:nth-child(#{$var}) {
+      .van-icon:before {
+        background-image: url(/_nuxt/assets/img/ic_tabbar_#{$var}.png);
+      }
+    }
+  }
   .van-tabbar-item:nth-child(3) {
-    transform: translateY(-10px);
-    .van-icon-add:before {
-      font-size: 40px;
+    transform: translateY(-4px);
+    .van-icon:before {
+      font-size: 36px;
     }
   }
 }

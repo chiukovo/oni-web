@@ -1,24 +1,22 @@
 <template>
-  <!-- 關注 -->
   <div class="container">
+    <!-- 關注 -->
     <van-sticky class="header">
       <header class="searchHeader">
         <div class="searchHeader__everyday">
-          <a href="#" class="everyday__btn">
-            btn
-            <!-- <img src="img/btn_everyday.png" alt="每日精选"> -->
+          <a href="#" class="btn everyday__btn">
+            <img src="/_nuxt/assets/img/ic_searchHeader_1.png" alt="每日精选">
           </a>
         </div>
         <a href="#" class="searchHeader__search">
           <div class="search__input">
-            <!-- <img src="img/ic_search.png"> -->
             <span>视频｜创作者</span>
+            <img src="/_nuxt/assets/img/ic_search.png">
           </div>
         </a>
-        <div class="search__recharge">
-          <a href="#" class="recharge__btn">
-            btn
-            <!-- <img src="img/btn_everyday.png" alt="充值"> -->
+        <div class="searchHeader__recharge">
+          <a href="#" class="btn recharge__btn">
+            <img src="/_nuxt/assets/img/ic_searchHeader_2.png" alt="充值">
           </a>
         </div>
       </header>
@@ -27,23 +25,23 @@
           <ul class="list">
             <li class="active">
               <a href="/_template/focus" class="btn">
-                <span>關注</span>
+                <span>关注</span>
               </a>
             </li>
             <li>
               <a href="/_template/demo" class="btn">
-                <span>推薦</span>
+                <span>推荐</span>
               </a>
             </li>
             <li v-for="n in 10">
               <a href="#" class="btn">
-                <span>標籤</span>
+                <span>标签</span>
               </a>
             </li>
           </ul>
         </div>
         <a href="#" class="featuredTab__btn">
-          btn
+          <img src="/_nuxt/assets/img/ic_menu.png" alt="更多推荐">
         </a>
       </div>
     </van-sticky>
