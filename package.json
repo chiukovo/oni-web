@@ -19,6 +19,7 @@
         "vue": "latest"
     },
     "dependencies": {
+        "@master/css": "^1.37.8",
         "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
         "@pinia/nuxt": "^0.4.7",
         "pinia": "^2.0.32"
