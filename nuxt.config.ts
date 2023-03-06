@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     modules: [
       '@vueuse/nuxt',
       '@pinia/nuxt',
-      '@vant/nuxt'
     ],
     // public config
     appConfig: {
