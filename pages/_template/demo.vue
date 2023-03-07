@@ -1,8 +1,52 @@
 <template>
   <div class="wrap">
     <Transition name="swipe-right" appear>
-      <div v-if="tab === 1" class="discoverMenu">
-        box
+      <div class="dialog discoverMenu" v-if="discoverMenu === true">
+        <div class="dialog__overlay">
+          <div class="dialog__header flex:1|0|3em">
+            <a href="#" class="close" @click="discoverMenu = !discoverMenu">
+              關閉
+            </a>
+          </div>
+          <div class="dialog__body">
+            <div class="content">
+              <div class="box bg:red">
+                <a href="#" class="close block p:10px bg:blue fixed" @click="discoverMenu2 = !discoverMenu2">
+                  進入第二層
+                </a>
+                <ul>
+                  <li v-for="n in 500">我是肚子 {{ n }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="dialog__footer flex:1|0|3em">
+            footer
+          </div>
+        </div>
+      </div>
+    </Transition>
+    <Transition name="swipe-right" appear>
+      <div class="dialog discoverMenu" v-if="discoverMenu2 === true">
+        <div class="dialog__overlay">
+          <div class="dialog__header flex:1|0|3em">
+            <a href="#" class="close" @click="discoverMenu2 = !discoverMenu2">
+              回第一層
+            </a>
+          </div>
+          <div class="dialog__body">
+            <div class="content">
+              <div class="box bg:blue">
+                <ul>
+                  <li v-for="n in 500">我是肚子 {{ n }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="dialog__footer flex:1|0|3em">
+            footer
+          </div>
+        </div>
       </div>
     </Transition>
     <div class="container">
@@ -44,7 +88,7 @@
             </li>
           </ul>
         </div>
-        <a href="#" class="featuredTab__btn">
+        <a href="#" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
           <img src="/_nuxt/assets/img/ic_menu.png" alt="更多推荐">
         </a>
       </div>
@@ -54,7 +98,7 @@
             <section class="sectionVideoFocus">
               <div class="featuredVideoFocus">
                 <div class="list">
-                  <div class="item" v-for="n in 20">
+                  <div class="item" v-for="n in 0">
                     <div class="info">
                       <div class="avatar">
                         <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
@@ -104,7 +148,7 @@
                 <div class="list">
                   <div class="item" v-for="n in 20">
                     <div class="preview">
-                      <div class="title">3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</div>
+                      <div class="title"><span class="font:50px color:red pr:10">{{ n }}</span>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</div>
                       <div class="view"><span>5</span>万次播放</div>
                       <div class="time"><span>2:12</span></div>
                       <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
@@ -209,7 +253,11 @@
 
   export default {
     data() {
-      return { tab: 0 }
+      return {
+        tab: 0,
+        discoverMenu: false,
+        discoverMenu2: false
+      }
     },
   };
 </script>
