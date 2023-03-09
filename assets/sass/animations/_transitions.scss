@@ -38,3 +38,17 @@
   transform: translateX(50%);
   opacity: 0;
 }
+
+.swipe-left-enter-active {
+  transition: all 0.3s ease-in;
+}
+
+.swipe-left-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.swipe-left-enter-from,
+.swipe-left-leave-to {
+  transform: translateX(-50%);
+  opacity: 0;
+}

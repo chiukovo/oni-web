@@ -15,13 +15,22 @@ html, body
   height: 100%
 
 html
-  font-size: 14px
   color: #fff
   background-color: #111117
   background-size: 100%
 
+body
+  font-size: var(--fontSize)
+
 img
   max-width: 100%
+
+input
+  outline: 0
+
+::placeholder
+  font-size: var(--fontSize-s)
+  color: #585a6d
 
 .avatar
   img
@@ -58,12 +67,10 @@ img
   .content
     height: 100%
     overflow: auto
-    padding-bottom: 10px
+    padding-bottom: var(--p10)
 
 
-
-
-.tabbar
+.footerTabbar
   display: flex
   width: 100%
   background: linear-gradient(180deg, #1C1D2E 0%, #1C1D2E 72.89%)
@@ -78,8 +85,8 @@ img
     border: 0
     cursor: pointer
     .icon
-      width: 26px
-      height: 26px
+      width: 1.625rem
+      height: 1.625rem
       margin: 6px 0 4px
       @for $var from 1 through 5
         &.icon__#{$var}
@@ -98,78 +105,82 @@ img
           position: absolute
           left: 50%
     .title
-      font-size: 10px
+      font-size: var(--fontSize-xs)
       color: #777
+      margin-bottom: 6px
     &.current
       .title
         color: #fff
 
 
-.searchHeader
-  display: flex
-  align-items: center
-  justify-content: space-between
-  gap: 2px
-  margin-bottom: 6px
-  position: relative
-  .searchHeader__everyday,
-  .searchHeader__recharge
-    .btn
-      display: block
-      width: 40px
-      box-sizing: content-box
-      &.everyday__btn
-        padding-left: 10px
-      &.recharge__btn
-        padding: 0px 10px 0 8px
-  .searchHeader__search
-    flex: 1
-    .search__input
-      display: flex
-      align-items: center
-      justify-content: space-between
-      height: 30px
-      background-color: #1C1D2E
-      border-radius: 30px
-      padding: 0 15px
-      img
-        height: 100%
-        margin-left: 10px
-      span
-        font-size: 13px
-        color: #585a6d
-  .searchHeader__titleTab
-    display: flex
-    gap: 20px
-    position: absolute
-    left: 50%
-    transform: translateX(-50%)
-    .btn
-      font-size: 16px
-      &.current
-        color: #FB50FB
-
 .featuredTab
   display: flex
   align-items: center
   justify-content: space-between
+  flex: 1 0 2.5rem
   gap: 4px
   .featuredTab__list
     width: 100%
-    overflow: hidden
+    overflow-y: hidden
     .list
       display: flex
       flex-wrap: nowrap
-      overflow: auto
       gap: 6px
-      height: 40px
+      height: 2.5rem
       padding-left: 8px
+      overflow-y: hidden
       li
         white-space: nowrap
-        padding-top: 3px
         a
           display: block
-          font-size: 16px
+          font-size: var(--fontSize-m)
+          color: #5F6577
+          padding-right: 4px
+          span
+            display: block
+            border-radius: 8px
+            padding: 5px 16px
+        &.current
+          span
+            color: #fff
+            background: linear-gradient(90deg, #d22785, #a82dba)
+  .featuredTab__btn
+    width: 2.75rem
+    height: 2.5rem
+    padding-right: 6px
+    img
+      height: 80%
+
+.featuredPart
+  display: flex
+  justify-content: space-between
+  gap: 10px
+  padding: 0 8px 10px 8px
+
+
+.pageTab
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 4px
+  &.pageTab-center
+    .pageTab__list
+      display: flex
+      justify-content: center
+      margin-bottom: 20px
+  .pageTab__list
+    width: 100%
+    overflow-y: hidden
+    .list
+      display: flex
+      flex-wrap: nowrap
+      gap: 6px
+      overflow-y: hidden
+      li
+        white-space: nowrap
+        a
+          display: block
+          font-size: var(--fontSize)
           color: #5F6577
           padding-right: 4px
           span
@@ -181,19 +192,116 @@ img
             color: #fff
             background: linear-gradient(90deg, #d22785, #a82dba)
 
-  .featuredTab__btn
-    width: 44px
-    height: 40px
-    padding-right: 6px
-    img
-      height: 80%
 
-.featuredPart
-  display: flex
-  justify-content: space-between
-  gap: 10px
-  padding: 0 8px 10px 8px
+.section
+  + .section
+    margin-top: 30px
+  .section__title
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 10px
+    margin: 10px 0 16px
+    .title
+      font-size: var(--fontSize-l)
+    .btn__more
+      color: #6F6F6F
+      &:after
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        width: 16px
+        height: 16px
+        background: url(/_nuxt/assets/img/ic_more.svg) no-repeat
+        background-size: 100%
+        position: relative
+        top: -1px
+        margin-left: 6px
 
 .sectionMoney
   img
     max-width: 100%
+
+.sectionButton
+  margin: 0
+
+.tag__list
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  .list__item
+    width: calc(100% / 3 - 7px)
+    overflow: hidden
+    .btn
+      display: block
+      text-align: center
+      background-color: rgb(56 56 57 / 60%)
+      border-radius: 30px
+      padding: 12px
+    .title
+      .tag
+        color: #ccc
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+
+
+.btn
+  border: 0
+  white-space: nowrap
+  &.btn__focus
+    font-size: var(--fontSize-s)
+    background: linear-gradient(0, #a82dba, #d22785)
+    border-radius: 30px
+    padding: 4px 18px
+  &.btn__reports
+    font-size: var(--fontSize-s)
+    color: #6F6F6F
+    background-color: #3B3B3B
+    border-radius: 30px
+    padding: 4px 10px
+    &::before
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      background: url(/_nuxt/assets/img/ic_reports.svg) no-repeat center / contain
+      width: 12px
+      height: 12px
+      margin-right: 2px
+      position: relative
+      top: -2px
+
+i.dot
+  &::after
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    width: 3px
+    height: 3px
+    background-color: #77787C
+    border-radius: 50%
+    margin: 0 4px
+
+
+.icon
+  display: block
+  width: 15px
+  height: 15px
+  background-repeat: no-repeat
+  background-size: 100%
+  $list: ('love', 'message', 'share', 'view', 'great')
+  @each $icon in $list
+    &.icon__#{$icon}
+      background-image: url(/_nuxt/assets/img/ic_#{$icon}.svg)
+  $list: ('love', 'share', 'money')
+  @each $icon in $list
+    &.icon__#{$icon}-w
+      background-image: url(/_nuxt/assets/img/ic_#{$icon}_w.svg)
+
+.pageBack
+  width: 40px
+  height: 40px
+  position: absolute
+  left: 10px
+  top: 10px
+  z-index: 9

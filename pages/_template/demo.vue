@@ -1,70 +1,21 @@
 <template>
   <div class="wrap">
-    <Transition name="swipe-right" appear>
-      <div class="dialog discoverMenu" v-if="discoverMenu === true">
-        <div class="dialog__overlay">
-          <div class="dialog__header flex:1|0|3em">
-            <a href="#" class="close" @click="discoverMenu = !discoverMenu">
-              關閉
-            </a>
-          </div>
-          <div class="dialog__body">
-            <div class="content">
-              <div class="box bg:red">
-                <a href="#" class="close block p:10px bg:blue fixed" @click="discoverMenu2 = !discoverMenu2">
-                  進入第二層
-                </a>
-                <ul>
-                  <li v-for="n in 500">我是肚子 {{ n }}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="dialog__footer flex:1|0|3em">
-            footer
-          </div>
-        </div>
-      </div>
-    </Transition>
-    <Transition name="swipe-right" appear>
-      <div class="dialog discoverMenu" v-if="discoverMenu2 === true">
-        <div class="dialog__overlay">
-          <div class="dialog__header flex:1|0|3em">
-            <a href="#" class="close" @click="discoverMenu2 = !discoverMenu2">
-              回第一層
-            </a>
-          </div>
-          <div class="dialog__body">
-            <div class="content">
-              <div class="box bg:blue">
-                <ul>
-                  <li v-for="n in 500">我是肚子 {{ n }}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="dialog__footer flex:1|0|3em">
-            footer
-          </div>
-        </div>
-      </div>
-    </Transition>
     <div class="container">
       <header class="searchHeader">
         <div class="searchHeader__everyday">
-          <a href="#" class="btn everyday__btn">
-            <img src="/_nuxt/assets/img/ic_searchHeader_1.png" alt="每日精选">
+          <a href="/_template/everyDay" class="btn everyday__btn">
+            <img src="/_nuxt/assets/img/ic_searchHeader_1.svg" alt="每日精选">
           </a>
         </div>
         <a href="#" class="searchHeader__search">
           <div class="search__input">
             <span>视频｜创作者</span>
-            <img src="/_nuxt/assets/img/ic_search.png">
+            <img src="/_nuxt/assets/img/ic_search.svg">
           </div>
         </a>
         <div class="searchHeader__recharge">
           <a href="#" class="btn recharge__btn">
-            <img src="/_nuxt/assets/img/ic_searchHeader_2.png" alt="充值">
+            <img src="/_nuxt/assets/img/ic_searchHeader_2.svg" alt="充值">
           </a>
         </div>
       </header>
@@ -88,17 +39,17 @@
             </li>
           </ul>
         </div>
-        <a href="#" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
-          <img src="/_nuxt/assets/img/ic_menu.png" alt="更多推荐">
+        <a href="/_template/discoverMenu" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
+          <img src="/_nuxt/assets/img/ic_menu.svg" alt="更多推荐">
         </a>
       </div>
       <main class="main">
         <Transition appear>
           <div class="content" v-if="tab === 0">
-            <section class="sectionVideoFocus">
+            <section class="section sectionVideoFocus">
               <div class="featuredVideoFocus">
                 <div class="list">
-                  <div class="item" v-for="n in 0">
+                  <div class="item" v-for="n in 10">
                     <div class="info">
                       <div class="avatar">
                         <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
@@ -111,6 +62,8 @@
                       </div>
                     </div>
                     <div class="preview">
+                      <div class="view"><span>5w</span>次播放</div>
+                      <div class="time"><span>2:12</span></div>
                       <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
                     </div>
                     <div class="interaction">
@@ -143,13 +96,15 @@
                 </a>
               </div>
             </section>
-            <section class="sectionVideo">
+            <section class="section sectionVideo">
               <div class="featuredVideo">
                 <div class="list">
                   <div class="item" v-for="n in 20">
                     <div class="preview">
-                      <div class="title"><span class="font:50px color:red pr:10">{{ n }}</span>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</div>
-                      <div class="view"><span>5</span>万次播放</div>
+                      <div class="title">
+                        <p>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>
+                      </div>
+                      <div class="view"><span>5w</span>次播放</div>
                       <div class="time"><span>2:12</span></div>
                       <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
                     </div>
@@ -160,7 +115,7 @@
                       <div class="title">
                         <div class="name">
                           <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
-                          <button class="btn">关注</button>
+                          <button class="btn btn__focus">关注</button>
                         </div>
                         <span>88888888关注<i class="dot"></i>2551视频</span>
                       </div>
@@ -183,13 +138,15 @@
             <section class="sectionMoney">
               <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
             </section>
-            <section class="sectionVideo mt:10">
+            <section class="section sectionVideo mt:10">
               <div class="featuredVideo">
                 <div class="list">
                   <div class="item" v-for="n in 20">
                     <div class="preview">
-                      <div class="title">3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</div>
-                      <div class="view"><span>5</span>万次播放</div>
+                      <div class="title">
+                        <p>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>
+                      </div>
+                      <div class="view"><span>5w</span>次播放</div>
                       <div class="time"><span>2:12</span></div>
                       <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
                     </div>
@@ -222,7 +179,7 @@
         </Transition>
       </main>
     </div>
-    <div class="tabbar">
+    <div class="footerTabbar">
       <button class="btn current">
         <div class="icon icon__1"></div>
         <div class="title">精选</div>
@@ -254,9 +211,7 @@
   export default {
     data() {
       return {
-        tab: 0,
-        discoverMenu: false,
-        discoverMenu2: false
+        tab: 0
       }
     },
   };
