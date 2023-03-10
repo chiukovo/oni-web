@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <header class="searchHeader">
+      <header class="searchHeader" :class="none ? 'none' : ''">
         <div class="searchHeader__everyday">
           <a href="/_template/everyDay" class="btn everyday__btn">
             <img src="/_nuxt/assets/img/ic_searchHeader_1.svg" alt="每日精选">
@@ -19,7 +19,7 @@
           </a>
         </div>
       </header>
-      <div class="featuredTab">
+      <div class="featuredTab" :class="none ? 'none' : ''">
         <div class="featuredTab__list">
           <ul class="list">
             <li :class="tab == '0' ? 'current' : ''">
@@ -45,7 +45,7 @@
       </div>
       <main class="main">
         <Transition appear>
-          <div class="content" v-if="tab === 0">
+          <div class="content" @scroll="scroll" v-if="tab === 0">
             <section class="section sectionVideoFocus">
               <div class="featuredVideoFocus">
                 <div class="list">
@@ -85,7 +85,7 @@
               </div>
             </section>
           </div>
-          <div class="content" v-else-if="tab === 1">
+          <div class="content" @scroll="scroll" v-else-if="tab === 1">
             <section class="sectionMoney">
               <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
             </section>
@@ -97,6 +97,48 @@
               </div>
             </section>
             <section class="section sectionVideo">
+              <div class="featuredVideo">
+                <div class="list">
+                  <NuxtLink class="item" v-for="n in 1" to="/_template/videoDetail">
+                    <div class="preview">
+                      <div class="title">
+                        <p>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>
+                      </div>
+                      <div class="view"><span>5w</span>次播放</div>
+                      <div class="time"><span>2:12</span></div>
+                      <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                    </div>
+                    <div class="info">
+                      <div class="avatar">
+                        <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                      </div>
+                      <div class="title">
+                        <div class="name">
+                          <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+                          <button class="btn btn__focus">关注</button>
+                        </div>
+                        <span>88888888关注<i class="dot"></i>2551视频</span>
+                      </div>
+                      <div class="interaction">
+                        <a href="#" class="btn">
+                          <i class="icon icon__message"></i>
+                          <span>1w</span>
+                        </a>
+                        <a href="#" class="btn">
+                          <i class="icon icon__share"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </NuxtLink>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="content" @scroll="scroll" v-else>
+            <section class="sectionMoney">
+              <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
+            </section>
+            <section class="section sectionVideo mt:10">
               <div class="featuredVideo">
                 <div class="list">
                   <div class="item" v-for="n in 20">
@@ -134,52 +176,10 @@
               </div>
             </section>
           </div>
-          <div class="content" v-else>
-            <section class="sectionMoney">
-              <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
-            </section>
-            <section class="section sectionVideo mt:10">
-              <div class="featuredVideo">
-                <div class="list">
-                  <div class="item" v-for="n in 20">
-                    <div class="preview">
-                      <div class="title">
-                        <p>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>
-                      </div>
-                      <div class="view"><span>5w</span>次播放</div>
-                      <div class="time"><span>2:12</span></div>
-                      <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
-                    </div>
-                    <div class="info">
-                      <div class="avatar">
-                        <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
-                      </div>
-                      <div class="title">
-                        <div class="name">
-                          <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
-                          <button class="btn">关注</button>
-                        </div>
-                        <span>88888888关注<i class="dot"></i>2551视频</span>
-                      </div>
-                      <div class="interaction">
-                        <a href="#" class="btn">
-                          <i class="icon icon__message"></i>
-                          <span>1w</span>
-                        </a>
-                        <a href="#" class="btn">
-                          <i class="icon icon__share"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
         </Transition>
       </main>
     </div>
-    <div class="footerTabbar">
+    <div class="footerTabbar" :class="none ? 'none' : ''">
       <button class="btn current">
         <div class="icon icon__1"></div>
         <div class="title">精选</div>
@@ -211,8 +211,28 @@
   export default {
     data() {
       return {
-        tab: 0
+        height: '',
+        none: false,
+        tab: 1
       }
     },
+    methods: {
+      scroll(e) {
+        this.height = e.target.scrollTop;
+      }
+    },
+    watch: {
+      height: {
+        handler(newValue, oldValue) {
+          if(newValue > 100){
+            if (newValue > oldValue) {
+              this.none = true;
+            } else {
+              this.none = false;
+            }
+          }
+        }
+      }
+    }
   };
 </script>

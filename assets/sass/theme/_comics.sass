@@ -1,0 +1,17 @@
+.featuredComics
+  .list
+    display: flex
+    flex-wrap: wrap
+    gap: 10px
+    padding: 0 10px
+    .item
+      display: flex
+      flex-direction: column
+      gap: 6px
+      width: calc(100% / 3 - 7px)
+      overflow: hidden
+    .title
+      @include multiline_ellipsis
+  .interaction
+    .btn
+      padding: 2px 0

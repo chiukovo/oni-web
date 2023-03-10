@@ -1,0 +1,20 @@
+@mixin preview_hasPlay
+  &::before
+    content: ''
+    display: block
+    width: 100%
+    height: 100%
+    background: url(/_nuxt/assets/img/ic_play.svg) center no-repeat
+    background-size: 16%
+    position: absolute
+
+@mixin single_ellipsis
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+@mixin multiline_ellipsis
+  display: -webkit-box
+  -webkit-line-clamp: 2
+  -webkit-box-orient: vertical
+  overflow: hidden

@@ -7,7 +7,7 @@
           <div class="dialog__header">
             <header class="pageHeader">
               <div class="pageHeader__back">
-                <a href="#" class="btn btn__back" @click="everyDay = false">
+                <a href="/_template/demo" class="btn btn__back" @click="everyDay = false">
                   <img src="/_nuxt/assets/img/ic_back.svg">
                 </a>
               </div>

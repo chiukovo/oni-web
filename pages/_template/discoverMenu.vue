@@ -1,123 +1,5 @@
 <template>
   <div class="wrap">
-    <Transition name="swipe-right" appear>
-      <div class="dialog full discoverMenu" v-if="discoverMenu === true">
-        <div class="dialog__overlay">
-          <div class="dialog__header">
-            <header class="searchHeader">
-              <div class="searchHeader__everyday">
-                <a href="/_template/everyDay" class="btn everyday__btn" @click="discoverMenu = !discoverMenu">
-                  <img src="/_nuxt/assets/img/ic_searchHeader_1.svg" alt="每日精选">
-                </a>
-              </div>
-              <div class="searchHeader__titleTab">
-                <button class="btn" :class="discoverMenuTab == '0' ? 'current' : ''" @click="discoverMenuTab = 0">
-                  <div class="title">国产原创</div>
-                </button>
-                <button class="btn" :class="discoverMenuTab == '1' ? 'current' : ''" @click="discoverMenuTab = 1">
-                  <div class="title">分类</div>
-                </button>
-              </div>
-              <a href="#" class="searchHeader__search" @click="discoverSearch = !discoverSearch">
-                <div class="search__input">
-                  <span>搜索</span>
-                  <img src="/_nuxt/assets/img/ic_search.svg">
-                </div>
-              </a>
-            </header>
-          </div>
-          <!-- 國產原創 -->
-          <div class="dialog__body" v-if="discoverMenuTab === 0">
-            <div class="content">
-              <section class="section sectionVideoType" v-for="n in 4">
-                <div class="section__title">
-                  <div class="title">原创微剧</div>
-                  <div class="btn btn__more">更多</div>
-                </div>
-                <div class="featuredVideoType">
-                  <div class="list">
-                    <div class="item" v-for="n in 4">
-                      <div class="preview">
-                        <div class="time"><span>2:12</span></div>
-                        <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
-                      </div>
-                      <div class="title">
-                        <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
-                      </div>
-                      <div class="interaction">
-                        <a href="#" class="btn">
-                          <i class="icon icon__view"></i>
-                          <span>5w</span>
-                        </a>
-                        <a href="#" class="btn">
-                          <i class="icon icon__great"></i>
-                          <span>116</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-          <!-- 分類 -->
-          <div class="dialog__body" v-if="discoverMenuTab === 1">
-            <div class="content content__left">
-              <ul class="list">
-                <li class="current">
-                  <a href="#" class="btn">
-                    <span>已選中</span>
-                  </a>
-                </li>
-                <li v-for="n in 200">
-                  <a href="#" class="btn">
-                    <span>左邊 {{ n }}</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="content content__right">
-              <div class="top">
-                <div class="top__header">
-                  <div class="title">热门创作者</div>
-                  <a href="#" class="btn btn__more" @click="authorMore = !authorMore">查看全部</a>
-                </div>
-                <div class="top__content">
-                  <ul class="list">
-                    <li class="list__item" v-for="n in 10">
-                      <a href="#" class="btn" @click="authorPersonal = !authorPersonal">
-                        <div class="avatar">
-                          <img class="img" src="https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/240f011d-cb42-4383-a73f-499eddc76d00/public">
-                        </div>
-                        <div class="title">
-                          <div class="name">{{ n }}橫向橫向橫向橫向橫向橫向</div>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="bottom">
-                <div class="bottom__header">
-                  <div class="title">全部标签</div>
-                </div>
-                <div class="bottom__content">
-                  <ul class="tag__list">
-                    <li class="list__item" v-for="n in 100">
-                      <a href="#" class="btn">
-                        <div class="title">
-                          <div class="tag">{{ n }}橫向橫向橫向橫向橫向橫向</div>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Transition>
     <!-- 搜索 -->
     <Transition name="swipe-right" appear>
       <div class="dialog full discoverSearch" v-if="discoverSearch === true">
@@ -131,17 +13,17 @@
               </div>
               <div href="#" class="searchHeader__search">
                 <div class="search__input">
-                  <input type="text" placeholder="视频｜创作者">
-                  <img src="/_nuxt/assets/img/ic_search.svg">
+                  <input type="text" placeholder="视频｜创作者" value="B站洛里塔">
+                  <img src="/_nuxt/assets/img/ic_clear.svg">
                 </div>
                 <div class="search__submit">
-                  <a href="#" class="btn btn__submit">搜索</a>
+                  <a href="#" class="btn btn__submit" @click="searchResults = 1">搜索</a>
                 </div>
               </div>
             </header>
           </div>
           <div class="dialog__body">
-            <div class="content">
+            <div class="content" v-if="searchResults === 0">
               <section class="section">
                 <div class="section__title">
                   <div class="title">大家都在搜</div>
@@ -161,9 +43,10 @@
               <section class="section">
                 <div class="section__title">
                   <div class="title">搜索歷史</div>
+                  <a href="#" class="btn btn__clear">清除</a>
                 </div>
                 <div class="tags">
-                  <ul class="tag__list">
+                  <ul class="tag__list {w:auto!}>li">
                     <li class="list__item">
                       <a href="#" class="btn">
                         <div class="title">
@@ -191,6 +74,121 @@
                 </div>
               </section>
             </div>
+            <!-- 搜尋結果 -->
+            <div class="content" v-else>
+              <div class="pageTab pageTab-center mt:10">
+                <div class="pageTab__list">
+                  <ul class="list">
+                    <li :class="searchResultTab == '0' ? 'current' : ''">
+                      <a href="#" class="btn" @click="searchResultTab = 0">
+                        <span>视频</span>
+                      </a>
+                    </li>
+                    <li :class="searchResultTab == '1' ? 'current' : ''">
+                      <a href="#" class="btn" @click="searchResultTab = 1">
+                        <span>用户</span>
+                      </a>
+                    </li>
+                    <li :class="searchResultTab == '2' ? 'current' : ''">
+                      <a href="#" class="btn" @click="searchResultTab = 2">
+                        <span>漫画</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <section class="section sectionVideoPersonal" v-if="searchResultTab === 0">
+                <div class="featuredVideoPersonal">
+                  <div class="list">
+                    <div class="item" v-for="n in 12">
+                      <div class="preview">
+                        <div class="time"><span>2:12</span></div>
+                        <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                      </div>
+                      <div class="info">
+                        <div class="title">
+                          <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+                        </div>
+                        <div class="info__bottom">
+                          <div class="name">
+                            <p>作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID</p>
+                          </div>
+                          <div class="interaction">
+                            <a href="#" class="btn">
+                              <i class="icon icon__view"></i>
+                              <span>5w</span>
+                            </a>
+                            <a href="#" class="btn">
+                              <i class="icon icon__great"></i>
+                              <span>116</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="section" v-else-if="searchResultTab === 1">
+                <div class="featuredAuthor">
+                  <div class="list">
+                    <div class="item" v-for="n in 1">
+                      <div class="info">
+                        <div class="avatar">
+                          <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                        </div>
+                        <div class="title">
+                          <div class="name">
+                            <p>B次元</p>
+                          </div>
+                          <span>88888888关注<i class="dot"></i>2551视频</span>
+                        </div>
+                        <button class="btn btn__focus hasFocus">已关注</button>
+                      </div>
+                    </div>
+                    <div class="item" v-for="n in 12">
+                      <div class="info">
+                        <div class="avatar">
+                          <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                        </div>
+                        <div class="title">
+                          <div class="name">
+                            <p>B次元</p>
+                          </div>
+                          <span>88888888关注<i class="dot"></i>2551视频</span>
+                        </div>
+                        <button class="btn btn__focus">关注</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="section" v-else>
+                <div class="featuredComics">
+                  <div class="list">
+                    <div class="item" v-for="n in 20">
+                      <div class="preview">
+                        <img class="img" src="https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public">
+                      </div>
+                      <div class="info">
+                        <div class="title">
+                          <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+                        </div>
+                        <div class="interaction">
+                          <div class="btn">
+                            <i class="icon icon__view"></i>
+                            <span>14 132</span>
+                          </div>
+                          <a href="#" class="btn">
+                            <span>共 5 話</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
       </div>
@@ -212,24 +210,24 @@
             </header>
           </div>
           <div class="dialog__body">
+            <!-- 排序使用 -->
+            <div class="pageTab pageTab-center">
+              <div class="pageTab__list">
+                <ul class="list">
+                  <li class="current">
+                    <a href="#" class="btn">
+                      <span>最新排序</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn">
+                      <span>最熱排序</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div class="content">
-              <!-- 排序使用 -->
-              <!-- <div class="pageTab pageTab-center">
-                <div class="pageTab__list">
-                  <ul class="list">
-                    <li class="current">
-                      <a href="#" class="btn">
-                        <span>最新排序</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn">
-                        <span>最熱排序</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div> -->
               <section class="section sectionVideoType">
                 <div class="featuredVideoType">
                   <div class="list">
@@ -368,6 +366,140 @@
         </div>
       </div>
     </Transition>
+    <div class="container discoverMenu">
+      <header class="searchHeader">
+        <div class="searchHeader__everyday">
+          <a href="/_template/everyDay" class="btn everyday__btn" @click="discoverMenu = !discoverMenu">
+            <img src="/_nuxt/assets/img/ic_searchHeader_1.svg" alt="每日精选">
+          </a>
+        </div>
+        <div class="searchHeader__titleTab">
+          <button class="btn" :class="discoverMenuTab == '0' ? 'current' : ''" @click="discoverMenuTab = 0">
+            <div class="title">国产原创</div>
+          </button>
+          <button class="btn" :class="discoverMenuTab == '1' ? 'current' : ''" @click="discoverMenuTab = 1">
+            <div class="title">分类</div>
+          </button>
+        </div>
+        <a href="#" class="searchHeader__search" @click="discoverSearch = !discoverSearch">
+          <div class="search__input">
+            <span>搜索</span>
+            <img src="/_nuxt/assets/img/ic_search.svg">
+          </div>
+        </a>
+      </header>
+      <main class="main">
+        <Transition appear>
+          <div class="content" @scroll="scroll" v-if="discoverMenuTab === 0">
+            <section class="section sectionVideoType" v-for="n in 4">
+              <div class="section__title">
+                <div class="title">原创微剧</div>
+                <div class="btn btn__more">更多</div>
+              </div>
+              <div class="featuredVideoType">
+                <div class="list">
+                  <div class="item" v-for="n in 5">
+                    <div class="preview">
+                      <div class="time"><span>2:12</span></div>
+                      <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                    </div>
+                    <div class="title">
+                      <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+                    </div>
+                    <div class="interaction">
+                      <a href="#" class="btn">
+                        <i class="icon icon__view"></i>
+                        <span>5w</span>
+                      </a>
+                      <a href="#" class="btn">
+                        <i class="icon icon__great"></i>
+                        <span>116</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="content flex" v-else>
+            <div class="content__left">
+              <ul class="list">
+                <li class="current">
+                  <a href="#" class="btn">
+                    <span>已選中</span>
+                  </a>
+                </li>
+                <li v-for="n in 200">
+                  <a href="#" class="btn">
+                    <span>左邊 {{ n }}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="content__right">
+              <div class="top">
+                <div class="top__header">
+                  <div class="title">热门创作者</div>
+                  <a href="#" class="btn btn__more" @click="authorMore = !authorMore">查看全部</a>
+                </div>
+                <div class="top__content">
+                  <ul class="list">
+                    <li class="list__item" v-for="n in 10">
+                      <a href="#" class="btn" @click="authorPersonal = !authorPersonal">
+                        <div class="avatar">
+                          <img class="img" src="https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/240f011d-cb42-4383-a73f-499eddc76d00/public">
+                        </div>
+                        <div class="title">
+                          <div class="name">{{ n }}橫向橫向橫向橫向橫向橫向</div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="bottom__header">
+                  <div class="title">全部标签</div>
+                </div>
+                <div class="bottom__content">
+                  <ul class="tag__list">
+                    <li class="list__item" v-for="n in 100">
+                      <a href="#" class="btn">
+                        <div class="title">
+                          <div class="tag">{{ n }}橫向橫向橫向橫向橫向橫向</div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Transition>
+      </main>
+    </div>
+    <div class="footerTabbar" :class="none ? 'none' : ''">
+      <button class="btn current">
+        <div class="icon icon__1"></div>
+        <div class="title">精选</div>
+      </button>
+      <button class="btn">
+        <div class="icon icon__2"></div>
+        <div class="title">发现</div>
+      </button>
+      <button class="btn">
+        <div class="icon icon__3"></div>
+        <div class="title">上传</div>
+      </button>
+      <button class="btn">
+        <div class="icon icon__4"></div>
+        <div class="title">社区</div>
+      </button>
+      <button class="btn">
+        <div class="icon icon__5"></div>
+        <div class="title">我的</div>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -378,8 +510,12 @@
   export default {
     data() {
       return {
-        discoverMenu: true,
+        height: '',
+        none: false,
+        discoverMenuTab: 1,
         discoverSearch: false,
+        searchResults: 0,
+        searchResultTab: 0,
         discoverMenuTab: 1,
         authorMore: false,
         authorPersonal: false,
@@ -395,5 +531,23 @@
         ]
       }
     },
+    methods: {
+      scroll(e) {
+        this.height = e.target.scrollTop;
+      }
+    },
+    watch: {
+      height: {
+        handler(newValue, oldValue) {
+          if(newValue > 100){
+            if (newValue > oldValue) {
+              this.none = true;
+            } else {
+              this.none = false;
+            }
+          }
+        }
+      }
+    }
   };
 </script>
