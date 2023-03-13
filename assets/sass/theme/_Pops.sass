@@ -1,0 +1,102 @@
+.pops
+  display: flex
+  justify-content: center
+  align-items: center
+  position: absolute
+  width: 100%
+  height: 100%
+  .pops__overlay
+    max-width: 80%
+    &::after
+      content: ''
+      width: 100%
+      height: 100%
+      background-color: rgb(0 0 0 / .6)
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      z-index: 100
+  .pops__container
+    position: relative
+    z-index: 101
+  .pops__header,
+  .pops__body
+    min-width: 80vw
+    background-color: #3B3B3B
+    padding: 10px
+  .pops__header
+    font-size: var(--fontSize-m)
+    text-align: center
+    padding: 20px 20px 16px
+    border-radius: 16px 16px 0 0
+  .pops__body
+    padding: 0 20px 20px
+    border-radius: 0 0 16px 16px
+  .pops__footer
+    margin-top: 20px
+
+
+.addTags
+  .sectionAddTags
+    .top
+      display: flex
+      gap: 6px
+      margin-bottom: 20px
+  .bnt__ManagementTags
+    display: block
+    text-align: center
+    color: #ccc
+    .hasIcon
+      font-family: Fira Code
+      padding-left: 4px
+  .tag__list
+    gap: 6px
+    .list__item
+      width: auto
+      overflow: hidden
+      &.current
+        .btn
+          border: 1px solid #FB50FB
+          .title
+            .tag
+              color: #FB50FB
+      .btn
+        display: block
+        min-width: 60px
+        max-width: 100%
+        text-align: center
+        background-color: #2a2a2b
+        border: 1px solid transparent
+        border-radius: 30px
+        padding: 10px 20px
+        &.btn__addtag
+            display: flex
+            text-align: center
+            color: #6F6F6F
+            background-color: rgb(21 21 21 / 60%)
+            border-radius: 30px
+            padding: 10px 20px
+            img
+              width: 15px
+              margin-right: 4px
+      .title
+        max-width: 180px
+        overflow: hidden
+        .tag
+          color: #fff
+
+
+.sectionManagementAddTags
+  .form__input
+    display: flex
+    align-items: center
+    width: 100%
+    height: 44px
+    background-color: #252525
+    border-radius: 30px
+    padding: 10px 20px
+    img
+      height: 100%
+      margin-right: 10px
+      padding: 3px

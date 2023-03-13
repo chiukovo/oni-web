@@ -210,24 +210,24 @@
             </header>
           </div>
           <div class="dialog__body">
-            <!-- 排序使用 -->
-            <div class="pageTab pageTab-center">
-              <div class="pageTab__list">
-                <ul class="list">
-                  <li class="current">
-                    <a href="#" class="btn">
-                      <span>最新排序</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="btn">
-                      <span>最熱排序</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div class="content">
+              <!-- 排序使用 -->
+              <div class="pageTab pageTab-center">
+                <div class="pageTab__list">
+                  <ul class="list">
+                    <li class="current">
+                      <a href="#" class="btn">
+                        <span>最新</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="btn">
+                        <span>最熱</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <section class="section sectionVideoType">
                 <div class="featuredVideoType">
                   <div class="list">

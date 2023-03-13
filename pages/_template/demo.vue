@@ -91,8 +91,14 @@
             </section>
             <section class="sectionButton">
               <div class="featuredPart">
-                <a href="#" class="btn" v-for="n in 3">
-                  <img :src="'/_nuxt/assets/img/btn_first_' + n + '.png'">
+                <a href="#" class="btn">
+                  <img :src="'/_nuxt/assets/img/btn_first_1.png'">
+                </a>
+                <a href="/_template/firstVideo" class="btn">
+                  <img :src="'/_nuxt/assets/img/btn_first_2.png'">
+                </a>
+                <a href="#" class="btn">
+                  <img :src="'/_nuxt/assets/img/btn_first_3.png'">
                 </a>
               </div>
             </section>

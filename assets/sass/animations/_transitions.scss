@@ -52,3 +52,45 @@
   transform: translateX(-50%);
   opacity: 0;
 }
+
+
+.swipe-show-enter-active {
+  transition: all 0.3s ease-out;
+}
+.swipe-show-leave-active {
+  transition: all 0.3s ease-out;
+}
+.swipe-show-enter-from,
+.swipe-show-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.pops-enter-active, .pops-leave-active {
+	transition: all 0.2s ease-in-out;
+  z-index: 101;
+}
+
+.pops-leave-active {
+  transition-delay: 0.15s;
+}
+
+.pops-enter-from,
+.pops-leave-to {
+  opacity: 0;
+}
+
+.pops-enter-active .pops__container,
+.pops-leave-active .pops__container {
+  transition: all 0.3s ease-in-out;
+}
+
+.pops-enter-active .pops__container {
+	transition-delay: 0.2s;
+}
+
+.pops-enter-from .pops__container,
+.pops-leave-to .pops__container {
+  transform: translateY(20px);
+  opacity: 0.001;
+}

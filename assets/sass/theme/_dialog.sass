@@ -28,7 +28,7 @@
         width: 100%
   .content__left
     height: 100%
-    background-color: rgb(56 56 57 / 60%)
+    background-color: #2a2a2b
     overflow: auto
     .list
       li
@@ -99,3 +99,63 @@
     padding: 0 14px
   .tags
     padding: 0 10px
+
+
+// 標籤管理
+.managementTags
+  .managementTags__list
+    .list
+      display: flex
+      flex-direction: column
+      .item
+        display: flex
+        justify-content: space-between
+        padding: 20px
+        border-bottom: 1px solid rgb(95 101 119 / .3)
+
+
+// 黑料
+.firstVideo
+  padding-bottom: 10px
+  .firstVideo__list
+    .list
+      display: flex
+      flex-direction: column
+      gap: 10px
+      padding: 0 10px
+      .item
+        position: relative
+        &::before
+          content: ''
+          width: 100%
+          height: 100%
+          background-color: rgb(0 0 0 / .66)
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          z-index: 1
+        .title
+          width: 100%
+          max-width: 90%
+          font-weight: bold
+          text-align: center
+          font-size: 20px
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate3d(-50%, -50%, 0)
+          z-index: 2
+          .sum
+            font-size: var(--fontSize)
+            font-weight: normal
+            color: #acacac
+            padding-top: 10px
+            &::before
+              content: ''
+              display: inline-block
+              vertical-align: middle
+              width: 14px
+              height: 14px
+              background: url(/_nuxt/assets/img/ic_sum.svg) no-repeat center / contain
+              margin-right: 6px

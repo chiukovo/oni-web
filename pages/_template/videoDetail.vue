@@ -1,5 +1,63 @@
 <template>
   <div class="wrap">
+    <Transition name="pops" duration="550" appear>
+      <div class="pops addTags" v-if="addTags === true">
+        <div class="pops__overlay">
+          <div class="pops__container">
+            <div class="pops__header">
+              <div class="pageHeader__title">
+                  <div class="title">选择标签</div>
+                </div>
+            </div>
+            <div class="pops__body">
+              <div class="content">
+                <section class="section sectionAddTags">
+                  <div class="top">
+                    <ul class="tag__list">
+                      <li class="list__item">
+                        <div class="btn">
+                          <div class="title">
+                            <div class="tag">全部</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list__item current">
+                        <div class="btn">
+                          <div class="title">
+                            <div class="tag">標籤標籤標籤標籤標籤標籤標籤標籤標籤標籤</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list__item" v-for="n in 5">
+                        <div class="btn">
+                          <div class="title">
+                            <div class="tag">標籤{{n}}</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list__item">
+                        <div class="btn btn__addtag">
+                          <img src="/_nuxt/assets/img/ic_edit.svg">
+                          <span>新增标签</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bottom">
+                    <a href="/_template/managementTags/" class="btn bnt__ManagementTags">前去标签管理<span class="hasIcon">></span></a>
+                  </div>
+                </section>
+              </div>
+              <div class="pops__footer">
+                <div class="button__group">
+                  <button class="btn btn__checked" @click="addTags = false">确认</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Transition>
     <div class="container">
       <section class="sectionVideoDetail">
         <div class="videoDetail">
@@ -12,16 +70,10 @@
                   </a>
                 </div>
               </div>
-              <!-- 未開通VIP -->
-              <!-- <div class="previewLock">
-                <div class="lock">
-                  <p>開通VIP解鎖完整版<span>></span></p>
+              <div class="preview" :class="useVIP ? '' : 'previewLock'">
+                <div class="lock" v-if="useVIP === false">
+                  <p>開通VIP解鎖完整版<span class="hasIcon">></span></p>
                 </div>
-                <div class="time"><span>2:12</span></div>
-                <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
-              </div> -->
-              <!-- 開通VIP -->
-              <div class="preview">
                 <div class="time"><span>2:12</span></div>
                 <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
               </div>
@@ -99,9 +151,9 @@
                       <div class="date">2023-03-07 19:26:08 发布</div>
                     </div>
                     <div class="interaction">
-                      <a href="#" class="btn">
+                      <a href="#" class="btn"  @click="addTags = true">
                         <i class="icon icon__love-w"></i>
-                        <span>喜欢</span>
+                        <span>收藏</span>
                       </a>
                       <a href="#" class="btn">
                         <i class="icon icon__money-w"></i>
@@ -245,6 +297,17 @@
           </div>
         </Transition>
       </main>
+      <div class="footerTabbar footerComments">
+        <a href="#" class="btn__message">
+          <div class="form">
+            <div class="form__input">
+              <img src="/_nuxt/assets/img/ic_edit.svg">
+              <span>优质评论优先展示</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="btn btn__unlimited">無限看</a>
+      </div>
     </div>
   </div>
 </template>
@@ -256,7 +319,9 @@
   export default {
     data() {
       return {
-        videoDetailtab: 0
+        videoDetailtab: 0,
+        useVIP: false,
+        addTags: false
       }
     },
   };

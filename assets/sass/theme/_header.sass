@@ -39,12 +39,13 @@
       background-color: #1C1D2E
       border-radius: 30px
       padding: 0 6px 0 16px
+      ::placeholder
+        color: #585a6d
       img
         height: 100%
         margin-left: 10px
         padding: 8px
       span
-        font-size: var(--fontSize-s)
         color: #585a6d
         white-space: nowrap
       input
@@ -72,6 +73,11 @@
   height: 50px
   margin-bottom: 6px
   position: relative
+  .pageHeader__right
+    display: flex
+    gap: 20px
+    font-size: var(--fontSize-m)
+    padding-right: 6px
   .pageHeader__back
     height: 100%
     padding: 6px 0
