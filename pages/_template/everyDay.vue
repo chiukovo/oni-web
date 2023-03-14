@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <!-- 每日精選 -->
-    <Transition name="swipe-left" appear>
+    <Transition name="fadeInLeft" appear>
       <div class="dialog full everyDay" v-if="everyDay === true">
         <div class="dialog__overlay">
           <div class="dialog__header">

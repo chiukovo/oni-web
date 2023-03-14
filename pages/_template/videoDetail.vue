@@ -62,9 +62,9 @@
       <section class="sectionVideoDetail">
         <div class="videoDetail">
           <div class="item">
-            <div class="videoGroup">
-              <div class="pageBack">
-                <div class="btn btn__back">
+            <div class="videoDetail__top">
+              <div class="detailHeader">
+                <div class="detailback">
                   <a href="/_template/demo" class="btn btn__back" @click="authorMore = false">
                     <img src="/_nuxt/assets/img/ic_back.svg">
                   </a>
@@ -78,8 +78,8 @@
                 <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
               </div>
             </div>
-            <div class="videoTab">
-              <div class="videoTab__list">
+            <div class="detailTab">
+              <div class="detailTab__list">
                 <ul class="list">
                   <li :class="videoDetailtab == '0' ? 'current' : ''">
                     <a href="#" class="btn" @click="videoDetailtab = 0">
@@ -108,7 +108,7 @@
                     <div class="avatar">
                       <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
                     </div>
-                    <div class="title">
+                    <div class="title title-center">
                       <div class="name">
                         <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
                       </div>
@@ -144,11 +144,11 @@
                       </li>
                     </ul>
                     <div class="detail">
-                      <div class="view">102次播放</div>
+                      <div class="view"><span>102</span>次播放</div>
                       <i class="dot"></i>
-                      <div class="great">13个赞</div>
+                      <div class="love"><span>13</span>个收藏</div>
                       <i class="dot"></i>
-                      <div class="date">2023-03-07 19:26:08 发布</div>
+                      <div class="updated">2023-03-07 19:26:08 发布</div>
                     </div>
                     <div class="interaction">
                       <a href="#" class="btn"  @click="addTags = true">
@@ -196,7 +196,7 @@
                             <span>5w</span>
                           </a>
                           <a href="#" class="btn">
-                            <i class="icon icon__great"></i>
+                            <i class="icon icon__love"></i>
                             <span>116</span>
                           </a>
                         </div>
@@ -297,15 +297,33 @@
           </div>
         </Transition>
       </main>
-      <div class="footerTabbar footerComments">
-        <a href="#" class="btn__message">
-          <div class="form">
-            <div class="form__input">
-              <img src="/_nuxt/assets/img/ic_edit.svg">
-              <span>优质评论优先展示</span>
+      <div class="footerTabbar footerComments" :class="none ? 'none' : ''">
+        <Transition name="fadeInUp" appear>
+          <div class="comments" v-if="comments === true">
+            <div class="form">
+              <div class="form__input">
+                <img src="/_nuxt/assets/img/ic_edit.svg">
+                <input type="text" placeholder="优质评论优先展示">
+              </div>
+              <div class="form__button">
+                <a href="#" class="btn btn__submit" @click="comments = false">确定</a>
+              </div>
             </div>
           </div>
-        </a>
+        </Transition>
+        <div class="footerComments__left">
+          <a href="#" class="btn__comments" @click="comments = true">
+            <div class="form">
+              <div class="form__input">
+                <img src="/_nuxt/assets/img/ic_edit.svg">
+                <span>优质评论优先展示</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="btn__love" @click="addTags = true">
+            <img src="/_nuxt/assets/img/ic_love_w.svg">
+          </a>
+        </div>
         <a href="#" class="btn btn__unlimited">無限看</a>
       </div>
     </div>
@@ -319,10 +337,31 @@
   export default {
     data() {
       return {
+        height: '',
+        none: false,
         videoDetailtab: 0,
         useVIP: false,
-        addTags: false
+        addTags: false,
+        comments: false
       }
     },
+    methods: {
+      scroll(e) {
+        this.height = e.target.scrollTop;
+      }
+    },
+    watch: {
+      height: {
+        handler(newValue, oldValue) {
+          if(newValue > 100){
+            if (newValue > oldValue) {
+              this.none = true;
+            } else {
+              this.none = false;
+            }
+          }
+        }
+      }
+    }
   };
 </script>

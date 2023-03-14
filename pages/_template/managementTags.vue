@@ -32,7 +32,7 @@
       </div>
     </Transition>
     <!-- 管理分組 -->
-    <Transition name="swipe-right" appear>
+    <Transition name="fadeInRight" appear>
       <div class="dialog full managementTags" v-if="managementTags === true">
         <div class="dialog__overlay">
           <div class="dialog__header">

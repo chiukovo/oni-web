@@ -1,17 +1,151 @@
-.featuredComics
-  .list
-    display: flex
-    flex-wrap: wrap
-    gap: 10px
-    padding: 0 10px
-    .item
+.sectionComics
+  .comics__list
+    .list
+      display: flex
+      flex-wrap: wrap
+      gap: 16px 10px
+      padding: 0 10px
+      .item
+        display: flex
+        flex-direction: column
+        gap: 6px
+        width: calc(100% / 3 - 7px)
+        overflow: hidden
+      .title
+        color: #eaeaea
+        @include multiline_ellipsis
+    .interaction
+      .btn
+        padding: 2px 0
+
+.sectionComicsDetails
+  .comicsDetail__top
+    .preview
+      display: flex
+      padding: 70px 30px 30px
+      position: relative
+      z-index: 8
+      .preview__left
+        flex: 1
+        .img
+          width: 100%
+          padding-top: 132%
+          background-size: cover
+          background-position: center
+      .preview__right
+        flex: 2
+      .bg
+        width: 100%
+        height: 100%
+        background-size: cover
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        &::after
+          content: ''
+          display: block
+          width: 100%
+          height: 100%
+          background-color: rgb(0 0 0 / .5)
+          backdrop-filter: blur(5px)
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 8
+    .info
       display: flex
       flex-direction: column
-      gap: 6px
-      width: calc(100% / 3 - 7px)
-      overflow: hidden
+      gap: 10px
+      padding: 10px 16px 10px 30px
+      list-style: disc
+      li:first-child
+        list-style: none
+      .state
+        display: inline-block
+        text-align: center
+        font-size: var(--fontSize-s)
+        background-color: #FB50FB
+        border-radius: 30px
+        padding: 6px 20px
+        margin: 0 0 16px -16px
+  .comicsInfo
+    display: flex
+    flex-direction: column
+    gap: 10px
+    padding: 10px 16px
+    .description
+      line-height: 1.6
+      color: #ccc
+      padding: 0 4px
+    .tag__list
+      .list__item
+        width: auto
+        .btn
+          padding-top: 6px
+          padding-bottom: 6px
+          .title
+            font-size: var(--fontSize-s)
+    .detail
+      display: flex
+      font-size: var(--fontSize-xs)
+      color: #77787C
+    .interaction
+      gap: 10px 16px
+      .btn
+        gap: 10px
+        flex: 1
+        color: #fff
+        text-align: center
+        font-size: var(--fontSize-m)
+        // background-color: #2a2a2b
+        border: 1px solid #2a2a2b
+        border-radius: 30px
+        padding: 12px 16px 12px 12px
+
+.sectionComicsContents
+  padding: 10px 16px
+  .section__title
+    padding: 0 2px
     .title
-      @include multiline_ellipsis
-  .interaction
-    .btn
-      padding: 2px 0
+      font-size: var(--fontSize-m)
+      margin: 10px 0
+  .contents__list
+    margin-top: 10px
+    .list
+      display: flex
+      flex-wrap: wrap
+      gap: 10px
+      &.list__reverse
+        flex-wrap: wrap-reverse
+        flex-direction: row-reverse
+      .item
+        width: calc(50% - 5px)
+        text-align: center
+        font-size: var(--fontSize-m)
+        background-color: #2a2a2b
+        border-radius: 3px
+        position: relative
+        > a
+          display: block
+          padding: 12px
+        &.read
+          color: #6F6F6F
+        &.vip
+          &::before
+            content: ''
+            display: block
+            // font-size: var(--fontSize-xs)
+            // color: #2a2a2b
+            width: 40px
+            height: 16px
+            background: #fbbe50 url(/_nuxt/assets/img/ic_vip.svg) no-repeat center / 32%
+            border-radius: 9px 0 3px 0
+            position: absolute
+            right: 0
+            bottom: 0
+
+.sectioncomicsArticle
+  .preview
+    img
+      width: 100%

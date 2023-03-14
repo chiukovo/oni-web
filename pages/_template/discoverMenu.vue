@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <!-- 搜索 -->
-    <Transition name="swipe-right" appear>
+    <Transition name="fadeInRight" appear>
       <div class="dialog full discoverSearch" v-if="discoverSearch === true">
         <div class="dialog__overlay">
           <div class="dialog__header">
@@ -119,7 +119,7 @@
                               <span>5w</span>
                             </a>
                             <a href="#" class="btn">
-                              <i class="icon icon__great"></i>
+                              <i class="icon icon__love"></i>
                               <span>116</span>
                             </a>
                           </div>
@@ -163,8 +163,8 @@
                   </div>
                 </div>
               </section>
-              <section class="section" v-else>
-                <div class="featuredComics">
+              <section class="section sectionComics" v-else>
+                <div class="comics__list">
                   <div class="list">
                     <div class="item" v-for="n in 20">
                       <div class="preview">
@@ -194,7 +194,7 @@
       </div>
     </Transition>
     <!-- 熱門創作者: 查看全部 -->
-    <Transition name="swipe-right" appear>
+    <Transition name="fadeInRight" appear>
       <div class="dialog full authorMore" v-if="authorMore === true">
         <div class="dialog__overlay">
           <div class="dialog__header">
@@ -245,7 +245,7 @@
                           <span>5w</span>
                         </a>
                         <a href="#" class="btn current">
-                          <i class="icon icon__great"></i>
+                          <i class="icon icon__love"></i>
                           <span>116</span>
                         </a>
                       </div>
@@ -264,7 +264,7 @@
                           <span>5w</span>
                         </a>
                         <a href="#" class="btn">
-                          <i class="icon icon__great"></i>
+                          <i class="icon icon__love"></i>
                           <span>116</span>
                         </a>
                       </div>
@@ -278,7 +278,7 @@
       </div>
     </Transition>
     <!-- 熱門創作者: 創作者 -->
-    <Transition name="swipe-right" appear>
+    <Transition name="fadeInRight" appear>
       <div class="dialog full authorPersonal" v-if="authorPersonal === true">
         <div class="dialog__overlay">
           <div class="dialog__header">
@@ -351,7 +351,7 @@
                               <span>5w</span>
                             </a>
                             <a href="#" class="btn">
-                              <i class="icon icon__great"></i>
+                              <i class="icon icon__love"></i>
                               <span>116</span>
                             </a>
                           </div>
@@ -394,7 +394,7 @@
             <section class="section sectionVideoType" v-for="n in 4">
               <div class="section__title">
                 <div class="title">原创微剧</div>
-                <div class="btn btn__more">更多</div>
+                <a href="#" class="btn btn__more">更多</a>
               </div>
               <div class="featuredVideoType">
                 <div class="list">
@@ -412,7 +412,7 @@
                         <span>5w</span>
                       </a>
                       <a href="#" class="btn">
-                        <i class="icon icon__great"></i>
+                        <i class="icon icon__love"></i>
                         <span>116</span>
                       </a>
                     </div>

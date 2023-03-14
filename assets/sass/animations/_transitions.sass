@@ -1,0 +1,76 @@
+// page transition
+.page-enter-active
+  transition: all 0.1s ease-out
+.page-leave-active
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1)
+.page-enter-from,
+.page-leave-to
+  transform: translateY(20px)
+  opacity: 0
+
+
+// layout transition
+.layout-enter-active
+  transition: all 0.1s ease-out
+.layout-leave-active
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1)
+.layout-enter-from,
+.layout-leave-to
+  transform: translateY(-20px)
+  opacity: 0
+
+
+// fade in right
+.fadeInRight-enter-active
+  transition: all 0.3s ease-in
+.fadeInRight-leave-active
+  transition: all 0.3s ease-out
+.fadeInRight-enter-from,
+.fadeInRight-leave-to
+  transform: translateX(50%)
+  opacity: 0
+
+
+// fade in left
+.fadeInLeft-enter-active
+  transition: all 0.3s ease-in
+.fadeInLeft-leave-active
+  transition: all 0.3s ease-out
+.fadeInLeft-enter-from,
+.fadeInLeft-leave-to
+  transform: translateX(-50%)
+  opacity: 0
+
+
+@mixin animate($animation-name, $animation-time, $animation-transform)
+  .#{$animation-name}-enter-active
+    transition: all $animation-time ease-in
+  .#{$animation-name}-leave-active
+    transition: all $animation-time ease-out
+  .#{$animation-name}-enter-from,
+  .#{$animation-name}-leave-to
+    transform: $animation-transform
+    opacity: 0
+
+@include animate(fadeInUp, .3s, translateY(10px))
+
+
+// pops up
+.pops-enter-active,
+.pops-leave-active
+  transition: all 0.2s ease-in-out
+  z-index: 101
+.pops-leave-active
+  transition-delay: 0.15s
+.pops-enter-from,
+.pops-leave-to
+  opacity: 0
+.pops-enter-active .pops__container,
+.pops-leave-active .pops__container
+  transition: all 0.3s ease-in-out
+.pops-enter-active .pops__container
+  transition-delay: 0.2s
+.pops-enter-from .pops__container,
+.pops-leave-to .pops__container
+  transform: translateY(20px)
+  opacity: 0.001

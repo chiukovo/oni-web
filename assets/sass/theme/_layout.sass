@@ -53,7 +53,6 @@ input
   flex-direction: column
   height: 100%
   background-color: #111117
-  // background: #111117 url(/_nuxt/assets/img/not-use/bg.jpg) no-repeat center / contain
   overflow: hidden
 
 .main
@@ -65,99 +64,37 @@ input
     margin-bottom: 10px
 
 .searchHeader,
-.featuredTab
-  max-width: none
+.featuredTab,
+.dialog__header
+  max-height: none
   transition: all .3s ease-in-out
   &.none
     max-height: 0
     transform: translateY(-100%)
-    overflow: hidden
 
-.footerTabbar
-  max-width: none
-  transition: all .2s ease-in-out
+.footerTabbar,
+.dialog__footer
+  max-height: none
+  transition: transform .2s ease-in-out, max-height .5s ease
   &.none
     max-height: 0
     transform: translateY(100%)
-    overflow: hidden
 
-
-.footerTabbar
-  display: flex
-  width: 100%
-  background: linear-gradient(180deg, #1C1D2E 0%, #1C1D2E 72.89%)
-  padding-bottom: env(safe-area-inset-bottom)
-  .btn
+.form
+  .form__input
     display: flex
-    flex: 1
-    flex-direction: column
     align-items: center
-    justify-content: center
-    background-color: transparent
-    border: 0
-    cursor: pointer
-    .icon
-      width: 1.625rem
-      height: 1.625rem
-      margin: 6px 0 4px
-      @for $var from 1 through 5
-        &.icon__#{$var}
-          &::after
-            content: ''
-            display: block
-            width: 100%
-            height: 100%
-            background-image: url(/_nuxt/assets/img/ic_tabbar_#{$var}.png)
-            background-size: 100%
-      &.icon__3
-        &::after
-          width: 36px
-          height: 36px
-          transform: translate3d(-50%, -10px, 0)
-          position: absolute
-          left: 50%
-    .title
-      font-size: var(--fontSize-xs)
-      color: #777
-      margin-bottom: 6px
-    &.current
-      .title
-        color: #fff
-
-.footerComments
-  display: flex
-  gap: 6px
-  padding: 6px
-  .btn__message
-    flex: 1
-    .form__input
-      display: flex
-      align-items: center
-      width: 100%
-      height: 44px
-      background-color: #353946
-      border-radius: 30px
-      padding: 10px 20px
-      span
-        color: #6f6f6f
-      img
-        height: 100%
-        margin-right: 10px
-        padding: 3px
-  .btn__unlimited
-    flex: inherit
-    flex-direction: row
-    background: linear-gradient(0, #a82dba, #d22785)
+    width: 100%
+    height: 38px
     border-radius: 30px
-    padding: 4px 18px
-    &::before
-      content: ''
-      display: inline-block
-      vertical-align: middle
-      width: 14px
-      height: 14px
-      background: url(/_nuxt/assets/img/ic_unlimited.svg) no-repeat center / contain
-      margin-right: 6px
+    padding: 10px 20px
+    img
+      height: 38px
+      padding: 10px 0
+  .form__button
+    .btn
+      padding: 10px
+
 
 .featuredTab
   display: flex
@@ -206,6 +143,84 @@ input
     flex: 1
 
 
+// section
+.section
+  margin-bottom: 10px
+  + .section
+    margin-top: 20px
+  .section__title
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 10px
+    margin: 10px 0
+    &.title-center
+      justify-content: center
+      margin-bottom: 20px
+      position: relative
+      &::before,
+      &::after
+        content: ''
+        display: block
+        width: 30%
+        height: 1px
+        background-color: rgb(95 101 119 / .3)
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+      &::before
+        left: 0
+      &::after
+        right: 0
+      .title
+        font-size: var(--fontSize-m)
+    .title
+      font-size: var(--fontSize-l)
+      > span
+        color: #6F6F6F
+    .btn__clear
+      color: #6F6F6F
+      padding: 0 6px
+    .btn__more
+      color: #6F6F6F
+      &:after
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        width: 13px
+        height: 13px
+        background: url(/_nuxt/assets/img/ic_more.svg) no-repeat
+        background-size: 100%
+        position: relative
+        top: -1px
+        margin-left: 4px
+    .btn__sort
+      height: 22px
+      img
+        height: 100%
+.sectionButton
+  margin: 0
+
+// tags
+.tag__list
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  .list__item
+    width: calc(100% / 3 - 7px)
+    overflow: hidden
+    .btn
+      display: block
+      text-align: center
+      background-color: #2a2a2b
+      border-radius: 30px
+      padding: 12px
+    .title
+      .tag
+        color: #ccc
+        @include single_ellipsis
+
+// tabs
 .pageTab
   display: flex
   align-items: center
@@ -242,61 +257,29 @@ input
             color: #fff
             background: linear-gradient(90deg, #d22785, #a82dba)
 
-
-.section
-  + .section
-    margin-top: 30px
-  .section__title
-    display: flex
-    align-items: center
-    justify-content: space-between
-    padding: 0 10px
-    margin: 10px 0
-    .title
-      font-size: var(--fontSize-l)
-    .btn__clear
-      color: #6F6F6F
-      padding: 0 6px
-    .btn__more
-      color: #6F6F6F
-      &:after
-        content: ''
-        display: inline-block
-        vertical-align: middle
-        width: 15px
-        height: 15px
-        background: url(/_nuxt/assets/img/ic_more.svg) no-repeat
-        background-size: 100%
-        position: relative
-        top: -1px
-        margin-left: 4px
-
-.sectionButton
-  margin: 0
-
-.tag__list
+.detailTab
   display: flex
-  flex-wrap: wrap
-  gap: 10px
-  .list__item
-    width: calc(100% / 3 - 7px)
-    overflow: hidden
-    .btn
-      display: block
-      text-align: center
-      background-color: #2a2a2b
-      border-radius: 30px
-      padding: 12px
-    .title
-      .tag
-        color: #ccc
-        @include single_ellipsis
+  align-items: center
+  justify-content: space-between
+  border-bottom: 1px solid rgb(95 101 119 / 30%)
+  padding: 2px 16px 0 0
+  .detailTab__list
+    .list
+      display: flex
+      li
+        .btn
+          display: block
+          font-size: var(--fontSize-m)
+          padding: 16px
+        &.current
+          color: #FB50FB
 
-
+// button
 .button__group
   display: flex
   gap: 10px
 .btn
+  display: block
   border: 0
   white-space: nowrap
   &.btn__edit
@@ -355,7 +338,10 @@ input
       margin-right: 2px
       position: relative
       top: -2px
+  &.btn__more
+    color: #6F6F6F
 
+// dot & icon
 i.dot
   &::after
     content: ''
@@ -366,7 +352,6 @@ i.dot
     background-color: #77787C
     border-radius: 50%
     margin: 0 4px
-
 
 .icon
   display: block
@@ -394,10 +379,3 @@ i.dot
     &.icon__#{$icon}
       background-image: url(/_nuxt/assets/img/ic_#{$icon}_h.svg)
 
-.pageBack
-  width: 40px
-  height: 40px
-  position: absolute
-  left: 10px
-  top: 10px
-  z-index: 9

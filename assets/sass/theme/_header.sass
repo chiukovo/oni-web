@@ -81,6 +81,8 @@
   .pageHeader__back
     height: 100%
     padding: 6px 0
+    .btn
+      height: 100%
     img
       height: 100%
   .pageHeader__title
@@ -94,3 +96,28 @@
     transform: translateX(-50%)
     .title
       @include single_ellipsis
+
+
+.detailHeader
+  display: flex
+  align-items: center
+  width: 100%
+  padding: 0 10px
+  position: absolute
+  top: 10px
+  z-index: 9
+  .detailback
+    .btn__back
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 40px
+      height: 40px
+    + .detailTitle
+      display: flex
+      align-items: center
+      height: 40px
+      overflow: hidden
+      .title
+        font-size: var(--fontSize-m)
+        @include single_ellipsis

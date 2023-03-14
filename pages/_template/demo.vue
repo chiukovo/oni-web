@@ -91,21 +91,25 @@
             </section>
             <section class="sectionButton">
               <div class="featuredPart">
-                <a href="#" class="btn">
+                <a href="/_template/firstNovel" class="btn">
                   <img :src="'/_nuxt/assets/img/btn_first_1.png'">
                 </a>
                 <a href="/_template/firstVideo" class="btn">
                   <img :src="'/_nuxt/assets/img/btn_first_2.png'">
                 </a>
-                <a href="#" class="btn">
+                <a href="/_template/firstComics" class="btn">
                   <img :src="'/_nuxt/assets/img/btn_first_3.png'">
                 </a>
               </div>
             </section>
             <section class="section sectionVideo">
+              <div class="section__title">
+                <div class="title">最新新作</div>
+                <a href="#" class="btn btn__more">更多</a>
+              </div>
               <div class="featuredVideo">
                 <div class="list">
-                  <NuxtLink class="item" v-for="n in 1" to="/_template/videoDetail">
+                  <NuxtLink class="item" v-for="n in 2" to="/_template/videoDetail">
                     <div class="preview">
                       <div class="title">
                         <p>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>

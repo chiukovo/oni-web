@@ -1,0 +1,169 @@
+.footerTabbar
+  display: flex
+  width: 100%
+  background: linear-gradient(180deg, #1C1D2E 0%, #1C1D2E 72.89%)
+  padding-bottom: env(safe-area-inset-bottom)
+  .btn
+    display: flex
+    flex: 1
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background-color: transparent
+    border: 0
+    cursor: pointer
+    .icon
+      width: 1.625rem
+      height: 1.625rem
+      margin: 6px 0 4px
+      @for $var from 1 through 5
+        &.icon__#{$var}
+          &::after
+            content: ''
+            display: block
+            width: 100%
+            height: 100%
+            background-image: url(/_nuxt/assets/img/ic_tabbar_#{$var}.png)
+            background-size: 100%
+      &.icon__3
+        &::after
+          width: 36px
+          height: 36px
+          transform: translate3d(-50%, -10px, 0)
+          position: absolute
+          left: 50%
+    .title
+      font-size: var(--fontSize-xs)
+      color: #777
+      margin-bottom: 6px
+    &.current
+      .title
+        color: #fff
+
+// 有評論的
+.footerComments
+  display: flex
+  gap: 6px
+  background: #111117
+  padding: 6px
+  position: relative
+  .comments
+    display: flex
+    align-items: center
+    width: 100%
+    height: 100%
+    background: #e4e1e4
+    padding: 0 6px
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 9
+    .form
+      flex: 1
+      display: flex
+      align-items: center
+      .form__input
+        background-color: #fff
+        input
+          color: #000
+        img
+          margin-right: 4px
+      .form__button
+        .btn
+          color: #000
+  .footerComments__left
+    flex: 1
+    position: relative
+  .btn__comments
+    .form__input
+      background-color: #1C1D2E
+      span
+        color: #585a6d
+      img
+        filter: invert(26%) sepia(28%) saturate(314%) hue-rotate(196deg) brightness(60%) contrast(100%)
+        margin-right: 4px
+  .btn__love
+    width: 38px
+    height: 38px
+    position: absolute
+    right: 2px
+    top: 0
+    img
+      padding: 10px
+  .btn__unlimited
+    flex: inherit
+    flex-direction: row
+    background: linear-gradient(0, #a82dba, #d22785)
+    border-radius: 30px
+    padding: 4px 18px
+    &::before
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      width: 14px
+      height: 14px
+      background: url(/_nuxt/assets/img/ic_unlimited.svg) no-repeat center / contain
+      margin-right: 6px
+
+// 只有收藏跟分享
+.footerContents
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 6px
+  background: #111117
+  padding: 6px
+  position: relative
+  .footerContents__left
+    flex: 1
+    .interaction
+      justify-content: space-evenly
+      .btn
+        font-size: var(--fontSize)
+        color: #fff
+  .footerContents__right
+    flex: 1
+  .btn__starread
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 38px
+    background: linear-gradient(0, #a82dba, #d22785)
+    border-radius: 30px
+    padding: 4px 18px
+
+// 文章
+.footerArticle
+  display: flex
+  width: 100%
+  background-color: #111117
+  padding-bottom: env(safe-area-inset-bottom)
+  .btn
+    flex: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 4px
+    height: 50px
+    background-color: transparent
+    border: 0
+    cursor: pointer
+    .icon
+      width: 16px
+      height: 16px
+      @for $var from 1 through 4
+        &.icon__#{$var}
+          &::after
+            content: ''
+            display: block
+            width: 100%
+            height: 100%
+            background-image: url(/_nuxt/assets/img/ic_article_#{$var}.svg)
+            background-size: 100%
+    .title
+      font-size: var(--fontSize-s)
+    &.current
+      .icon
+        filter: invert(52%) sepia(47%) saturate(4206%) hue-rotate(268deg) brightness(97%) contrast(103%)
+      .title
+        color: #FB50FB
