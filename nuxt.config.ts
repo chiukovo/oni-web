@@ -45,7 +45,12 @@ export default defineNuxtConfig({
     // auto import components
     components: true,
     // css
-    css: ['~/assets/sass/vendor.scss', '~/assets/sass/app.sass'],
+    css: [
+      '~/assets/sass/vendor.scss',
+      '~/assets/sass/app.sass',
+      '@master/normal.css',
+      '@master/css'
+    ],
     nitro: {
         devProxy: {
             "/api": {
