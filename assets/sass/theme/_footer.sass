@@ -149,9 +149,21 @@
     border: 0
     cursor: pointer
     .icon
-      width: 16px
-      height: 16px
-      @for $var from 1 through 4
+      width: 20px
+      height: 20px
+      &.icon__prev,
+      &.icon__next
+        &::after
+          content: ''
+          display: block
+          width: 100%
+          height: 100%
+          background-size: 100%
+      &.icon__prev
+          background-image: url(/_nuxt/assets/img/ic_article_prev.svg)
+      &.icon__next
+          background-image: url(/_nuxt/assets/img/ic_article_next.svg)
+      @for $var from 1 through 5
         &.icon__#{$var}
           &::after
             content: ''
@@ -161,6 +173,7 @@
             background-image: url(/_nuxt/assets/img/ic_article_#{$var}.svg)
             background-size: 100%
     .title
+      line-height: 1
       font-size: var(--fontSize-s)
     &.current
       .icon

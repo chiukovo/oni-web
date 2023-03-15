@@ -1,5 +1,104 @@
 <template>
   <div class="wrap">
+    <!-- footer_書籤 -->
+    <Transition name="pops" duration="550" appear>
+      <div class="pops pops-full pops-bottom articleFooterBookmarks" v-if="articleFooterBookmarks === true">
+        <div class="pops__overlay">
+          <div class="pops__container">
+            <div class="pops__header">
+              <div class="pops__title pops__title-center">
+                <div class="title">書籤</div>
+              </div>
+              <div class="pops__close">
+                <div class="btn btn__close" @click="articleFooterBookmarks = false">
+                  <img src="/_nuxt/assets/img/ic_close.svg">
+                </div>
+              </div>
+            </div>
+            <div class="pops__body">
+              <div class="content">
+                <section class="section sectionFooterBookmark">
+                  <div class="bookmark__list">
+                    <ul class="list" :class="sort ? '' : 'list__reverse'">
+                      <li class="item read">
+                        <a href="#">
+                          <p>第1話</p>
+                        </a>
+                        <a href="#" class="btn btn__delet">
+                          刪除
+                        </a>
+                      </li>
+                      <li class="item">
+                        <a href="#">
+                          <p>第2話</p>
+                        </a>
+                        <a href="#" class="btn btn__delet">
+                          刪除
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Transition>
+    <!-- footer_目錄 -->
+    <Transition name="pops" duration="550" appear>
+      <div class="pops pops-full pops-bottom articleFooterContents" v-if="articleFooterContents === true">
+        <div class="pops__overlay">
+          <div class="pops__container">
+            <div class="pops__header">
+              <div class="pops__title">
+                <div class="title">成人漫画名称成人漫画名称成人漫画名称成人漫画名称成人漫画名称</div>
+              </div>
+              <div class="pops__close">
+                <div class="btn btn__close" @click="articleFooterContents = false">
+                  <img src="/_nuxt/assets/img/ic_close.svg">
+                </div>
+              </div>
+            </div>
+            <div class="pops__body">
+              <div class="content">
+                <section class="section sectionComicsContents">
+                  <div class="section__title">
+                    <div class="title">
+                      連載中
+                      <span>(週五) 更新至124話</span>
+                    </div>
+                    <a href="#" class="btn btn__sort" @click="sort = !sort">
+                      <img src="/_nuxt/assets/img/ic_sort_up.svg" alt="正序" v-if="sort === true">
+                      <img src="/_nuxt/assets/img/ic_sort_down.svg" alt="反序" v-else>
+                    </a>
+                  </div>
+                  <div class="contents__list">
+                    <ul class="list" :class="sort ? '' : 'list__reverse'">
+                      <li class="item read">
+                        <a href="#">
+                          <p>第1話(已讀)</p>
+                        </a>
+                      </li>
+                      <li class="item">
+                        <a href="#">
+                          <p>第2話</p>
+                        </a>
+                      </li>
+                      <li class="item vip" v-for="n in 32">
+                        <a href="#">
+                          <p>第{{ n + 2 }}話</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Transition>
     <!-- 成人漫画 -->
     <Transition name="fadeInLeft" appear>
       <div class="dialog full firstComics" v-if="firstComics === true">
@@ -43,7 +142,7 @@
                   <div class="list">
                     <div class="item" v-for="n in 6" @click="comicsDetails = true">
                       <div class="preview">
-                        <img class="img" src="https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public">
+                        <div class="img" style="background-image: url(&quot;https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public&quot;);"></div>
                       </div>
                       <div class="info">
                         <div class="title">
@@ -215,9 +314,9 @@
                 </div>
                 <div class="comics__list">
                   <div class="list">
-                    <div class="item" v-for="n in 6">
+                    <div class="item" v-for="n in 1">
                       <div class="preview">
-                        <img class="img" src="https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public">
+                        <div class="img" style="background-image: url(&quot;https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public&quot;);"></div>
                       </div>
                       <div class="info">
                         <div class="title">
@@ -244,7 +343,7 @@
                 <div class="contents__list">
                   <ul class="list" :class="sort ? '' : 'list__reverse'">
                     <li class="item read">
-                      <a href="#">
+                      <a href="#" @click="comicsArticle = true">
                         <p>第1話(已讀)</p>
                       </a>
                     </li>
@@ -278,7 +377,7 @@
                 </div>
               </div>
               <div class="footerContents__right">
-                <a href="#" class="btn btn__starread">开始阅读</a>
+                <a href="#" class="btn btn__starread" @click="comicsArticle = true">开始阅读</a>
               </div>
             </div>
           </div>
@@ -313,20 +412,20 @@
           <div class="dialog__footer" :class="none ? 'none' : ''">
             <div class="footerArticle">
               <button class="btn">
+                <div class="icon icon__prev"></div>
+                <div class="title">上一頁</div>
+              </button>
+              <button class="btn" @click="articleFooterContents = true">
                 <div class="icon icon__1"></div>
-                <div class="title">目錄</div>
+                <div class="title">目录</div>
+              </button>
+              <button class="btn" @click="articleFooterBookmarks = true">
+                <div class="icon icon__5"></div>
+                <div class="title">书签</div>
               </button>
               <button class="btn">
-                <div class="icon icon__2"></div>
-                <div class="title">進度</div>
-              </button>
-              <button class="btn">
-                <div class="icon icon__3"></div>
-                <div class="title">夜間</div>
-              </button>
-              <button class="btn">
-                <div class="icon icon__4"></div>
-                <div class="title">設置</div>
+                <div class="icon icon__next"></div>
+                <div class="title">下一頁</div>
               </button>
             </div>
           </div>
@@ -346,10 +445,12 @@
         height: '',
         none: false,
         firstComics: true,
-        comicsDetails: true,
-        comicsDetailtab: 1,
-        comicsArticle: true,
-        sort: true
+        comicsDetails: false,
+        comicsDetailtab: 0,
+        comicsArticle: false,
+        articleFooterContents: false,
+        articleFooterBookmarks: false,
+        sort: true,
       }
     },
     methods: {

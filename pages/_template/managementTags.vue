@@ -5,9 +5,9 @@
         <div class="pops__overlay">
           <div class="pops__container">
             <div class="pops__header">
-              <div class="pageHeader__title">
-                  <div class="title">编辑标签</div>
-                </div>
+              <div class="pops__title pops__title-center">
+                <div class="title">编辑标签</div>
+              </div>
             </div>
             <div class="pops__body">
               <div class="content">
@@ -29,6 +29,7 @@
             </div>
           </div>
         </div>
+        <div class="pops__mask" @click="managementAddTags = false"></div>
       </div>
     </Transition>
     <!-- 管理分組 -->

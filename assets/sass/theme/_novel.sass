@@ -1,5 +1,5 @@
-.sectionComics
-  .comics__list
+.sectionNove
+  .novel__list
     .list
       display: flex
       flex-wrap: wrap
@@ -24,8 +24,8 @@
       .btn
         padding: 2px 0
 
-.sectionComicsDetails
-  .comicsDetail__top
+.sectionNoveDetails
+  .novelDetail__top
     .preview
       display: flex
       padding: 70px 30px 30px
@@ -75,7 +75,7 @@
         border-radius: 30px
         padding: 6px 20px
         margin: 0 0 16px -16px
-  .comicsInfo
+  .novelInfo
     display: flex
     flex-direction: column
     gap: 10px
@@ -109,7 +109,7 @@
         border-radius: 30px
         padding: 12px 16px 12px 12px
 
-.sectionComicsContents
+.sectionNoveContents
   padding: 10px 16px
   .section__title
     padding: 0 2px
@@ -126,7 +126,7 @@
         flex-wrap: wrap-reverse
         flex-direction: row-reverse
       .item
-        width: calc(50% - 5px)
+        width: 100%
         text-align: center
         font-size: var(--fontSize-m)
         background-color: #2a2a2b
@@ -151,10 +151,13 @@
             right: 0
             bottom: 0
 
-.sectioncomicsArticle
+.sectionNoveArticle
   .preview
-    img
-      width: 100%
+    color: #b3b7bb
+    background: #212529
+    .article
+      line-height: 1.6
+      padding: 10px 20px
 
 // article footer
 .articleFooterContents
@@ -173,4 +176,26 @@
         display: flex
         justify-content: space-between
         padding: 20px
-        border-bottom: 1px solid rgb(95 101 119 / .3)
+        + .item
+          border-top: 1px solid rgb(95 101 119 / .3)
+
+.articleFooterSettings
+  .fontsize__list
+    .list
+      display: flex
+      flex-direction: column
+      .item
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 20px
+        + .item
+          border-top: 1px solid rgb(95 101 119 / .3)
+        .icon
+          display: block
+          width: 26px
+          height: 26px
+          background: url(/_nuxt/assets/img/ic_check.svg) no-repeat center / cover
+        &.current
+          .icon
+            background-image: url(/_nuxt/assets/img/ic_check_h.svg)

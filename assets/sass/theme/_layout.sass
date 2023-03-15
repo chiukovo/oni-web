@@ -71,6 +71,7 @@ input
   &.none
     max-height: 0
     transform: translateY(-100%)
+    overflow: hidden
 
 .footerTabbar,
 .dialog__footer
@@ -79,6 +80,7 @@ input
   &.none
     max-height: 0
     transform: translateY(100%)
+    overflow: hidden
 
 .form
   .form__input
@@ -278,20 +280,35 @@ input
 .button__group
   display: flex
   gap: 10px
+  padding: 0 20px 20px
 .btn
   display: block
   border: 0
   white-space: nowrap
+  &.btn__delet
+    color: #6F6F6F
+    &::before
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      width: 16px
+      height: 18px
+      background: url(/_nuxt/assets/img/ic_delet.svg) no-repeat center / contain
+      margin-right: 4px
+      position: relative
+      top: -2px
   &.btn__edit
     color: #6F6F6F
     &::before
       content: ''
       display: inline-block
       vertical-align: middle
-      width: 14px
-      height: 14px
+      width: 16px
+      height: 16px
       background: url(/_nuxt/assets/img/ic_edit.svg) no-repeat center / contain
       margin-right: 6px
+      position: relative
+      top: -2px
   &.btn__add
     font-size: var(--fontSize-s)
     background: linear-gradient(0, #a82dba, #d22785)
@@ -379,3 +396,10 @@ i.dot
     &.icon__#{$icon}
       background-image: url(/_nuxt/assets/img/ic_#{$icon}_h.svg)
 
+
+
+// font size
+$font-size: ("lg": var(--fontSize-lg), "l": var(--fontSize-l), "m": var(--fontSize-m), "s": var(--fontSize-s))
+@each $name, $size in $font-size
+  .fontsize-#{$name}
+    font-size: $size !important

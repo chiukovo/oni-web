@@ -5,9 +5,14 @@
         <div class="pops__overlay">
           <div class="pops__container">
             <div class="pops__header">
-              <div class="pageHeader__title">
-                  <div class="title">选择标签</div>
+              <div class="pops__title pops__title-center">
+                <div class="title">选择标签</div>
+              </div>
+              <div class="pops__close">
+                <div class="btn btn__close" @click="articleFooterContents = false">
+                  <img src="/_nuxt/assets/img/ic_close.svg">
                 </div>
+              </div>
             </div>
             <div class="pops__body">
               <div class="content">
@@ -50,12 +55,14 @@
               </div>
               <div class="pops__footer">
                 <div class="button__group">
+                  <button class="btn btn__cancel">取消</button>
                   <button class="btn btn__checked" @click="addTags = false">确认</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="pops__mask" @click="addTags = false"></div>
       </div>
     </Transition>
     <div class="container">
