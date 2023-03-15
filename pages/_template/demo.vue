@@ -190,26 +190,26 @@
       </main>
     </div>
     <div class="footerTabbar" :class="none ? 'none' : ''">
-      <button class="btn current">
+      <NuxtLink class="btn current" to="/_template/demo">
         <div class="icon icon__1"></div>
         <div class="title">精选</div>
-      </button>
-      <button class="btn">
+      </NuxtLink>
+      <NuxtLink class="btn" to="/_template/discover">
         <div class="icon icon__2"></div>
         <div class="title">发现</div>
-      </button>
-      <button class="btn">
+      </NuxtLink>
+      <NuxtLink class="btn">
         <div class="icon icon__3"></div>
         <div class="title">上传</div>
-      </button>
-      <button class="btn">
+      </NuxtLink>
+      <NuxtLink class="btn">
         <div class="icon icon__4"></div>
         <div class="title">社区</div>
-      </button>
-      <button class="btn">
+      </NuxtLink>
+      <NuxtLink class="btn">
         <div class="icon icon__5"></div>
         <div class="title">我的</div>
-      </button>
+      </NuxtLink>
     </div>
   </div>
 </template>

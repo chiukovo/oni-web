@@ -1,0 +1,75 @@
+.sectionDiscoverVideo
+  .list
+    display: flex
+    flex-direction: column
+  .preview
+    position: relative
+    display: block
+    width: 100%
+    @include preview_hasPlay
+    .title
+      position: absolute
+      top: 6px
+      left: 6px
+      > p
+        @include multiline_ellipsis
+    .view
+      font-size: var(--fontSize-xs)
+      color: #B7B7B7
+      position: absolute
+      left: 6px
+      bottom: 14px
+    .img
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: cover
+  .info
+    display: grid
+    grid-template-columns: 2.5rem auto auto
+    align-items: center
+    gap: 6px
+    padding: 10px
+    .avatar
+      position: relative
+      display: block
+      height: 2.5rem
+      border-radius: 50%
+      overflow: hidden
+      .img
+        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .title
+      line-height: 1.2
+      overflow: hidden
+      .name
+        display: flex
+        align-items: center
+        gap: 4px
+        > p
+          font-size: var(--fontSize)
+          @include single_ellipsis
+      > span
+        font-size: var(--fontSize-xs)
+        color: #77787C
+  .interaction
+    padding-left: 10px
+
+.swiper
+  width: 100%
+  height: 100%
+
+.swiper-slide
+  background: #111117
+
+  display: flex
+  justify-content: center
+  align-items: center
+
+.swiper-slide img
+  display: block
+  width: 100%
+  height: 100%
+  object-fit: cover

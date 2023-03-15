@@ -103,6 +103,16 @@
     transform: translateX(-50%)
     .title
       @include single_ellipsis
+  .pageHeader__titleTab
+    display: flex
+    gap: 20px
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    .btn
+      font-size: var(--fontSize-l)
+      &.current
+        color: #FB50FB
 
 
 .detailHeader
