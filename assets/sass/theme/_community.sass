@@ -1,0 +1,66 @@
+.community__wrap
+  .pageHeader
+    position: relative
+    &::before
+      content: ''
+      width: 100%
+      border-bottom: 2px solid #000
+      position: absolute
+      bottom: 0
+.sectionCommunity
+  .list
+    display: flex
+    flex-direction: column
+    gap: 10px
+    padding: 0 10px
+  .preview
+    position: relative
+    display: block
+    width: 100%
+    .img__list
+      display: grid
+      grid-template-columns: repeat(auto-fill,minmax(30%,1fr))
+      gap: 6px
+      .img
+        display: inline-grid
+        background: #0a0b0e center / cover no-repeat
+        border-radius: 6px
+        padding-top: 100%
+        &:first-child
+          grid-column-start: 1
+          grid-column-end: 4
+          grid-row-start: 1
+          grid-row-end: 3
+  .info
+    display: grid
+    grid-template-columns: 36px auto 60px
+    align-items: center
+    gap: 10px
+    padding: 10px 0
+    .avatar
+      position: relative
+      display: block
+      height: 36px
+      border-radius: 50%
+      overflow: hidden
+      .img
+        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .title
+      line-height: 1.2
+      overflow: hidden
+      .name
+        display: flex
+        align-items: center
+        gap: 4px
+        > p
+          font-size: var(--fontSize)
+          margin: 0
+          @include single_ellipsis
+      > span
+        font-size: var(--fontSize-xs)
+        color: #77787C
+  .interaction
+    padding: 2px 10px

@@ -142,7 +142,7 @@
                   <div class="list">
                     <div class="item" v-for="n in 6" @click="comicsDetails = true">
                       <div class="preview">
-                        <div class="img" style="background-image: url(&quot;https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public&quot;);"></div>
+                        <div class="img" style="background-image: url(https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public);"></div>
                       </div>
                       <div class="info">
                         <div class="title">
@@ -316,7 +316,7 @@
                   <div class="list">
                     <div class="item" v-for="n in 1">
                       <div class="preview">
-                        <div class="img" style="background-image: url(&quot;https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public&quot;);"></div>
+                        <div class="img" style="background-image: url(https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public);"></div>
                       </div>
                       <div class="info">
                         <div class="title">

@@ -46,9 +46,9 @@ export default defineNuxtConfig({
     components: true,
     // css
     css: [
+      '@master/normal.css',
       '~/assets/sass/vendor.scss',
       '~/assets/sass/app.sass',
-      '@master/normal.css',
       '@master/css'
     ],
     nitro: {

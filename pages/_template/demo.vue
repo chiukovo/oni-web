@@ -39,7 +39,7 @@
             </li>
           </ul>
         </div>
-        <a href="/_template/discoverMenu" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
+        <a href="#" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
           <img src="/_nuxt/assets/img/ic_menu.svg" alt="更多推荐">
         </a>
       </div>
@@ -202,7 +202,7 @@
         <div class="icon icon__3"></div>
         <div class="title">上传</div>
       </NuxtLink>
-      <NuxtLink class="btn">
+      <NuxtLink class="btn" to="/_template/community">
         <div class="icon icon__4"></div>
         <div class="title">社区</div>
       </NuxtLink>
@@ -215,9 +215,6 @@
 </template>
 
 <script>
-  import '@master/normal.css';
-  import '@master/css';
-
   export default {
     data() {
       return {

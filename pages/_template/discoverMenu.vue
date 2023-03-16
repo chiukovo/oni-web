@@ -168,7 +168,7 @@
                   <div class="list">
                     <div class="item" v-for="n in 20">
                       <div class="preview">
-                        <img class="img" src="https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public">
+                        <div class="img" style="background-image: url(https://imagedelivery.net/wZHPgs2OG1Jdmm2gsKzHiA/32a3b2eb-070b-4b57-59fd-0b2811bf8300/public);"></div>
                       </div>
                       <div class="info">
                         <div class="title">
