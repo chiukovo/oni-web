@@ -2,7 +2,9 @@ import { defineStore } from 'pinia'
 
 export const useMainStore = defineStore('main', {
     state: () => ({
-        appVersion: process.env.APP_VERSION
+        hideHeaderFooter: false,
+        contentHeight: 0,
+        featuredTab: 0,
     }),
     actions: {
         async getAN() {

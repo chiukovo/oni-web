@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     modules: [
       '@vueuse/nuxt',
       '@pinia/nuxt',
+      'nuxt-swiper'
     ],
     // public config
     appConfig: {

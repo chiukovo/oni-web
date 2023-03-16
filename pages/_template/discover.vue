@@ -21,16 +21,15 @@
           <div class="content" @scroll="scroll">
             <section class="section sectionDiscoverVideo">
               <div class="discoverVideo__list">
-                <swiper
+                <Swiper
                   :direction="'vertical'"
                   :slidesPerView="1"
                   :mousewheel="true"
                   :pagination="{
                     clickable: true,
                   }"
-                  :modules="modules"
                 >
-                  <swiper-slide v-for="n in 3">
+                  <SwiperSlide v-for="n in 3" :key="n">
                     <div class="item">
                       <div class="preview">
                         <div class="view"><span>5w</span>次播放</div>
@@ -53,8 +52,8 @@
                         <p>{{n}} 3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>
                       </div>
                     </div>
-                  </swiper-slide>
-                </swiper>
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </section>
           </div>
@@ -87,14 +86,6 @@
 </template>
 
 <script>
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-  import 'swiper/css';
-  import 'swiper/css/pagination';
-  import { Mousewheel, Pagination } from 'swiper';
-
-  import '@master/normal.css';
-  import '@master/css';
-
   export default {
     data() {
       return {
@@ -102,15 +93,6 @@
         none: false,
         discoverTab: 0
       }
-    },
-    components: {
-      Swiper,
-      SwiperSlide,
-    },
-    setup() {
-      return {
-        modules: [Mousewheel, Pagination],
-      };
     },
     methods: {
       scroll(e) {
