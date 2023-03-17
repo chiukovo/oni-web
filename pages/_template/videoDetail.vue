@@ -215,7 +215,7 @@
             </section>
           </div>
           <div class="content" @scroll="scroll" v-else>
-            <section class="sectionVideoMessage">
+            <section class="sectionMessage">
               <div class="section__title">
                 <div class="title">热门评论</div>
               </div>
@@ -231,7 +231,7 @@
                           <div class="name">
                             <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
                           </div>
-                          <span>2021-08-30</span>
+                          <span>2023-03-07</span>
                         </div>
                       </div>
                       <div class="msg">
@@ -274,7 +274,7 @@
                           <div class="name">
                             <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
                           </div>
-                          <span>2021-08-30</span>
+                          <span>2023-03-07</span>
                         </div>
                       </div>
                       <div class="msg">

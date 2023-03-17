@@ -20,9 +20,14 @@
 
 <br>
 
+
 ### # 使用套件
 - Vant (https://vant-ui.github.io/vant/#/zh-CN)
 - Master CSS (https://css.master.co/tw)
+
+<br>
+
+-----
 
 <br>
 
@@ -47,8 +52,25 @@
 
 <br>
 
-###### node use v16.19.0
+-----
 
+<br>
 
+### # 廣宣尺寸
 
+- 啟動圖 720x1560
+- 彈窗小廣宣 450x512
+- banner 576x172
+
+<br>
+
+-----
+
+<br>
+
+### # 備註
 - 呼叫原生分享按鈕 (https://ithelp.ithome.com.tw/articles/10280875)
+
+<br>
+
+###### <div style="text-align: center; color: gray">node use v16.19.0</div>

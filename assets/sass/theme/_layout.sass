@@ -99,7 +99,9 @@ input
     width: 100%
     height: 38px
     border-radius: 30px
-    padding: 10px 20px
+    padding: 0 20px
+    input
+      height: 100%
     img
       height: 38px
       padding: 10px 0
@@ -387,11 +389,11 @@ i.dot
   line-height: 1
   background-repeat: no-repeat
   background-size: contain
-  $list: ('love', 'message', 'share', 'view', 'great')
+  $list: ('love', 'message', 'share', 'view', 'great', 'reports')
   @each $icon in $list
     &.icon__#{$icon}
       background-image: url(/_nuxt/assets/img/ic_#{$icon}.svg)
-  $list: ('love', 'share', 'money')
+  $list: ('love', 'share', 'money', 'message')
   @each $icon in $list
     &.icon__#{$icon}-w
       background-image: url(/_nuxt/assets/img/ic_#{$icon}_w.svg)
