@@ -5,8 +5,7 @@
       <FeaturedTab></FeaturedTab>
       <main class="main">
         <Transition name="style1">
-          <Swiper
-          >
+          <Swiper>
             <SwiperSlide :key="1">
               <Swiper
                 :direction="'vertical'"
