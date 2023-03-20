@@ -343,7 +343,7 @@
                         </div>
                         <span>2023-03-07</span>
                       </div>
-                      <button class="btn btn__focus">关注</button>
+                      <button class="btn btn__focus hasFocus">已关注</button>
                     </div>
                     <div class="description">
                       <p><a href="#">Aidol</a></p>
@@ -426,7 +426,7 @@
         height: '',
         none: false,
         tab: 1,
-        communityDetails: true,
+        communityDetails: false,
         communityDetailtab: 0,
         footerMessage: false
       }
