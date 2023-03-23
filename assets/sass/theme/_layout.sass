@@ -409,6 +409,12 @@ i.dot
       background-image: url(/_nuxt/assets/img/ic_#{$icon}_h.svg)
 
 
+.icon__level
+  width: 20px
+  height: 20px
+  @for $var from 1 through 4
+    &.icon__level#{$var}
+      background: url(/_nuxt/assets/img/ic_mem_corwn#{$var}.png) center / contain no-repeat
 
 // font size
 $font-size: ("lg": var(--fontSize-lg), "l": var(--fontSize-l), "m": var(--fontSize-m), "s": var(--fontSize-s))

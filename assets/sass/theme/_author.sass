@@ -39,8 +39,6 @@
       padding-top: 8px
       padding-bottom: 8px
 
-
-
 .authorPersonal
   .content__top
     display: flex
@@ -91,3 +89,51 @@
   .content__bottom
     .pageTab
         padding: 10px 10px 20px 10px
+
+
+.sectionAuthor
+  .author__info
+    .info
+      display: grid
+      grid-template-columns: 5rem 1fr
+      align-items: center
+      gap: 20px
+      padding: 20px
+      .avatar
+        position: relative
+        display: block
+        height: 5rem
+        border-radius: 50%
+        overflow: hidden
+        .img
+          display: block
+          width: 100%
+          height: 100%
+          object-fit: cover
+      .title
+        line-height: 1.2
+        overflow: hidden
+        .name
+          display: flex
+          align-items: center
+          gap: 4px
+          > p
+            font-size: var(--fontSize-m)
+            font-weight: bold
+            margin: 0
+            @include single_ellipsis
+        .level
+          .level__card
+            display: inline-flex
+            align-items: center
+            gap: 4px
+            font-size: var(--fontSize-s)
+            background: linear-gradient(180deg, #292E41 0%, #1E1F31 100%)
+            border-radius: 8px
+            padding: 4px 10px
+            margin-top: 8px
+            .icon__level
+              width: 20px
+              height: 20px
+          .expiry__date
+            color: #a4a5ae
