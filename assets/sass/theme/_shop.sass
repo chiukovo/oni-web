@@ -2,7 +2,12 @@
   display: flex
   flex-direction: column
   height: 100%
-  margin-bottom: 0
+  margin: 0 !important
+  .shopSwiper__card
+    height: calc( 100% - 260px )
+    padding-bottom: 20px
+  .shopSwiper__cardInfo
+    height: 260px
   .sectionShop__card
     height: 100%
     .card_shop
@@ -12,28 +17,75 @@
       transform: scale(.9)
       @for $var from 1 through 4
         &.card_shop#{$var}
-          background: url(/_nuxt/assets/img/card_shop#{$var}.png) center / contain no-repeat
+          background: url(/_nuxt/assets/img/card_shop_#{$var}.png) center / contain no-repeat
     .swiper-slide-active .card_shop
       transform: scale(1)
   .sectionShop__cardInfo
+    width: 100%
+    height: 260px
     background: linear-gradient(180deg, #2C3346 0%, #1C1D2E 100%)
     box-shadow: inset 0 1px 0 #434E6A
     border-radius: 20px 20px 0 0
-    padding: 20px
+    padding: 10px 20px
     .cardInfo__header
       display: flex
+      justify-content: space-between
       align-items: center
-      flex-direction: column
       gap: 10px
+      padding: 0 10px
       .level
-        display: inline-flex
+        display: flex
         align-items: center
         gap: 10px
-        background: linear-gradient(180deg, #292E41 0%, #1E1F31 100%)
-        border-radius: 12px
-        padding: 10px 20px
+        padding: 10px
         .mem__level
-          font-size: var(--fontSize-l)
           font-weight: bold
       .describe
         font-size: var(--fontSize-s)
+    .cardInfo__body
+      .hr
+        font-size: var(--fontSize-s)
+        color: rgb(219 219 219 / 70%)
+      .vip__list
+        display: grid
+        gap: 10px
+        padding: 10px
+        &.vip__list1
+          grid-template-columns: repeat(4, 1fr)
+        &.vip__list2
+          grid-template-columns: repeat(3, 1fr)
+        .item
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          gap: 4px
+          font-size: var(--fontSize-s)
+          .icon__vip
+            width: 30px
+            height: 30px
+            border: 1px solid rgb(219 219 219 / 50%)
+            border-radius: 50%
+    .cardInfo__footer
+      padding: 10px
+  .shop__list
+    display: flex
+    flex-direction: column
+    gap: 10px
+    margin: 0 10px
+    .item
+      display: grid
+      align-items: center
+      grid-template-columns: auto 1fr auto
+      gap: 10px
+      background: linear-gradient(180deg, #2C3346 0%, #1C1D2E 100%)
+      border: 1px solid #434E6A
+      border-radius: 20px
+      padding: 20px 10px
+      .money
+        font-size: var(--fontSize-lg)
+        font-weight: bold
+        color: #FB50FB
+        > span
+          font-size: var(--fontSize-m)
+          padding-left: 2px

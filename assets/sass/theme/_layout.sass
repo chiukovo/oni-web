@@ -288,6 +288,29 @@ input
         &.current
           color: #FB50FB
 
+
+
+input[type=radio]
+  margin: 0
+  max-width: 100%
+  height: auto
+  font-family: inherit
+  font-size: inherit
+  line-height: inherit
+  color: #1b1b1b
+  appearance: none
+  border: 0.08em solid #ccc
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  &:checked
+    background-image: url("data:image/svg+xml,%3Csvg height='32' width='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m11.4 21.5-5.93-5.93-2.01 2.01 7.94 7.94 17.1-17.1-2.01-2.01z' fill='%23fff'/%3E%3C/svg%3E")
+    background-size: 80% 80%
+    background-position: center
+    background-repeat: no-repeat
+    background-color: #00a1e9
+    border-color: #00a1e9
+
 // button
 .button__group
   display: flex
@@ -297,6 +320,9 @@ input
   display: block
   border: 0
   white-space: nowrap
+  &.disabled
+    color: #6F6F6F
+    background: #2a2a2b
   &.btn__delet
     color: #6F6F6F
     &::before
@@ -321,36 +347,6 @@ input
       margin-right: 6px
       position: relative
       top: -2px
-  &.btn__add
-    font-size: var(--fontSize-s)
-    background: linear-gradient(0, #a82dba, #d22785)
-    border-radius: 30px
-    padding: 10px 18px
-  &.btn__regreat
-    color: #6F6F6F !important
-    background: #2a2a2b
-    border-radius: 30px
-  &.btn__checked
-    flex: 1
-    background: linear-gradient(0, #a82dba, #d22785)
-    border-radius: 30px
-    padding: 10px 18px
-    &.disabled
-      color: #6F6F6F
-      background: #2a2a2b
-  &.btn__cancel
-    flex: 1
-    background: #4a4a4a
-    border-radius: 30px
-    padding: 10px 18px
-  &.btn__focus
-    font-size: var(--fontSize-s)
-    background: linear-gradient(0, #a82dba, #d22785)
-    border-radius: 30px
-    padding: 4px 18px
-    &.hasFocus
-      color: #6F6F6F
-      background: #2a2a2b
   &.btn__reports
     font-size: var(--fontSize-s)
     color: #6F6F6F
@@ -367,8 +363,75 @@ input
       margin-right: 2px
       position: relative
       top: -2px
+  &.btn__add
+    font-size: var(--fontSize-s)
+    background: linear-gradient(0, #a82dba, #d22785)
+    border-radius: 30px
+    padding: 10px 18px
+  &.btn__checked
+    flex: 1
+    background: linear-gradient(0, #a82dba, #d22785)
+    border-radius: 30px
+    padding: 10px 18px
+  &.btn__payment,
+  &.btn__buy
+    width: 100%
+    background: linear-gradient(0, #a82dba, #d22785)
+    border-radius: 30px
+    padding: 10px 18px
+  &.btn__focus
+    font-size: var(--fontSize-s)
+    background: linear-gradient(0, #a82dba, #d22785)
+    border-radius: 30px
+    padding: 4px 18px
+    &.hasFocus
+      color: #6F6F6F
+      background: #2a2a2b
+  &.btn__cancel
+    flex: 1
+    background: #4a4a4a
+    border-radius: 30px
+    padding: 10px 18px
+  &.btn__regreat
+    color: #6F6F6F !important
+    background: #2a2a2b
+    border-radius: 30px
   &.btn__more
     color: #6F6F6F
+
+.btn
+  &.btn__select
+    min-width: 90px
+    border: 1px solid #e1e1e3
+    border-radius: 2px
+    padding: 8px
+    position: relative
+    &.active
+      border-color: #00a1e9
+      &::before
+        content: ''
+        display: block
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 0 18px 20px
+        border-color: transparent transparent #00a1e9 transparent
+        position: absolute
+        right: 0
+        bottom: 0
+      &::after
+        content: ''
+        display: block
+        width: 14px
+        height: 12px
+        background-image: url("data:image/svg+xml,%3Csvg height='32' width='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m11.4 21.5-5.93-5.93-2.01 2.01 7.94 7.94 17.1-17.1-2.01-2.01z' fill='%23fff'/%3E%3C/svg%3E")
+        background-size: 100%
+        background-position: center
+        background-repeat: no-repeat
+        position: absolute
+        right: 0
+        bottom: 0
+
 
 // dot & icon
 i.dot
@@ -414,10 +477,40 @@ i.dot
   height: 20px
   @for $var from 1 through 4
     &.icon__level#{$var}
-      background: url(/_nuxt/assets/img/ic_mem_corwn#{$var}.png) center / contain no-repeat
+      background: url(/_nuxt/assets/img/ic_mem_corwn_#{$var}.png) center / contain no-repeat
+
+.icon__vip
+  @for $var from 1 through 6
+    &.icon__vip#{$var}
+      background: url(/_nuxt/assets/img/ic_mem_vip_#{$var}.svg) center / 50% no-repeat
+
+.icon__coin
+  width: 50px
+  height: 50px
+  @for $var from 1 through 4
+    &.icon__coin#{$var}
+      background: url(/_nuxt/assets/img/ic_coin_#{$var}.png) center / contain no-repeat
 
 // font size
 $font-size: ("lg": var(--fontSize-lg), "l": var(--fontSize-l), "m": var(--fontSize-m), "s": var(--fontSize-s))
 @each $name, $size in $font-size
   .fontsize-#{$name}
     font-size: $size !important
+
+.hr
+  display: flex
+  justify-content: center
+  position: relative
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 40%
+    height: 1px
+    background-color: rgb(219 219 219 / 50%)
+  &::before
+    left: 0
+  &::after
+    right: 0

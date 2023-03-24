@@ -183,3 +183,40 @@
         filter: invert(52%) sepia(47%) saturate(4206%) hue-rotate(268deg) brightness(97%) contrast(103%)
       .title
         color: #FB50FB
+
+// 支付方式
+.footerPayment
+  .pops__container
+    background: linear-gradient(180deg, #2C3346 0%, #1C1D2E 100%)
+    box-shadow: inset 0 1px 0 #434E6A
+  .sectionPayment
+    padding: 0 20px 20px
+  .payment__list
+    .item + .item
+      border-top: 1px solid #efefef
+      padding-top: 10px
+      margin-top: 10px
+    .label
+      display: flex
+      align-items: center
+      justify-content: space-between
+      .left
+        display: grid
+        align-items: center
+        grid-template-columns: 40px auto
+        gap: 10px
+        .icon
+          width: 40px
+          height: 40px
+      .right
+        text-align: right
+        > span
+          color: #999
+          padding-right: 6px
+    .channel
+      margin-left: 40px
+      padding: 10px 0 10px 10px
+      .channel__group
+        display: flex
+        flex-wrap: wrap
+        gap: 10px

@@ -90,6 +90,9 @@
     .pageTab
         padding: 10px 10px 20px 10px
 
+.swiper-slide
+  display: flex
+  flex-direction: column
 
 .sectionAuthor
   .author__info
@@ -123,6 +126,10 @@
             margin: 0
             @include single_ellipsis
         .level
+          display: flex
+          align-items: center
+          justify-content: space-between
+          margin-top: 10px
           .level__card
             display: inline-flex
             align-items: center
@@ -131,7 +138,6 @@
             background: linear-gradient(180deg, #292E41 0%, #1E1F31 100%)
             border-radius: 8px
             padding: 4px 10px
-            margin-top: 8px
             .icon__level
               width: 20px
               height: 20px
