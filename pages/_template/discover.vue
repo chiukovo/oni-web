@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap discover__wrap">
     <div class="container">
       <header class="pageHeader" :class="none ? 'none' : ''">
         <div class="pageHeader__back">
@@ -18,23 +18,23 @@
       </header>
       <main class="main">
         <Transition appear>
-          <div class="content" @scroll="scroll">
+          <div class="content" @scroll="scroll" v-if="discoverTab == 0">
             <section class="section sectionDiscoverVideo">
-              <div class="discoverVideo__list">
-                <Swiper
-                  :direction="'vertical'"
-                  :slidesPerView="1"
-                  :mousewheel="true"
-                  :pagination="{
-                    clickable: true,
-                  }"
-                >
-                  <SwiperSlide v-for="n in 3" :key="n">
+              <Swiper
+                :direction="'vertical'"
+                class="discoverSwiper">
+                <swiper-slide v-for="n in 5">
                     <div class="item">
+                      <div class="floating">
+                        <a href="#" class="floating__btn floating__love">
+                          <i class="icon icon__love-w"></i>
+                        </a>
+                        <a href="#" class="floating__btn floating__money">
+                          <i class="icon icon__money-w"></i>
+                        </a>
+                      </div>
                       <div class="preview">
-                        <div class="view"><span>5w</span>次播放</div>
-                        <div class="time"><span>2:12</span></div>
-                        <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                        <img class="img" src="/_nuxt/assets/img/getMoney_bg.jpg">
                       </div>
                       <div class="info">
                         <div class="avatar">
@@ -43,19 +43,20 @@
                         <div class="title">
                           <div class="name">
                             <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
-                            <button class="btn btn__focus">关注</button>
                           </div>
                           <span>88888888关注<i class="dot"></i>2551视频</span>
                         </div>
                       </div>
                       <div class="videoTitle">
-                        <p>{{n}} 3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>
+                        <p>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>
                       </div>
                     </div>
-                  </SwiperSlide>
-                </Swiper>
-              </div>
+                </swiper-slide>
+              </Swiper>
             </section>
+          </div>
+          <div class="content" @scroll="scroll" v-else>
+            2
           </div>
         </Transition>
       </main>
@@ -86,6 +87,8 @@
 </template>
 
 <script>
+  import { ref } from 'vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
   export default {
     data() {
       return {
@@ -93,6 +96,10 @@
         none: false,
         discoverTab: 0
       }
+    },
+    components: {
+      Swiper,
+      SwiperSlide,
     },
     methods: {
       scroll(e) {
@@ -114,3 +121,9 @@
     }
   };
 </script>
+
+<style lang="sass">
+.swiper.discoverSwiper
+  width: 100%
+  height: 100%
+</style>

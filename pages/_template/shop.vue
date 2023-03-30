@@ -544,8 +544,8 @@
         none: false,
         shopTab: 1,
         footerPayment: false,
-        shopDetails: true,
-        getMoney: true,
+        shopDetails: false,
+        getMoney: false,
         getMoneyDetails: false
       }
     },
