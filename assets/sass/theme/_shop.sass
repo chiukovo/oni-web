@@ -1,3 +1,4 @@
+// - 充值
 .sectionShop
   display: flex
   flex-direction: column
@@ -89,3 +90,116 @@
         > span
           font-size: var(--fontSize-m)
           padding-left: 2px
+
+// - 充值明細
+.sectionShopDetails
+  .table
+    td
+      &:first-child
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 4px
+        padding-left: 16px
+      &:last-child
+        padding-right: 0
+      .info
+        font-size: var(--fontSize-m)
+        font-weight: bold
+      .expirationDate
+        display: inline-block
+        color: #ccc
+        font-size: var(--fontSize-s)
+      .date
+        font-size: var(--fontSize-xs)
+        color: #6F6F6F
+
+// - 馬上賺錢
+.dialogGetMoney
+  .dialog__overlay
+    &::after
+      content: ''
+      display: inline-block
+      width: 100%
+      height: 100%
+      opacity: 0.2
+      background: url(/_nuxt/assets/img/getMoney_bg.jpg) center / cover no-repeat
+      position: absolute
+      top: 0
+      left: 0
+      pointer-events: none
+.sectionGetMoney
+  .getMoney
+    padding: 10px
+    .getMoney__header
+      img
+        max-width: 80%
+        margin: 1rem auto
+    .getMoney__body
+      .qrcode
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 10px
+        background-color: #1C1D2E
+        border-radius: 20px
+        padding: 20px
+        .title
+          font-size: var(--fontSize-m)
+          font-weight: bold
+        .code
+          font-size: var(--fontSize-lg)
+          font-weight: bold
+          color: #FB50FB
+        .describe
+          font-size: var(--fontSize-xs)
+          color: #5F6577
+        .qrcode__img
+          width: 60%
+          background-color: #fff
+          background-size: 100%
+          border-radius: 10px
+          padding: 6px
+          margin-top: 10px
+      .button__group
+        margin-top: 20px
+    .img_getMoneystep
+      padding: 30px 10px
+    .img_getMoneystepHeader1
+      max-width: 30%
+      padding: 30px 0 0
+      margin: 0 auto
+    .img_getMoneystepHeader2
+      max-width: 30%
+      padding: 30px 0 20px
+      margin: 0 auto
+    .qand
+      padding: 0 10px
+      li
+        line-height: 1.5
+        padding-bottom: 10px
+      .qand__q
+        text-indent: -2em
+        margin-left: 2em
+        position: relative
+        &::after
+          content: ''
+          width: 100px
+          height: 10px
+          background-color: #3e0e4d
+          display: inline-block
+          position: absolute
+          bottom: 0
+          left: 0
+          z-index: -1
+        &:before
+          content: '问：'
+      .qand__a
+        text-indent: -2em
+        margin-left: 2em
+        font-weight: bold
+        &:before
+          content: '答：'
+  .table
+    td:last-child
+      font-size: var(--fontSize-s)

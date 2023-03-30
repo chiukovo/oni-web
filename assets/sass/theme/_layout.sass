@@ -92,22 +92,7 @@ input
     transform: translateY(100%)
     overflow: hidden
 
-.form
-  .form__input
-    display: flex
-    align-items: center
-    width: 100%
-    height: 38px
-    border-radius: 30px
-    padding: 0 20px
-    input
-      height: 100%
-    img
-      height: 38px
-      padding: 10px 0
-  .form__button
-    .btn
-      padding: 10px
+
 
 
 .featuredTab
@@ -157,7 +142,7 @@ input
     flex: 1
 
 
-// section
+// - section
 .section
   margin-bottom: 10px
   + .section
@@ -215,7 +200,23 @@ input
 .sectionButton
   margin: 0
 
-// tags
+
+// - tag
+$colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
+.tag
+  font-size: var(--fontSize-s)
+  color: #fff
+  border: 1px solid rgba(95, 101, 119, 0.3)
+  border-radius: 3px
+  padding: 4px 8px
+@each $value, $color in $colors
+  .text-#{$value}
+    color: $color
+  .tag-#{$value}
+    color: $color
+    border: 1px solid darken($color, 30%)
+
+// - tag list
 .tag__list
   display: flex
   flex-wrap: wrap
@@ -234,7 +235,7 @@ input
         color: #ccc
         @include single_ellipsis
 
-// tabs
+// - tabs
 .pageTab
   display: flex
   align-items: center
@@ -288,8 +289,25 @@ input
         &.current
           color: #FB50FB
 
+// - form
+.form
+  .form__input
+    display: flex
+    align-items: center
+    width: 100%
+    height: 38px
+    border-radius: 30px
+    padding: 0 20px
+    input
+      height: 100%
+    img
+      height: 38px
+      padding: 10px 0
+  .form__button
+    .btn
+      padding: 10px
 
-
+//- input: radio
 input[type=radio]
   margin: 0
   max-width: 100%
@@ -311,7 +329,7 @@ input[type=radio]
     background-color: #00a1e9
     border-color: #00a1e9
 
-// button
+// - button
 .button__group
   display: flex
   gap: 10px
@@ -374,11 +392,15 @@ input[type=radio]
     border-radius: 30px
     padding: 10px 18px
   &.btn__payment,
-  &.btn__buy
+  &.btn__buy,
+  &.btn__share
     width: 100%
     background: linear-gradient(0, #a82dba, #d22785)
     border-radius: 30px
     padding: 10px 18px
+  &.btn__payment
+    font-size: var(--fontSize-m)
+    padding: 12px 18px
   &.btn__focus
     font-size: var(--fontSize-s)
     background: linear-gradient(0, #a82dba, #d22785)
@@ -399,10 +421,12 @@ input[type=radio]
   &.btn__more
     color: #6F6F6F
 
+// - btn select
 .btn
   &.btn__select
     min-width: 90px
-    border: 1px solid #e1e1e3
+    font-size: var(--fontSize-s)
+    border: 1px solid rgb(95 101 119 / 30%)
     border-radius: 2px
     padding: 8px
     position: relative
@@ -433,7 +457,7 @@ input[type=radio]
         bottom: 0
 
 
-// dot & icon
+// - dot
 i.dot
   &::after
     content: ''
@@ -445,6 +469,7 @@ i.dot
     border-radius: 50%
     margin: 0 4px
 
+// - icon
 .icon
   display: block
   width: 16px
@@ -491,12 +516,7 @@ i.dot
     &.icon__coin#{$var}
       background: url(/_nuxt/assets/img/ic_coin_#{$var}.png) center / contain no-repeat
 
-// font size
-$font-size: ("lg": var(--fontSize-lg), "l": var(--fontSize-l), "m": var(--fontSize-m), "s": var(--fontSize-s))
-@each $name, $size in $font-size
-  .fontsize-#{$name}
-    font-size: $size !important
-
+// - hr
 .hr
   display: flex
   justify-content: center
@@ -514,3 +534,34 @@ $font-size: ("lg": var(--fontSize-lg), "l": var(--fontSize-l), "m": var(--fontSi
     left: 0
   &::after
     right: 0
+
+
+// - font size
+$font-size: ("lg": var(--fontSize-lg), "l": var(--fontSize-l), "m": var(--fontSize-m), "s": var(--fontSize-s))
+@each $name, $size in $font-size
+  .fontsize-#{$name}
+    font-size: $size !important
+
+// - font text-alian
+$lists: ('center', 'left', 'right')
+@each $value in $lists
+  .text-#{$value}
+    text-align: #{$value}
+
+
+// - table
+.table
+  width: 100%
+  border-spacing: 0
+  th, td
+    padding: 16px 2px
+    &:first-child
+      padding-left: 16px
+    &:last-child
+      padding-right: 16px
+  th
+    font-weight: normal
+    font-size: var(--fontSize-s)
+    color: #6F6F6F
+  td
+    border-bottom: 1px solid rgb(95 101 119 / 10%)
