@@ -101,7 +101,7 @@
                       <div class="date">2023-3-30 13:20:11</div>
                     </td>
                     <td class="text-right">¥100</td>
-                    <td class="text-center"><span class="tag">未付款</span></td>
+                    <td class="text-center"><span class="btn__tags">未付款</span></td>
                   </tr>
                   <tr>
                     <td>
@@ -109,7 +109,7 @@
                       <div class="date">2023-3-30 13:20:11</div>
                     </td>
                     <td class="text-right">¥500</td>
-                    <td class="text-center"><span class="tag tag-green">已付款</span></td>
+                    <td class="text-center"><span class="btn__tags btn__tags-green">已付款</span></td>
                   </tr>
                   <tr>
                     <td>
@@ -117,7 +117,7 @@
                       <div class="date">2023-3-30 13:20:11</div>
                     </td>
                     <td class="text-right">¥1,000</td>
-                    <td class="text-center"><span class="tag tag-gray">訂單失效</span></td>
+                    <td class="text-center"><span class="btn__tags btn__tags-gray">訂單失效</span></td>
                   </tr>
                 </table>
               </section>

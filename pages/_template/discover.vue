@@ -18,8 +18,8 @@
       </header>
       <main class="main">
         <Transition appear>
-          <div class="content" @scroll="scroll" v-if="discoverTab == 0">
-            <section class="section sectionDiscoverVideo">
+          <div class="content full" @scroll="scroll" v-if="discoverTab == 0">
+            <section class="sectionDiscoverVideo">
               <Swiper
                 :direction="'vertical'"
                 class="discoverSwiper">
@@ -56,7 +56,43 @@
             </section>
           </div>
           <div class="content" @scroll="scroll" v-else>
-            2
+            <div class="sectionDiscoverCreator">
+              <ul class="indexBar">
+                <li v-for="section in sections"
+                    :key="section"
+                    :class="{'active': (section.value == activeEntry)}"
+                    @click="goToSection(section.value)"
+                >
+                  <a :href="'#indexBar__' + section.value">{{section.name}}</a>
+                </li>
+              </ul>
+              <article class="article">
+                <section v-for="section in sections"
+                    :key="section"
+                    :id="'indexBar__' + section.value"
+                    :class="'indexBar__' + section.value"
+                    :name="section.value"
+                    ref="section">
+                  <div class="discoverCreator">
+                    <div class="creator__title">
+                      <h2>{{section.name}}</h2>
+                    </div>
+                    <div class="creator__list">
+                      <div class="item" v-for="n in 36">
+                        <div class="avatar">
+                          <div class="img" style="background-image: url('https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg')"></div>
+                        </div>
+                        <div class="title">
+                          <div class="name">
+                            <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </article>
+            </div>
           </div>
         </Transition>
       </main>
@@ -94,16 +130,76 @@
       return {
         height: '',
         none: false,
-        discoverTab: 0
+        discoverTab: 1,
+        currentSection: "null",
+        sections: {
+          indexA: {
+            name: 'A',
+            value: 'A',
+          },
+          indexB: {
+            name: 'B',
+            value: 'B',
+          },
+          indexC: {
+            name: 'C',
+            value: 'C',
+          },
+          indexD: {
+            name: 'D',
+            value: 'D',
+          },
+          indexE: {
+            name: 'Z',
+            value: 'Z',
+          }
+        },
+        observer: null,
+        activeEntry: 'A',
       }
     },
-    components: {
-      Swiper,
-      SwiperSlide,
+    mounted() {
+      this.initObserver();
+      console.log("Mounted!");
+      this.observeSections();
+    },
+    computed: {
+      getSectionsRefs() {
+        return this.$refs;
+      },
     },
     methods: {
       scroll(e) {
         this.height = e.target.scrollTop;
+      },
+      goToSection(sectionName) {
+        console.log(sectionName)
+        window.scrollTo({
+        top: this.$refs.section.filter(e => e.attributes.name.value === sectionName)[0].offsetTop,
+        behavior: 'smooth'
+      });
+      },
+      observeSections() {
+        this.$refs.section.forEach(section => {
+          this.observe(section)
+        });
+      },
+      observe(entry) {
+        this.observer.observe(entry)
+      },
+      setActiveSection(section) {
+        this.currentSection = section;
+      },
+      initObserver() {
+        const options = {
+          threshold: [0.5]
+        }
+        this.observer = new IntersectionObserver(entries => {
+          const active = entries.filter(e => e.isIntersecting);//entry.intersectionRatio
+          if(active.length) {
+            this.activeEntry = active[0].target.attributes.name.value;
+          }
+        },options)
       }
     },
     watch: {

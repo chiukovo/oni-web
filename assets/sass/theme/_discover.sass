@@ -1,8 +1,3 @@
-.discover__wrap
-  .content
-    margin-bottom: 0
-    overflow: hidden
-
 .sectionDiscoverVideo
   height: 100%
   .item
@@ -88,3 +83,63 @@
     padding-left: 10px
   .videoTitle
     padding: 10px 10px 20px 10px
+
+
+
+.sectionDiscoverCreator
+  .indexBar
+    position: fixed
+    top: 50%
+    right: 10px
+    transform: translateY(-100%)
+    li
+      color: #6F6F6F
+      &.active
+        color: var(--color-pink)
+  .article
+    section
+      min-height: 100vh
+      & + section
+        margin-top: 20px
+  .discoverCreator
+    padding: 10px 30px 0 10px
+    .creator__title
+      font-size: var(--fontSize)
+      color: var(--color-pink)
+      padding: 0 0 10px 4px
+    .creator__list
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+      gap: 6px
+      .item
+        background-color: rgb(29 31 43 / 78%)
+        border-radius: 12px
+        padding: 10px
+        overflow: hidden
+        .avatar
+          position: relative
+          display: block
+          width: 100%
+          padding-top: 100%
+          border-radius: 50%
+          margin-bottom: 6px
+          overflow: hidden
+          .img
+            width: 100%
+            height: 100%
+            background-size: cover
+            background-position: center
+            position: absolute
+            top: 0
+            left: 0
+        .title
+          line-height: 1.2
+          overflow: hidden
+          .name
+            display: flex
+            align-items: center
+            gap: 4px
+            > p
+              font-size: var(--fontSize-s)
+              margin: 0
+              @include single_ellipsis

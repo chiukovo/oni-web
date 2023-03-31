@@ -320,8 +320,8 @@
         <div class="pageHeader__title">
           <div class="title">社區</div>
         </div>
-        <div class="pageHeader__recharge">
-          <a href="/_template/shop" class="btn recharge__btn">
+        <div class="pageHeader__right">
+          <a href="/_template/shop" class="btn">
             <img src="/_nuxt/assets/img/ic_searchHeader_2.svg" alt="充值">
           </a>
         </div>

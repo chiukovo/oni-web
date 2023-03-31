@@ -72,6 +72,9 @@ input
     height: 100%
     overflow: auto
     margin-bottom: 10px
+    &.full
+      overflow: hidden
+      margin-bottom: 0
 
 .searchHeader,
 .pageHeader,
@@ -204,7 +207,7 @@ input
 
 // - tag
 $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
-.tag
+.btn__tags
   font-size: var(--fontSize-s)
   color: #fff
   border: 1px solid rgba(95, 101, 119, 0.3)
@@ -213,7 +216,7 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
 @each $value, $color in $colors
   .text-#{$value}
     color: $color
-  .tag-#{$value}
+  .btn__tags-#{$value}
     color: $color
     border: 1px solid darken($color, 30%)
 
@@ -288,7 +291,7 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
           font-size: var(--fontSize-m)
           padding: 16px
         &.current
-          color: #FB50FB
+          color: var(--color-pink)
 
 // - form
 .form
