@@ -259,8 +259,9 @@
                     :slidesPerView="1.5"
                     :centeredSlides="true"
                     :loop="true"
-                    :modules="[Thumbs]"
-                    :thumbs="{ swiper: thumbsSwiper }"
+                    :modules="[Controller]"
+                    @swiper="setCardSwiper"
+                    :controller="{ control: infoSwiper }"
                     class="shopSwiper__card"
                   >
                     <swiper-slide>
@@ -277,9 +278,9 @@
                     </swiper-slide>
                   </swiper>
                   <swiper
-                    :modules="[Thumbs]"
-                    watch-slides-progress
-                    @swiper="setThumbsSwiper"
+                  :modules="[Controller]"
+                  @swiper="setInfoSwiper"
+                  :controller="{ control: cardSwiper }"
                     class="shopSwiper__cardInfo"
                   >
                     <swiper-slide>
@@ -535,7 +536,7 @@
 
 <script>
   import { ref } from 'vue';
-  import { Thumbs } from 'swiper';
+  import { Controller } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   export default {
     data() {
@@ -554,14 +555,21 @@
       SwiperSlide,
     },
     setup() {
-      const thumbsSwiper = ref(null);
-      const setThumbsSwiper = (swiper) => {
-        thumbsSwiper.value = swiper;
+      const cardSwiper = ref(null);
+      const infoSwiper = ref(null);
+      const setCardSwiper = (swiper) => {
+        cardSwiper.value = swiper;
       };
+      const setInfoSwiper = (swiper) => {
+        infoSwiper.value = swiper;
+      };
+
       return {
-        Thumbs,
-        thumbsSwiper,
-        setThumbsSwiper,
+        Controller,
+        cardSwiper,
+        infoSwiper,
+        setCardSwiper,
+        setInfoSwiper,
       };
     },
     methods: {
