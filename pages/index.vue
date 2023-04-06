@@ -2,11 +2,23 @@
   <div class="wrap">
     <div class="container">
       <Header></Header>
-      <FeaturedTab></FeaturedTab>
+      <div class="featuredTab" :class="mainStore.hideHeaderFooter ? 'none' : ''">
+        <div class="featuredTab__list">
+          <ul class="list">
+            <li :class="featuredTab == n ? 'current' : ''" v-for="n in 10">
+              <a href="#" class="btn" @click="featuredTab = n">
+                <span>精选 {{ n }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
+          <img src="~/assets/img/ic_menu.svg" alt="更多推荐">
+        </a>
+      </div>
       <main class="main" @scroll="onBodyScroll">
         <Transition appear>
           <swiper
-            :loop="true"
             class="firstMainSwiper"
           >
             <swiper-slide>
@@ -75,7 +87,7 @@
                     <a href="#" class="btn btn__more">更多</a>
                   </div>
                   <div class="featuredVideo">
-                    <div class="list">
+                    <div class="list" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
                       <NuxtLink class="item" v-for="n in 10" to="/_template/videoDetail">
                         <div class="preview">
                           <div class="title">
@@ -166,11 +178,15 @@
 
 <script setup>
 import { useMainStore } from '@/stores/main'
+import { Controller } from 'swiper';
 const mainStore = useMainStore()
 const { onBodyScroll } = usePublic()
-const tab = ref(1)
 
-const handleInfiniteOnLoad = () => {
+const tab = ref(1)
+const featuredTab = ref(1)
+const discoverMenu = ref(false)
+
+const loadMore = () => {
   console.log('more')
-} 
+}
 </script>

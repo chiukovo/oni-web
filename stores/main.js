@@ -4,7 +4,6 @@ export const useMainStore = defineStore('main', {
     state: () => ({
         hideHeaderFooter: false,
         contentHeight: 0,
-        featuredTab: 0,
         nowHeight: 0,
     }),
     actions: {
