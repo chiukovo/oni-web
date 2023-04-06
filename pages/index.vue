@@ -6,7 +6,7 @@
       <main class="main">
         <Transition name="style1">
           <Swiper>
-            <SwiperSlide :key="1">
+            <swiper-slide :key="1">
               <Swiper
                 :direction="'vertical'"
                 :slides-per-view="'auto'"
@@ -14,7 +14,7 @@
                 :mousewheel="true"
                 :scrollbar="{ draggable: true }"
               >
-                <SwiperSlide :key="'in'">
+                <swiper-slide :key="'in'">
                   <div class="content" @scroll="onBodyScroll">
                     <section class="section sectionVideoFocus">
                       <div class="featuredVideoFocus">
@@ -55,10 +55,10 @@
                       </div>
                     </section>
                   </div>
-                </SwiperSlide>
+                </swiper-slide>
               </Swiper>
-            </SwiperSlide>
-            <SwiperSlide :key="2">
+            </swiper-slide>
+            <swiper-slide :key="2">
               <div class="content" @scroll="onBodyScroll">
                 <section class="sectionMoney">
                   <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
@@ -118,8 +118,8 @@
                   </div>
                 </section>
               </div>
-            </SwiperSlide>
-            <SwiperSlide :key="3">
+            </swiper-slide>
+            <swiper-slide :key="3">
               <div class="content" @scroll="onBodyScroll">
                 <section class="sectionMoney">
                   <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
@@ -162,7 +162,7 @@
                   </div>
                 </section>
               </div>
-            </SwiperSlide>
+            </swiper-slide>
           </Swiper>
         </Transition>
       </main>
@@ -178,9 +178,3 @@ const { onBodyScroll } = usePublic()
 const tab = ref(1)
 
 </script>
-
-<style lang="sass">
-.swiper
-  width: 100%
-  height: 100%
-</style>
