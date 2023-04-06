@@ -3,66 +3,56 @@
     <div class="container">
       <Header></Header>
       <FeaturedTab></FeaturedTab>
-      <main class="main">
-        <Transition name="style1">
-          <Swiper>
-            <swiper-slide :key="1">
-              <Swiper
-                :direction="'vertical'"
-                :slides-per-view="'auto'"
-                :freeMode="true"
-                :mousewheel="true"
-                :scrollbar="{ draggable: true }"
-              >
-                <swiper-slide :key="'in'">
-                  <div class="content" @scroll="onBodyScroll">
-                    <section class="section sectionVideoFocus">
-                      <div class="featuredVideoFocus">
-                        <div
-                          class="list"
-                          v-infinite-scroll="handleInfiniteOnLoad"
-                        >
-                          <div class="item" v-for="n in 10">
-                            <div class="info">
-                              <div class="avatar">
-                                <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
-                              </div>
-                              <div class="title">
-                                <div class="name">
-                                  <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
-                                </div>
-                                <span>2023-03-07</span>
-                              </div>
+      <main class="main" @scroll="onBodyScroll">
+        <Transition appear>
+          <swiper
+            :loop="true"
+            class="firstMainSwiper"
+          >
+            <swiper-slide>
+              <div class="content">
+                <section class="section sectionVideoFocus">
+                  <div class="featuredVideoFocus">
+                    <div class="list">
+                      <div class="item" v-for="n in 10">
+                        <div class="info">
+                          <div class="avatar">
+                            <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                          </div>
+                          <div class="title">
+                            <div class="name">
+                              <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
                             </div>
-                            <div class="preview">
-                              <div class="view"><span>5w</span>次播放</div>
-                              <div class="time"><span>2:12</span></div>
-                              <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
-                            </div>
-                            <div class="interaction">
-                              <a href="#" class="btn">
-                                <i class="icon icon__love"></i>
-                                <span>14 132</span>
-                              </a>
-                              <a href="#" class="btn">
-                                <i class="icon icon__message"></i>
-                                <span>116</span>
-                              </a>
-                              <a href="#" class="btn">
-                                <i class="icon icon__share"></i>
-                                <span>分享</span>
-                              </a>
-                            </div>
+                            <span>2023-03-07</span>
                           </div>
                         </div>
+                        <div class="preview">
+                          <div class="view"><span>5w</span>次播放</div>
+                          <div class="time"><span>2:12</span></div>
+                          <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                        </div>
+                        <div class="interaction">
+                          <a href="#" class="btn">
+                            <i class="icon icon__love"></i>
+                            <span>14 132</span>
+                          </a>
+                          <a href="#" class="btn">
+                            <i class="icon icon__message"></i>
+                            <span>116</span>
+                          </a>
+                          <a href="#" class="btn">
+                            <i class="icon icon__share"></i>
+                            <span>分享</span>
+                          </a>
+                        </div>
                       </div>
-                    </section>
+                    </div>
                   </div>
-                </swiper-slide>
-              </Swiper>
+                </section>
+              </div>
             </swiper-slide>
-            <swiper-slide :key="2">
-              <div class="content" @scroll="onBodyScroll">
+            <swiper-slide>
+              <div class="content">
                 <section class="sectionMoney">
                   <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
                 </section>
@@ -86,7 +76,7 @@
                   </div>
                   <div class="featuredVideo">
                     <div class="list">
-                      <NuxtLink class="item" v-for="n in 2" to="/_template/videoDetail">
+                      <NuxtLink class="item" v-for="n in 10" to="/_template/videoDetail">
                         <div class="preview">
                           <div class="title">
                             <p>3/1露脸女朋友 大一女生爱露脸 直播镜头 露脸女朋友</p>
@@ -122,8 +112,8 @@
                 </section>
               </div>
             </swiper-slide>
-            <swiper-slide :key="3">
-              <div class="content" @scroll="onBodyScroll">
+            <swiper-slide>
+              <div class="content">
                 <section class="sectionMoney">
                   <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
                 </section>
@@ -166,7 +156,7 @@
                 </section>
               </div>
             </swiper-slide>
-          </Swiper>
+          </swiper>
         </Transition>
       </main>
     </div>
@@ -184,9 +174,3 @@ const handleInfiniteOnLoad = () => {
   console.log('more')
 } 
 </script>
-
-<style lang="sass">
-.swiper
-  width: 100%
-  height: 100%
-</style>
