@@ -178,3 +178,9 @@ const { onBodyScroll } = usePublic()
 const tab = ref(1)
 
 </script>
+
+<style lang="sass">
+.swiper
+  width: 100%
+  height: 100%
+</style>
