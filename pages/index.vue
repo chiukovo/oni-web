@@ -18,7 +18,10 @@
                   <div class="content" @scroll="onBodyScroll">
                     <section class="section sectionVideoFocus">
                       <div class="featuredVideoFocus">
-                        <div class="list">
+                        <div
+                          class="list"
+                          v-infinite-scroll="handleInfiniteOnLoad"
+                        >
                           <div class="item" v-for="n in 10">
                             <div class="info">
                               <div class="avatar">
@@ -177,4 +180,13 @@ const mainStore = useMainStore()
 const { onBodyScroll } = usePublic()
 const tab = ref(1)
 
+const handleInfiniteOnLoad = () => {
+  console.log('more')
+} 
 </script>
+
+<style lang="sass">
+.swiper
+  width: 100%
+  height: 100%
+</style>

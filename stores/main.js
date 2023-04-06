@@ -5,6 +5,7 @@ export const useMainStore = defineStore('main', {
         hideHeaderFooter: false,
         contentHeight: 0,
         featuredTab: 0,
+        nowHeight: 0,
     }),
     actions: {
         async getAN() {

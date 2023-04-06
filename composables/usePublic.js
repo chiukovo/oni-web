@@ -5,10 +5,10 @@ export default function() {
 
     const onBodyScroll = (e) => {
         const contentHeight = mainStore.contentHeight
-        const nowHeight = e.target.scrollTop
+        mainStore.nowHeight = e.target.scrollTop
 
-        if (nowHeight > 100) {
-            if (nowHeight > contentHeight) {
+        if (mainStore.nowHeight > 100) {
+            if (mainStore.nowHeight > contentHeight) {
                 mainStore.hideHeaderFooter = true
             } else {
                 mainStore.hideHeaderFooter = false
@@ -17,7 +17,7 @@ export default function() {
             mainStore.hideHeaderFooter = false
         }
 
-        mainStore.contentHeight = nowHeight
+        mainStore.contentHeight = mainStore.nowHeight
     }
 
     return {
