@@ -5,7 +5,7 @@
       <div class="featuredTab" :class="mainStore.hideHeaderFooter ? 'none' : ''">
         <div class="featuredTab__list">
           <ul class="list">
-            <li :class="featuredTab == n ? 'current' : ''" v-for="n in 10">
+            <li :class="featuredTab == n ? 'current' : ''" v-for="n in 3">
               <a href="#" class="btn" @click="featuredTabChange(n - 1)">
                 <span>精选 {{ n }}</span>
               </a>

@@ -30,7 +30,10 @@ export default defineNuxtConfig({
     modules: [
       '@vueuse/nuxt',
       '@pinia/nuxt',
-      'nuxt-swiper'
+      'nuxt-swiper',
+      ['nuxt3-lazy-load', {
+        defaultImage: '/loading.svg'
+      }]
     ],
     // public config
     appConfig: {
