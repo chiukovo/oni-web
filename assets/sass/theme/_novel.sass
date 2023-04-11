@@ -129,7 +129,8 @@
         width: 100%
         text-align: center
         font-size: var(--fontSize-m)
-        background-color: #2a2a2b
+        // background-color: #2a2a2b
+        background-color: #1d2028
         border-radius: 3px
         position: relative
         > a
@@ -154,30 +155,11 @@
 .sectionNoveArticle
   .preview
     color: #b3b7bb
-    background: #212529
+    background: #1e1f22
     .article
       line-height: 1.6
       padding: 10px 20px
 
-// article footer
-.articleFooterContents
-  .pops__container
-    height: 50% !important
-
-.articleFooterBookmarks
-  .pops__container
-    height: 50% !important
-.sectionFooterBookmark
-  .bookmark__list
-    .list
-      display: flex
-      flex-direction: column
-      .item
-        display: flex
-        justify-content: space-between
-        padding: 20px
-        + .item
-          border-top: 1px solid rgb(95 101 119 / .3)
 
 .articleFooterSettings
   .fontsize__list
@@ -193,9 +175,10 @@
           border-top: 1px solid rgb(95 101 119 / .3)
         .icon
           display: block
-          width: 26px
-          height: 26px
-          background: url(/_nuxt/assets/img/ic_check.svg) no-repeat center / cover
+          width: 24px
+          height: 24px
+          background: #383c4a url(/_nuxt/assets/img/ic_check.svg) no-repeat center / cover
+          border-radius: 50%
         &.current
           .icon
-            background-image: url(/_nuxt/assets/img/ic_check_h.svg)
+            background-color: var(--color-pink)

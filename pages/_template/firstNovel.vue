@@ -533,7 +533,7 @@
         novelArticle: false,
         articleFooterContents: false,
         articleFooterBookmarks: false,
-        articleFooterSettings: true,
+        articleFooterSettings: false,
         sort: true,
       }
     },

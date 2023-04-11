@@ -1,6 +1,65 @@
 <template>
   <div class="wrap">
     <Transition name="pops" duration="550" appear>
+      <div class="pops payMoney" v-if="payMoney === true">
+        <div class="pops__overlay">
+          <div class="pops__container">
+            <div class="pops__header">
+              <div class="pops__title pops__title-center">
+                <div class="title">打赏</div>
+              </div>
+              <div class="pops__close">
+                <div class="btn btn__close" @click="payMoney = false">
+                  <img src="/_nuxt/assets/img/ic_close.svg">
+                </div>
+              </div>
+            </div>
+            <div class="pops__body">
+              <div class="content">
+                <section class="section sectionPayMoney">
+                  <div class="top">
+                    <ul class="tag__list">
+                      <li class="list__item current">
+                        <div class="btn">
+                          <div class="title">
+                            <div class="tag">5 币</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list__item" v-for="n in 5">
+                        <div class="btn">
+                          <div class="title">
+                            <div class="tag">{{ n * 10}} 币</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bottom">
+                    <!-- 當使用者填寫金額時，tag會自動移除current -->
+                    <!-- 反之點擊快速按鈕時，金幣金額會移除 -->
+                    <div class="form">
+                      <div class="form__input">
+                        <img src="/_nuxt/assets/img/ic_edit.svg">
+                        <input type="text" placeholder="想要打赏更多">
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="pops__footer">
+                <div class="button__group">
+                  <button class="btn btn__cancel">取消</button>
+                  <button class="btn btn__checked" @click="payMoney = false">确认</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pops__mask" @click="payMoney = false"></div>
+      </div>
+    </Transition>
+    <Transition name="pops" duration="550" appear>
       <div class="pops addTags" v-if="addTags === true">
         <div class="pops__overlay">
           <div class="pops__container">
@@ -9,7 +68,7 @@
                 <div class="title">选择标签</div>
               </div>
               <div class="pops__close">
-                <div class="btn btn__close" @click="articleFooterContents = false">
+                <div class="btn btn__close" @click="addTags = false">
                   <img src="/_nuxt/assets/img/ic_close.svg">
                 </div>
               </div>
@@ -158,11 +217,11 @@
                       <div class="updated">2023-03-07 19:26:08 发布</div>
                     </div>
                     <div class="interaction">
-                      <a href="#" class="btn"  @click="addTags = true">
+                      <a href="#" class="btn" @click="addTags = true">
                         <i class="icon icon__love-w"></i>
                         <span>收藏</span>
                       </a>
-                      <a href="#" class="btn">
+                      <a href="#" class="btn" @click="payMoney = true">
                         <i class="icon icon__money-w"></i>
                         <span>打赏</span>
                       </a>
@@ -252,22 +311,11 @@
                             <span>回覆</span>
                           </a>
                         </div>
-                        <a href="#" class="btn btn__regreat">
-                          作者已點讚
-                        </a>
-                      </div>
-                      <div class="resmsg">
-                        <ul class="resmsg__list">
-                          <li class="item">
-                            <div class="name">其他ID</div>
-                            <div class="content">园实形、众了样产情进品算下外片他，门说保子，能公动向其导习，背电学车！</div>
-                          </li>
-                        </ul>
                       </div>
                     </li>
-                    <li class="item">
+                    <li class="item" v-for="n in 4">
                       <div class="info">
-                        <div class="avatar">
+                        <div :class="'avatar vip vip__level' + n">
                           <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
                         </div>
                         <div class="title">
@@ -295,6 +343,17 @@
                             <span>回覆</span>
                           </a>
                         </div>
+                        <a href="#" class="btn btn__regreat">
+                          作者已點讚
+                        </a>
+                      </div>
+                      <div class="resmsg">
+                        <ul class="resmsg__list">
+                          <li class="item">
+                            <div class="name">其他ID</div>
+                            <div class="content">园实形、众了样产情进品算下外片他，门说保子，能公动向其导习，背电学车！</div>
+                          </li>
+                        </ul>
                       </div>
                     </li>
                   </ul>
@@ -331,7 +390,7 @@
             <img src="/_nuxt/assets/img/ic_love_w.svg">
           </a>
         </div>
-        <a href="#" class="btn btn__unlimited">無限看</a>
+        <a href="/_template/shop" class="btn btn__unlimited">无限看</a>
       </div>
     </div>
   </div>
@@ -349,6 +408,7 @@
         videoDetailtab: 0,
         useVIP: false,
         addTags: false,
+        payMoney: false,
         comments: false
       }
     },

@@ -21,7 +21,7 @@
       </header>
       <div class="featuredTab" :class="none ? 'none' : ''">
         <div class="featuredTab__list">
-          <swiper
+          <!-- <swiper
             :slides-per-view="1"
             :modules="[Controller]"
             @swiper="setTabSwiper"
@@ -37,7 +37,7 @@
             <swiper-slide>
               <span>关注3</span>
             </swiper-slide>
-          </swiper>
+          </swiper> -->
           <ul class="list">
             <li :class="tab == '0' ? 'current' : ''">
               <a href="#" class="btn" @click="tab = 0">

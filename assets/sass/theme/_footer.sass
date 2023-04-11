@@ -46,7 +46,7 @@
   display: flex
   gap: 6px
   height: 50px
-  background: #1E1E1E
+  background: #181a21
   padding: 6px
   position: relative
   .comments
@@ -78,7 +78,7 @@
     position: relative
   .btn__comments
     .form__input
-      background-color: #2b292b
+      background-color: #1d2028
       span
         color: #757575
       img
@@ -113,7 +113,7 @@
   align-items: center
   justify-content: space-between
   gap: 6px
-  background: #1E1E1E
+  background-color: #181a21
   padding: 6px
   position: relative
   .footerContents__left
@@ -139,7 +139,7 @@
 .footerArticle
   display: flex
   width: 100%
-  background-color: #111117
+  background-color: #181a21
   padding-bottom: env(safe-area-inset-bottom)
   .btn
     flex: 1
@@ -183,6 +183,26 @@
         filter: invert(52%) sepia(47%) saturate(4206%) hue-rotate(268deg) brightness(97%) contrast(103%)
       .title
         color: var(--color-pink)
+
+// article footer
+.articleFooterContents
+  .pops__container
+    height: 50% !important
+
+.articleFooterBookmarks
+  .pops__container
+    height: 50% !important
+.sectionFooterBookmark
+  .bookmark__list
+    .list
+      display: flex
+      flex-direction: column
+      .item
+        display: flex
+        justify-content: space-between
+        padding: 20px
+        border-bottom: 1px solid rgb(95 101 119 / .3)
+
 
 // 支付方式
 .footerPayment
