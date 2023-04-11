@@ -32,7 +32,7 @@ export default defineNuxtConfig({
       '@pinia/nuxt',
       'nuxt-swiper',
       ['nuxt3-lazy-load', {
-        defaultImage: '/loading.svg'
+        defaultImage: '/loading.png'
       }]
     ],
     // public config
