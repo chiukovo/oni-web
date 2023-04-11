@@ -30,6 +30,14 @@ body
 
 img
   max-width: 100%
+  &.isLoaded
+    opacity: 0
+    animation-name: fadein
+    animation-duration: 1s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+    animation-direction: normal
+    animation-timing-function: ease-out
 
 input
   outline: 0
