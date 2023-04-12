@@ -1,9 +1,9 @@
 <template>
-  <div class="list" v-infinite-scroll="loadMore" v-lazy-container="{ selector: 'img' }">
+  <div class="list" v-infinite-scroll="loadMore">
     <div class="item" v-for="n in 10">
       <div class="info">
         <div class="avatar">
-          <img class="img" data-src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+          <img class="img" v-lazy="'https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg'">
         </div>
         <div class="title">
           <div class="name">
@@ -15,7 +15,7 @@
       <div class="preview">
         <div class="view"><span>5w</span>次播放</div>
         <div class="time"><span>2:12</span></div>
-        <img class="img" data-src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+        <img class="img" v-lazy="'https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg'">
       </div>
       <div class="interaction">
         <a href="#" class="btn">
