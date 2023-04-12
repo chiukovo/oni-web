@@ -1,9 +1,9 @@
 <template>
   <header class="searchHeader" :class="mainStore.hideHeaderFooter ? 'none' : ''">
     <div class="searchHeader__everyday">
-      <a href="/_template/everyDay" class="btn everyday__btn">
+      <NuxtLink to="/_template/everyDay" class="btn everyday__btn">
         <img src="~/assets/img/ic_searchHeader_1.svg" alt="每日精选">
-      </a>
+      </NuxtLink>
     </div>
     <a href="#" class="searchHeader__search">
       <div class="search__input">
@@ -12,9 +12,9 @@
       </div>
     </a>
     <div class="searchHeader__recharge">
-      <a href="/_template/shop" class="btn recharge__btn">
+      <NuxtLink to="/_template/shop" class="btn recharge__btn">
         <img src="~/assets/img/ic_searchHeader_2.svg" alt="充值">
-      </a>
+      </NuxtLink>
     </div>
   </header>
 </template>

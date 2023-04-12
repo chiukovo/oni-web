@@ -3,11 +3,12 @@
     <div class="container">
       <Header></Header>
       <div class="featuredTab" :class="mainStore.hideHeaderFooter ? 'none' : ''">
+
         <div class="featuredTab__list">
           <ul class="list">
-            <li :class="featuredTab == n ? 'current' : ''" v-for="n in 3">
-              <a href="#" class="btn" @click="featuredTabChange(n - 1)">
-                <span>精选 {{ n }}</span>
+            <li :class="featuredTab == n ? 'current' : ''" v-for="(type, n) in titleGroup">
+              <a href="#" class="btn" @click="featuredTabChange(n)">
+                <span>{{ type.name }}</span>
               </a>
             </li>
           </ul>
@@ -92,11 +93,11 @@ const onSwiper = (swiper) => {
 }
 
 const onSlideChange = (t) => {
-  featuredTab.value = t.activeIndex + 1
+  featuredTab.value = t.activeIndex
 }
 
 
-const featuredTab = ref(1)
+const featuredTab = ref(0)
 const featuredTabChange = (n) => {
   featuredTab.value = n
 
@@ -106,8 +107,6 @@ const featuredTabChange = (n) => {
 }
 
 const discoverMenu = ref(false)
+const { data: titleGroup } = await mainStore.getTitleGroup()
 
-const loadMore = () => {
-  console.log('more')
-}
 </script>

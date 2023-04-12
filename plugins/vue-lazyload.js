@@ -9,6 +9,6 @@ export default defineNuxtPlugin((nuxtApp) => {
         preLoad: 1.33,
         error: errorImage,
         loading: loadingImage,
-        throttleWait: 300
+        throttleWait: 3000
     });
 });

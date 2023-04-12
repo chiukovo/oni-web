@@ -7,8 +7,8 @@ export const useMainStore = defineStore('main', {
         nowHeight: 0,
     }),
     actions: {
-        async getAN() {
-            const { data, error } = await useFetch('http://127.0.0.1:8000/api/getAN', {
+        async getTitleGroup() {
+            const { data, error } = await useFetch('/api/video/titleGroup', {
                 method: 'GET',
                 onRequest({ request, options }) {
                     // Set the request headers
