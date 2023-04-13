@@ -7,7 +7,7 @@
         <div class="featuredTab__list">
           <ul class="list">
             <li :class="featuredTab == n ? 'current' : ''" v-for="(type, n) in titleGroup">
-              <a href="#" class="btn" @click="featuredTabChange(n)">
+              <a href="#" class="btn" @click="featuredTabChange(n, type.name)">
                 <span>{{ type.name }}</span>
               </a>
             </li>
@@ -24,52 +24,11 @@
             @swiper="onSwiper"
             @slideChange="onSlideChange"
           >
-            <swiper-slide>
-              <div class="content">
+            <swiper-slide v-for="(type, n) in titleGroup">
+              <div class="content" v-if="featuredTab == n">
                 <section class="section sectionVideoFocus">
                   <div class="featuredVideoFocus">
-                    <Posts></Posts>
-                  </div>
-                </section>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-              <div class="content">
-                <section class="sectionMoney">
-                  <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
-                </section>
-                <section class="sectionButton">
-                  <div class="featuredPart">
-                    <a href="/_template/firstNovel" class="btn">
-                      <img :src="'/_nuxt/assets/img/btn_first_1.png'">
-                    </a>
-                    <a href="/_template/firstVideo" class="btn">
-                      <img :src="'/_nuxt/assets/img/btn_first_2.png'">
-                    </a>
-                    <a href="/_template/firstComics" class="btn">
-                      <img :src="'/_nuxt/assets/img/btn_first_3.png'">
-                    </a>
-                  </div>
-                </section>
-                <section class="section sectionVideo">
-                  <div class="section__title">
-                    <div class="title">最新新作</div>
-                    <a href="#" class="btn btn__more">更多</a>
-                  </div>
-                  <div class="featuredVideo">
-                    <Posts></Posts>
-                  </div>
-                </section>
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-              <div class="content">
-                <section class="sectionMoney">
-                  <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
-                </section>
-                <section class="section sectionVideo mt:10">
-                  <div class="featuredVideo">
-                    <Posts></Posts>
+                    <Posts :tabName="tabName"></Posts>
                   </div>
                 </section>
               </div>
@@ -92,17 +51,28 @@ const onSwiper = (swiper) => {
   mainSwiper.value = swiper
 }
 
-const onSlideChange = (t) => {
-  featuredTab.value = t.activeIndex
-}
-
-
 const featuredTab = ref(0)
-const featuredTabChange = (n) => {
+const tabName = ref('')
+const featuredTabChange = (n, name) => {
   featuredTab.value = n
+  tabName.value = name
 
   if (mainSwiper != null) {
     mainSwiper.value.slideTo(n)
+  }
+}
+const onSlideChange = (t) => {
+  featuredTab.value = t.activeIndex
+  getTabName(t.activeIndex)
+}
+
+const getTabName = (n) => {
+  if (titleGroup.value) {
+    titleGroup.value.forEach((data, index) => {
+      if (n == index) {
+        tabName.value = data.name
+      }
+    })
   }
 }
 

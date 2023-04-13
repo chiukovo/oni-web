@@ -20,6 +20,6 @@ export const useMainStore = defineStore('main', {
                 data,
                 error
             }
-        }
+        },
     },
 })
