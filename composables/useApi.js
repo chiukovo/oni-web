@@ -30,16 +30,13 @@ export const getTitleGroup = async () => {
     }
 }
 
-export const getVideoList = async () => {
+export const getVideoList = async (params) => {
     const { data, error } = await useFetch('/api/video/list', {
         method: 'GET',
         onRequest({ request, options }) {
             // Set the request headers
             options.headers = options.headers || {}
-            options.params = {
-              tabName: props.tabName,
-              page: page.value
-            }
+            options.params = params
         },
     })
 

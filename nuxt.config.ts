@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+    ssr: false,
     app: {
       head: {
         charset: 'utf-8',
@@ -52,29 +53,17 @@ export default defineNuxtConfig({
       '~/assets/sass/app.sass',
       '@master/css'
     ],
-    vite: {
-      server: {
-        proxy: {
-          "/api": {
-            target: process.env.API_URL + '/api',
-            changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/api/, ""),
-          },
-        },
-      },
+    nitro: {
+        devProxy: {
+            "/api": {
+                target: process.env.API_URL + '/api',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api\//, '/api'),
+            }
+        }
     },
     content: {
       // https://content.nuxtjs.org/api/configuration
       watch: false
-    },
-    optimizeDeps: {
-      include: ['pull-refresh']
-    },
-    build: {
-      vite: {
-        optimizeDeps: {
-          include: ['pull-refresh']
-        }
-      }
     }
 })

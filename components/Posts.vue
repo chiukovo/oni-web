@@ -53,8 +53,14 @@ const videoList = ref([])
 const page = ref(1)
 
 const loadList = async ($state) => {
-  const { data, error } = await getVideoList()
+  const parmas = {
+    tabName: props.tabName,
+    page: page.value
+  }
 
+  const { data, error } = await getVideoList(parmas)
+
+  console.log(error)
   if (!data.length) {
     $state.complete();
   } else {
