@@ -77,7 +77,6 @@ const getTabName = (n) => {
 }
 
 const discoverMenu = ref(false)
-const { data: titleGroup, error } = await mainStore.getTitleGroup()
-console.log(error)
+const { data: titleGroup, error } = await getTitleGroup()
 
 </script>

@@ -32,7 +32,7 @@
         </a>
       </div>
     </div>
-    <InfiniteLoading @infinite="getVideoList">
+    <InfiniteLoading @infinite="loadList">
       <template #complete>
         <span>查看更多</span>
       </template>
@@ -52,27 +52,17 @@ const props = defineProps({
 const videoList = ref([])
 const page = ref(1)
 
-const getVideoList = async ($state) => {
-    const { data, error } = await useFetch('/api/video/list', {
-        method: 'GET',
-        onRequest({ request, options }) {
-            // Set the request headers
-            options.headers = options.headers || {}
-            options.params = {
-              tabName: props.tabName,
-              page: page.value
-            }
-        },
-    })
+const loadList = async ($state) => {
+  const { data, error } = await getVideoList()
 
-    if (!data.value.length) {
-      $state.complete();
-    } else {
-      page.value++
-      $state.loaded();
-    }
+  if (!data.length) {
+    $state.complete();
+  } else {
+    page.value++
+    $state.loaded();
+  }
 
-    videoList.value.push(...data.value)
+  videoList.value.push(...data)
 }
 
 </script>

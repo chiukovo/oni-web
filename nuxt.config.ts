@@ -52,14 +52,16 @@ export default defineNuxtConfig({
       '~/assets/sass/app.sass',
       '@master/css'
     ],
-    nitro: {
-        devProxy: {
-            "/api": {
-                target: process.env.API_URL + '/api',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api\//, '/api'),
-            }
-        }
+    vite: {
+      server: {
+        proxy: {
+          "/api": {
+            target: process.env.API_URL + '/api',
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/api/, ""),
+          },
+        },
+      },
     },
     content: {
       // https://content.nuxtjs.org/api/configuration
