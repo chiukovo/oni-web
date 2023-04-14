@@ -27,7 +27,7 @@
         "pinia": "^2.0.32",
         "pull-refresh-vue3": "^0.3.1",
         "swiper": "^9.1.0",
-        "vue3-infinite-scroll-better": "^2.2.0",
+        "v3-infinite-loading": "^1.2.2",
         "vue-lazyload": "^3.0.0-rc.2"
     }
 }
