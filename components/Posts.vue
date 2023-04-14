@@ -1,5 +1,5 @@
 <template>
-  <div class="list" v-infinite-scroll="loadMore">
+  <div class="list">
     <div class="item" v-for="data in videoList">
       <div class="info">
         <div class="avatar">
@@ -32,6 +32,11 @@
         </a>
       </div>
     </div>
+    <InfiniteLoading @infinite="getVideoList">
+      <template #complete>
+        <span>查看更多</span>
+      </template>
+    </InfiniteLoading>
   </div>
 </template>
 
@@ -46,15 +51,8 @@ const props = defineProps({
 })
 const videoList = ref([])
 const page = ref(1)
-const canLoadMore = ref(true)
 
-const loadMore = () => {
-  if (canLoadMore.value) {
-    getVideoList()
-  }
-}
-
-const getVideoList = async () => {
+const getVideoList = async ($state) => {
     const { data, error } = await useFetch('/api/video/list', {
         method: 'GET',
         onRequest({ request, options }) {
@@ -68,9 +66,10 @@ const getVideoList = async () => {
     })
 
     if (!data.value.length) {
-      canLoadMore.value = false
+      $state.complete();
     } else {
       page.value++
+      $state.loaded();
     }
 
     videoList.value.push(...data.value)
