@@ -1,0 +1,78 @@
+.login__wrap
+  background-color: #111117
+  // background: #111117 url(/_nuxt/assets/img/getMoney_bg.jpg) center / cover no-repeat
+  .container
+    &::after
+      content: ''
+      display: inline-block
+      width: 100%
+      height: 100%
+      opacity: 0.2
+      background: url(/_nuxt/assets/img/getMoney_bg.jpg) center / cover no-repeat
+      position: absolute
+      top: 0
+      left: 0
+      pointer-events: none
+
+.sectionLogin
+  display: grid
+  grid-template-rows: 1fr auto
+  margin-bottom: 0
+  height: 100%
+  .logo
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50%
+    height: 50%
+    margin: 0 auto
+  .login__form
+    width: 100%
+    background: rgb(44 51 70 / 70%)
+    border-radius: 20px 20px 0 0
+    box-shadow: inset 0 1px 0 #434E6A
+    padding: 20px
+    position: absolute
+    bottom: 0
+    transition: transform .3s ease
+    &.signin
+      transform: translateX(-100%)
+    &.register
+      transform: translateX(100%)
+    &.show
+      transform: translateX(0)
+    .login__title
+      text-align: center
+      font-size: var(--fontSize-lg)
+      font-weight: bold
+      padding: 0 20px 20px
+    .form__input
+      height: 48px
+      background-color: rgb(0 0 0 / 50%)
+      border: 1px solid var(--border-color)
+      position: relative
+      input
+        width: 100%
+        height: 100%
+        &:disabled
+          color: #6F6F6F
+      .form__icon
+        padding-right: 10px
+      .form__btn
+        height: 100%
+        padding: 10px
+        position: absolute
+        right: 10px
+        img
+          height: 100%
+    .form__button
+      position: relative
+      z-index: 2
+      .btn
+        width: 100%
+        margin-top: 10px
+  .login__link
+    display: flex
+    justify-content: center
+    gap: 10px
+    padding: 30px 10px 10px 0

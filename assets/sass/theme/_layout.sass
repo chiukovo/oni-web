@@ -188,7 +188,7 @@ $vips:("1":#bdbddb, "2":#f6eea5, "3":#76748e, "4":#e7a85d)
         display: block
         width: 30%
         height: 1px
-        background-color: rgb(95 101 119 / .3)
+        background-color: var(--border-color)
         position: absolute
         top: 50%
         transform: translateY(-50%)
@@ -227,11 +227,11 @@ $vips:("1":#bdbddb, "2":#f6eea5, "3":#76748e, "4":#e7a85d)
 
 
 // - tag
-$colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
+$colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F, "white":#fff)
 .btn__tags
   font-size: var(--fontSize-s)
   color: #fff
-  border: 1px solid rgba(95, 101, 119, 0.3)
+  border: 1px solid var(--border-color)
   border-radius: 3px
   padding: 4px 8px
 @each $value, $color in $colors
@@ -252,13 +252,15 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
     .btn
       display: block
       text-align: center
-      // background-color: #2a2a2b
       background-color: #1d2028
       border-radius: 30px
       padding: 12px
+      &.disabled
+        .title
+          color: #4e515a
     .title
+      color: #ccc
       .tag
-        color: #ccc
         @include single_ellipsis
 
 // - tabs
@@ -302,7 +304,7 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
   display: flex
   align-items: center
   justify-content: space-between
-  border-bottom: 1px solid rgb(95 101 119 / 30%)
+  border-bottom: 1px solid var(--border-color)
   padding: 2px 16px 0 0
   .detailTab__list
     .list
@@ -318,6 +320,13 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
 
 // - form
 .form
+  display: flex
+  flex-direction: column
+  gap: 4px
+  position: relative
+  .form__space
+    width: 100%
+    height: 10px
   .form__input
     display: flex
     align-items: center
@@ -326,10 +335,19 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F)
     border-radius: 30px
     padding: 0 20px
     input
+      width: 100%
       height: 100%
-    img
+      &:disabled
+        color: #6F6F6F
+    .form__icon
       height: 38px
       padding: 10px 0
+    .getSecurityCode
+      font-size: var(--fontSize-s)
+      position: absolute
+      right: 20px
+      &.btn__tags-white
+        border: 1px solid #303030
   .form__button
     .btn
       padding: 10px
@@ -365,6 +383,9 @@ input[type=radio]
   display: block
   border: 0
   white-space: nowrap
+  .hasIcon
+    font-family: Fira Code
+    padding-left: 4px
   &.disabled
     color: #6F6F6F
     background: #2a2a2b
@@ -450,13 +471,16 @@ input[type=radio]
     border-radius: 30px
   &.btn__more
     color: #6F6F6F
+.btn__link
+  display: inline-block
+  color: var(--color-pink)
 
 // - btn select
 .btn
   &.btn__select
     min-width: 90px
     font-size: var(--fontSize-s)
-    border: 1px solid rgb(95 101 119 / 30%)
+    border: 1px solid var(--border-color)
     border-radius: 2px
     padding: 8px
     position: relative
@@ -544,9 +568,17 @@ i.dot
 .icon__coin
   width: 50px
   height: 50px
+  background: center / contain no-repeat
   @for $var from 1 through 4
     &.icon__coin#{$var}
-      background: url(/_nuxt/assets/img/ic_coin_#{$var}.png) center / contain no-repeat
+      background-image: url(/_nuxt/assets/img/ic_coin_#{$var}.png)
+
+@for $var from 1 through 5
+  .icon__mem-toplist#{$var}
+    background: url(/_nuxt/assets/img/ic_mem_toplist_#{$var}.png) center / contain no-repeat
+@for $var from 1 through 6
+  .icon__mem-list#{$var}
+    background: url(/_nuxt/assets/img/ic_mem_list_#{$var}.svg) center / contain no-repeat
 
 // - hr
 .hr
@@ -596,4 +628,5 @@ $lists: ('center', 'left', 'right')
     font-size: var(--fontSize-s)
     color: #6F6F6F
   td
-    border-bottom: 1px solid rgb(95 101 119 / 10%)
+    // border-bottom: 1px solid rgb(95 101 119 / 10%)
+    border-bottom: 1px solid rgb(var(--border-color-customize) / 10%)

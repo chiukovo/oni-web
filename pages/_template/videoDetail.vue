@@ -40,7 +40,7 @@
                     <!-- 反之點擊快速按鈕時，金幣金額會移除 -->
                     <div class="form">
                       <div class="form__input">
-                        <img src="/_nuxt/assets/img/ic_edit.svg">
+                        <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
                         <input type="text" placeholder="想要打赏更多">
                       </div>
                     </div>
@@ -368,7 +368,7 @@
           <div class="comments" v-if="comments === true">
             <div class="form">
               <div class="form__input">
-                <img src="/_nuxt/assets/img/ic_edit.svg">
+                <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
                 <input type="text" placeholder="优质评论优先展示">
               </div>
               <div class="form__button">
@@ -381,7 +381,7 @@
           <a href="#" class="btn__comments" @click="comments = true">
             <div class="form">
               <div class="form__input">
-                <img src="/_nuxt/assets/img/ic_edit.svg">
+                <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
                 <span>优质评论优先展示</span>
               </div>
             </div>

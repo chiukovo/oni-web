@@ -1,0 +1,184 @@
+.member__wrap
+  .sectionAuthor
+    .author__info
+      .info
+        padding-top: 0
+      .total
+        display: flex
+        position: relative
+        .item
+          flex: 1
+          display: flex
+          flex-direction: column
+          align-items: center
+          gap: 4px
+          & + .item
+            position: relative
+            &::before
+              content: ''
+              display: block
+              width: 1px
+              height: 60%
+              background-color: #6f6f6f
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+          .number
+            font-size: var(--fontSize-l)
+          .title
+            font-size: var(--fontSize-s)
+            color: #6F6F6F
+
+.sectionMemContent
+  .mem__joinVIP
+    border-bottom: 1px solid var(--border-color)
+    .joinVIP
+      width: 96%
+      margin: 0 auto
+  .mem__toplist
+    width: 96%
+    background: linear-gradient(180deg, #2C3346 0%, #1C1D2E 100%)
+    border: 1px solid #434E6A
+    border-radius: 20px
+    padding: 10px 10px 20px 10px
+    margin: 16px auto 20px
+    > .title
+      color: var(--color-pink)
+      border-bottom: 1px solid var(--border-color)
+      padding: 10px
+      margin-bottom: 10px
+    .list
+      display: flex
+      .item
+        flex: 1
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 4px
+        .icon
+          width: 60%
+          padding-top: 60%
+        .title
+          font-size: var(--fontSize-s)
+          color: #fff
+  .mem__list
+    padding: 0 10px 10p
+    > .title
+      color: var(--color-pink)
+      padding: 0 20px
+      margin-bottom: 10px
+    .list
+      .item
+        display: flex
+        gap: 10px
+        color: #B7B7B7
+        padding: 12px 20px
+        position: relative
+        + .item
+          border-top: 1px solid var(--border-color)
+        &.hasNext
+          &::before
+            content: ''
+            display: block
+            width: 6px
+            height: 100%
+            background: url(/_nuxt/assets/img/ic_mem_list_arrow.svg) center / contain no-repeat
+            position: absolute
+            right: 10px
+            top: 0
+
+.sectionVersion
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 20px 0 30px
+  p
+    font-size: var(--fontSize-s)
+    color: #5F6577
+
+// 個人管理
+.sectionAuthorSettings
+  .set__avatar
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    gap: 10px
+    .avatar
+      width: 6rem
+      height: 6rem
+      border-radius: 50%
+      overflow: hidden
+      .edit
+        width: 100%
+        text-align: center
+        font-size: var(--fontSize-s)
+        background-color: rgb(0 0 0 / 85%)
+        padding: 6px 0
+        position: absolute
+        bottom: 0
+    .name
+      font-size: var(--fontSize-l)
+      font-weight: bold
+    .admin
+      text-align: center
+      color: #6F6F6F
+      padding-top: 4px
+  .set__list
+    padding: 10px
+    .list
+      background-color: #1d2028
+      padding: 4px 20px
+      border-radius: 10px
+      + .list
+        margin-top: 10px
+      .item
+        display: flex
+        justify-content: space-between
+        padding: 16px 20px 16px 0
+        position: relative
+        + .item
+          border-top: 1px solid var(--border-color)
+        &.hasNext
+          &::before
+            content: ''
+            display: block
+            width: 6px
+            height: 100%
+            background: url(/_nuxt/assets/img/ic_mem_list_arrow.svg) center / contain no-repeat
+            position: absolute
+            right: 0
+            top: 0
+
+// 我的頻道
+.sectionAuthorChannel
+  padding: 10px
+  .channel__list
+    + .channel__list
+      margin-top: 50px
+    > .title
+      display: flex
+      align-items: center
+      gap: 8px
+      padding: 10px 10px 20px
+      .icon
+        width: 28px
+        height: auto
+      .primary
+        font-size: var(--fontSize-m)
+        font-weight: bold
+      .secondary
+        color: #6F6F6F
+    .list__item
+      position: relative
+      .icon
+        width: 20px
+        height: 20px
+        position: absolute
+        top: 0
+        right: 0
+        &.icon__clear
+          background-image: url(/_nuxt/assets/img/ic_clear.svg)
+        &.icon__add
+          background-image: url(/_nuxt/assets/img/ic_add.svg)

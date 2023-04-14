@@ -107,7 +107,7 @@
                 <div class="comments">
                   <div class="form">
                     <div class="form__input">
-                      <img src="/_nuxt/assets/img/ic_edit.svg">
+                      <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
                       <input type="text" placeholder="优质评论优先展示">
                     </div>
                     <div class="form__button">

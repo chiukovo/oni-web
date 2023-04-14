@@ -11,10 +11,10 @@
             </div>
             <div class="pops__body">
               <div class="content">
-                <section class="section sectionManagementAddTags">
+                <section class="section sectionForm">
                   <div class="form">
                     <div class="form__input">
-                      <img src="/_nuxt/assets/img/ic_edit.svg">
+                      <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
                       <input type="text" placeholder="新增標籤" value="視頻">
                     </div>
                   </div>
@@ -47,7 +47,7 @@
                 <div class="title">标签管理</div>
               </div>
               <div class="pageHeader__right">
-                <a href="#" class="btn btn__add" @click="managementAddTags = true">新增标签</a>
+                <a href="#" class="btn btn__primary" @click="managementAddTags = true">新增标签</a>
               </div>
             </header>
           </div>
