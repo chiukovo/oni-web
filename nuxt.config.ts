@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-    ssr: false,
     app: {
       head: {
         charset: 'utf-8',
@@ -58,12 +57,22 @@ export default defineNuxtConfig({
             "/api": {
                 target: process.env.API_URL + '/api',
                 changeOrigin: true,
-                rewrite: (path) => path.replace('/^/api/', '/api'),
+                rewrite: (path) => path.replace(/^\/api\//, '/api'),
             }
         }
     },
     content: {
       // https://content.nuxtjs.org/api/configuration
       watch: false
+    },
+    optimizeDeps: {
+      include: ['pull-refresh']
+    },
+    build: {
+      vite: {
+        optimizeDeps: {
+          include: ['pull-refresh']
+        }
+      }
     }
 })
