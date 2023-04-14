@@ -248,30 +248,26 @@
         <Transition appear>
           <div class="content" @scroll="scroll">
             <div class="flex full flex-direction:column">
-              <section class="section sectionAuthor">
-                <div class="author__info">
-                  <div class="info">
-                    <div class="avatar">
-                      <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
-                    </div>
-                    <div class="title">
-                      <div class="name">
-                        <p>使用者名称使用者名称使用者名称使用者名称使用者名称</p>
-                      </div>
-                      <div class="level">
-                        <div class="level__card">
-                          <div class="icon icon__level icon__level1"></div>
-                          <span class="mem__level">月卡会员</span>
-                          <span class="expiry__date">2023-04-08</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="section">
+              <section class="section sectionBalance">
                 <div class="balance">
-                  <div class="mem__balance">0 金币</div>
+                  <div class="balance__title">
+                    <div class="title">账户余额</div>
+                    <button class="btn btn__reload">
+                      <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
+                    </button>
+                  </div>
+                  <div class="balance__number">155,464.01</div>
+                  <a href="#" class="btn btn__checked">充值</a>
+                </div>
+                <div class="income">
+                  <div class="item">
+                    <div class="title">今日预计收益</div>
+                    <div class="number">135.00</div>
+                  </div>
+                  <div class="item">
+                    <div class="title">昨日收益</div>
+                    <div class="number">68.18</div>
+                  </div>
                 </div>
               </section>
             </div>

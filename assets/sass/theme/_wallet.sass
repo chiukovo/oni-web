@@ -1,0 +1,50 @@
+.sectionBalance
+  background: linear-gradient(180deg, #2C3346 0%, #1C1D2E 100%)
+  border: 1px solid #434E6A
+  border-radius: 20px
+  padding: 20px
+  margin: 20px
+  position: relative
+  &::before
+    content: ''
+    display: block
+    width: 100%
+    height: 100%
+    background: url("/_nuxt/assets/img/wallet_cardbg.png") 104% 104%/90% no-repeat
+    opacity: 0.05
+    position: absolute
+    top: 0
+    left: 0
+  .balance
+    border-bottom: 1px solid var(--border-color)
+    padding-bottom: 20px
+    margin-bottom: 20px
+    position: relative
+    .balance__title
+      display: flex
+      gap: 4px
+      font-size: var(--fontSize)
+      color: #7e87aa
+      .btn__reload
+        display: none
+        height: 1rem
+        img
+          height: 100%
+    .balance__number
+      font-size: 2.2rem
+    .btn
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+  .income
+    display: flex
+    gap: 10px
+    > .item
+      flex: 1
+      .title
+        font-size: var(--fontSize-s)
+        color: #7e87aa
+      .number
+        font-size: var(--fontSize-l)
+        padding-top: 4px
