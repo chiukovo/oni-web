@@ -372,7 +372,7 @@
               <div class="mem__toplist">
                 <div class="title">推荐服务</div>
                 <div class="list">
-                  <a href="#" class="item">
+                  <a href="/_template/wallet" class="item">
                     <div class="icon icon__mem-toplist1"></div>
                     <div class="title">钱包</div>
                   </a>

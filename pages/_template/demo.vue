@@ -234,7 +234,7 @@
         <div class="icon icon__4"></div>
         <div class="title">社区</div>
       </NuxtLink>
-      <NuxtLink class="btn">
+      <NuxtLink class="btn" to="/_template/member">
         <div class="icon icon__5"></div>
         <div class="title">我的</div>
       </NuxtLink>

@@ -231,7 +231,7 @@
     <div class="container">
       <header class="pageHeader" :class="none ? 'none' : ''">
         <div class="pageHeader__back">
-          <a href="#" class="btn btn__back" @click="authorMore = false">
+          <a href="/_template/member" class="btn btn__back">
             <img src="/_nuxt/assets/img/ic_back.svg">
           </a>
         </div>
@@ -264,12 +264,14 @@
                           <span class="mem__level">月卡会员</span>
                           <span class="expiry__date">2023-04-08</span>
                         </div>
-                        <div class="balance">
-                          <div class="mem__balance">0 金币</div>
-                        </div>
                       </div>
                     </div>
                   </div>
+                </div>
+              </section>
+              <section class="section">
+                <div class="balance">
+                  <div class="mem__balance">0 金币</div>
                 </div>
               </section>
             </div>
