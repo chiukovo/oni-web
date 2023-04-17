@@ -7,24 +7,23 @@
         </div>
         <div class="title">
           <div class="name">
-            <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+            <p>{{ data.title }}</p>
           </div>
-          <span>2023-03-07</span>
+          <span>{{ data.post_date }}</span>
         </div>
       </div>
       <div class="preview">
-        <div class="view"><span>5w</span>次播放</div>
-        <div class="time"><span>2:12</span></div>
+        <div class="view"><span>{{ data.watch }}</span>次播放</div>
         <img class="img" v-lazy="data.finish_preview_url">
       </div>
       <div class="interaction">
         <a href="#" class="btn">
           <i class="icon icon__love"></i>
-          <span>14 132</span>
+          <span>{{ data.like }}</span>
         </a>
         <a href="#" class="btn">
           <i class="icon icon__message"></i>
-          <span>116</span>
+          <span>{{ data.reply }}</span>
         </a>
         <a href="#" class="btn">
           <i class="icon icon__share"></i>
@@ -33,8 +32,8 @@
       </div>
     </div>
     <InfiniteLoading @infinite="loadList">
-      <template #complete>
-        <span>查看更多</span>
+      <template #complete style="text-center">
+        <span>查看更多 ٩(^ᴗ^)۶</span>
       </template>
     </InfiniteLoading>
   </div>
@@ -59,16 +58,19 @@ const loadList = async ($state) => {
   }
 
   const { data, error } = await getVideoList(parmas)
+  
+  if (!Array.isArray(data.value)) {
+    return
+  }
 
-  console.log(error)
-  if (!data.length) {
+  if (!data.value.length) {
     $state.complete();
   } else {
     page.value++
     $state.loaded();
   }
 
-  videoList.value.push(...data)
+  videoList.value.push(...data.value)
 }
 
 </script>
