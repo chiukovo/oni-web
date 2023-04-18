@@ -2,6 +2,7 @@ import { useMainStore } from '@/stores/main'
 
 export default function() {
     const mainStore = useMainStore()
+    const router = useRouter()
 
     const onBodyScroll = (e) => {
         const contentHeight = mainStore.contentHeight
