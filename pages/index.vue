@@ -2,7 +2,7 @@
   <div class="wrap">
     <!--fadeInRight-->
     <OpenRight :type="mainStore.openRightType" v-show="mainStore.openRightType"></OpenRight>
-    <div class="container" v-show="mainStore.openRightType == ''">
+    <div class="container">
       <Header></Header>
       <div class="featuredTab" :class="mainStore.hideHeaderFooter ? 'none' : ''">
 
