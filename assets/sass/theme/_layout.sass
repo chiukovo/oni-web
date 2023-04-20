@@ -42,7 +42,7 @@ img
 input
   outline: 0
 
-// - avatar
+// ! avatar
 $vips:("1":#bdbddb, "2":#f6eea5, "3":#76748e, "4":#e7a85d)
 .avatar
   display: block
@@ -168,7 +168,7 @@ $vips:("1":#bdbddb, "2":#f6eea5, "3":#76748e, "4":#e7a85d)
     flex: 1
 
 
-// - section
+// ! section
 .section
   margin-bottom: 10px
   + .section
@@ -227,7 +227,7 @@ $vips:("1":#bdbddb, "2":#f6eea5, "3":#76748e, "4":#e7a85d)
   margin: 0
 
 
-// - tag
+// ! tag
 $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F, "white":#fff)
 .btn__tags
   font-size: var(--fontSize-s)
@@ -242,7 +242,7 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F, "white":#fff)
     color: $color
     border: 1px solid darken($color, 30%)
 
-// - tag list
+// ! tag list
 .tag__list
   display: flex
   flex-wrap: wrap
@@ -264,7 +264,7 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F, "white":#fff)
       .tag
         @include single_ellipsis
 
-// - tabs
+// ! tabs
 .pageTab
   display: flex
   align-items: center
@@ -319,7 +319,7 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F, "white":#fff)
         &.current
           color: var(--color-pink)
 
-// - form
+// ! form
 .form
   display: flex
   flex-direction: column
@@ -353,7 +353,7 @@ $colors:("red":#f56c6c, "green":#67c23a, "gray":#6F6F6F, "white":#fff)
     .btn
       padding: 10px
 
-//- input: radio
+// ! input: radio
 input[type=radio]
   margin: 0
   max-width: 100%
@@ -375,7 +375,7 @@ input[type=radio]
     background-color: #00a1e9
     border-color: #00a1e9
 
-// - button
+// ! button
 .button__group
   display: flex
   gap: 10px
@@ -476,7 +476,7 @@ input[type=radio]
   display: inline-block
   color: var(--color-pink)
 
-// - btn select
+// ! btn select
 .btn
   &.btn__select
     min-width: 90px
@@ -512,7 +512,7 @@ input[type=radio]
         bottom: 0
 
 
-// - dot
+// ! dot
 i.dot
   &::after
     content: ''
@@ -524,7 +524,7 @@ i.dot
     border-radius: 50%
     margin: 0 4px
 
-// - icon
+// ! icon
 .icon
   display: block
   width: 16px
@@ -581,11 +581,14 @@ i.dot
   .icon__mem-list#{$var}
     background: url(/_nuxt/assets/img/ic_mem_list_#{$var}.svg) center / contain no-repeat
 
-// - hr
+// ! hr
 .hr
   display: flex
   justify-content: center
   position: relative
+  &.hr-s
+    font-size: var(--fontSize-s)
+    color: rgb(219 219 219 / 70%)
   &::before,
   &::after
     content: ''
@@ -601,20 +604,20 @@ i.dot
     right: 0
 
 
-// - font size
+// ! font size
 $font-size: ("lg": var(--fontSize-lg), "l": var(--fontSize-l), "m": var(--fontSize-m), "s": var(--fontSize-s))
 @each $name, $size in $font-size
   .fontsize-#{$name}
     font-size: $size !important
 
-// - font text-alian
+// ! font text-alian
 $lists: ('center', 'left', 'right')
 @each $value in $lists
   .text-#{$value}
     text-align: #{$value}
 
 
-// - table
+// ! table
 .table
   width: 100%
   border-spacing: 0

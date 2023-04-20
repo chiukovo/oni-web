@@ -60,7 +60,7 @@ const loadList = async ($state) => {
   }
 
   const { data, error } = await getVideoList(parmas)
-  
+
   if (!Array.isArray(data.value)) {
     return
   }

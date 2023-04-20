@@ -1,4 +1,4 @@
-// - 充值
+// ! 充值
 .sectionShop
   display: flex
   flex-direction: column
@@ -47,26 +47,6 @@
       .hr
         font-size: var(--fontSize-s)
         color: rgb(219 219 219 / 70%)
-      .vip__list
-        display: grid
-        gap: 10px
-        padding: 10px
-        &.vip__list1
-          grid-template-columns: repeat(4, 1fr)
-        &.vip__list2
-          grid-template-columns: repeat(3, 1fr)
-        .item
-          display: flex
-          flex-direction: column
-          justify-content: center
-          align-items: center
-          gap: 4px
-          font-size: var(--fontSize-s)
-          .icon__vip
-            width: 30px
-            height: 30px
-            border: 1px solid rgb(219 219 219 / 50%)
-            border-radius: 50%
     .cardInfo__footer
       padding: 10px
   .shop__list
@@ -91,7 +71,29 @@
           font-size: var(--fontSize-m)
           padding-left: 2px
 
-// - 充值明細
+  // ! VIP特權
+.vip__list
+  display: grid
+  gap: 10px
+  padding: 10px
+  &.vip__list1
+    grid-template-columns: repeat(4, 1fr)
+  &.vip__list2
+    grid-template-columns: repeat(3, 1fr)
+  .item
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 4px
+    font-size: var(--fontSize-s)
+    .icon__vip
+      width: 30px
+      height: 30px
+      border: 1px solid rgb(219 219 219 / 50%)
+      border-radius: 50%
+
+// ! 充值明細
 .sectionShopDetails
   .table
     td
@@ -114,7 +116,7 @@
         font-size: var(--fontSize-xs)
         color: #6F6F6F
 
-// - 馬上賺錢
+// ! 馬上賺錢
 .dialogGetMoney
   .dialog__overlay
     &::after

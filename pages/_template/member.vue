@@ -1,5 +1,50 @@
 <template>
   <div class="wrap member__wrap">
+    <!-- ! toasts -->
+    <!-- 兌換碼/邀請碼 填寫後跳出提示訊息 -->
+    <Transition name="toasts" appear>
+      <div class="toast" v-if="toast === true">
+        <div class="text">已经填写邀请码</div>
+      </div>
+    </Transition>
+    <!-- ! pops -->
+    <!-- 兌換碼、邀請碼 -->
+    <Transition name="pops" duration="550" appear>
+      <div class="pops memExchange" v-if="memExchange === true">
+        <div class="pops__overlay">
+          <div class="pops__container">
+            <div class="pops__header">
+              <div class="pops__title pops__title-center">
+                <div class="title">兑换码</div>
+              </div>
+              <div class="pops__close">
+                <div class="btn btn__close" @click="memExchange = false, toast = false">
+                  <img src="/_nuxt/assets/img/ic_close.svg">
+                </div>
+              </div>
+            </div>
+            <div class="pops__body">
+              <div class="content">
+                <section class="section sectionForm">
+                  <div class="form">
+                    <div class="form__input">
+                      <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
+                      <input type="text" placeholder="请输入兑换码" value="">
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="pops__footer">
+                <div class="button__group">
+                  <button class="btn btn__checked" @click="toast = true">确认</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pops__mask" @click="memExchange = false"></div>
+      </div>
+    </Transition>
     <!-- 修改密碼 -->
     <Transition name="pops" duration="550" appear>
       <div class="pops memExchangePassword" v-if="memExchangePassword === true">
@@ -125,6 +170,7 @@
         <div class="pops__mask" @click="memExchangeName = false"></div>
       </div>
     </Transition>
+    <!-- ! dialog -->
     <!-- 個人管理 -->
     <Transition name="fadeInRight" appear>
       <div class="dialog full authorSettings" v-if="authorSettings === true">
@@ -193,7 +239,7 @@
         </div>
       </div>
     </Transition>
-    <!-- 頻道設定 -->
+    <!-- 個人管理: 頻道設定 -->
     <Transition name="fadeInRight" appear>
       <div class="dialog full authorChannel" v-if="authorChannel === true">
         <div class="dialog__overlay">
@@ -277,48 +323,83 @@
         </div>
       </div>
     </Transition>
-    <Transition name="toasts" appear>
-      <div class="toast" v-if="toast === true">
-        <div class="text">已经填写邀请码</div>
-      </div>
-    </Transition>
-    <!-- 兌換碼、邀請碼 -->
-    <Transition name="pops" duration="550" appear>
-      <div class="pops memExchange" v-if="memExchange === true">
-        <div class="pops__overlay">
-          <div class="pops__container">
-            <div class="pops__header">
-              <div class="pops__title pops__title-center">
-                <div class="title">兑换码</div>
+    <!-- 推薦服務 -->
+    <!-- 推薦服務: 錢包 -->
+    <Transition name="fadeInRight" appear>
+      <div class="dialog full authorWallet" v-if="authorWallet === true">
+        <div class="dialog__overlay">
+          <div class="dialog__header">
+            <header class="pageHeader">
+              <div class="pageHeader__back">
+                <a href="#" class="btn btn__back" @click="authorWallet = false">
+                  <img src="/_nuxt/assets/img/ic_back.svg">
+                </a>
               </div>
-              <div class="pops__close">
-                <div class="btn btn__close" @click="memExchange = false, toast = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
-                </div>
+              <div class="pageHeader__title">
+                <div class="title">钱包</div>
               </div>
-            </div>
-            <div class="pops__body">
-              <div class="content">
-                <section class="section sectionForm">
-                  <div class="form">
-                    <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
-                      <input type="text" placeholder="请输入兑换码" value="">
+              <div class="pageHeader__right">
+                <a href="#" class="btn btn-right" @click="shopDetails = true">
+                  <img src="/_nuxt/assets/img/ic_shopDetail.svg" alt="充值明細">
+                </a>
+              </div>
+            </header>
+          </div>
+          <div class="dialog__body">
+            <div class="content" @scroll="scroll">
+              <div class="flex full flex-direction:column">
+                <section class="section sectionBalance">
+                  <div class="balance">
+                    <div class="balance__title">
+                      <div class="title">账户余额</div>
+                      <button class="btn btn__reload">
+                        <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
+                      </button>
+                    </div>
+                    <div class="balance__number">155,464.01</div>
+                    <a href="#" class="btn btn__checked">充值</a>
+                  </div>
+                  <div class="income">
+                    <div class="item">
+                      <div class="title">今日预计收益</div>
+                      <div class="number">135.00</div>
+                    </div>
+                    <div class="item">
+                      <div class="title">昨日收益</div>
+                      <div class="number">68.18</div>
                     </div>
                   </div>
                 </section>
-              </div>
-              <div class="pops__footer">
-                <div class="button__group">
-                  <button class="btn btn__checked" @click="toast = true">确认</button>
-                </div>
+                <section class="sectionVIPPower">
+                  <div class="hr">
+                    <span>VIP特权</span>
+                  </div>
+                  <ul class="vip__list vip__list1">
+                    <li class="item">
+                      <div class="icon icon__vip icon__vip1"></div>
+                      <div class="title">VIP资源</div>
+                    </li>
+                    <li class="item">
+                      <div class="icon icon__vip icon__vip2"></div>
+                      <div class="title">高速加载</div>
+                    </li>
+                    <li class="item">
+                      <div class="icon icon__vip icon__vip3"></div>
+                      <div class="title">评论吐槽</div>
+                    </li>
+                    <li class="item">
+                      <div class="icon icon__vip icon__vip4"></div>
+                      <div class="title">免广告</div>
+                    </li>
+                  </ul>
+                </section>
               </div>
             </div>
           </div>
         </div>
-        <div class="pops__mask" @click="memExchange = false"></div>
       </div>
     </Transition>
+    <!-- ! member center -->
     <div class="container">
       <header class="pageHeader" :class="none ? 'none' : ''">
         <div class="pageHeader__title">
@@ -483,9 +564,10 @@
         toast: false,
         authorSettings: false,
         authorChannel: false,
+        authorWallet: true,
         memExchangeName: false,
         memExchangePhone: false,
-        memExchangePassword: false,
+        memExchangePassword: false
       }
     },
     components: {
