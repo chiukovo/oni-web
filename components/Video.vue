@@ -1,5 +1,5 @@
 <template>
-  <div class="openRight">
+  <div class="floating openRight">
     <Transition name="pops" duration="550" appear>
       <div v-if="payMoney || addTags">
         <div class="pops payMoney" v-if="payMoney">
