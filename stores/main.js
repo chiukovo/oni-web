@@ -5,5 +5,6 @@ export const useMainStore = defineStore('main', {
         hideHeaderFooter: false,
         contentHeight: 0,
         nowHeight: 0,
+        videoCode: '',
     })
 })

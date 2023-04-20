@@ -12,7 +12,7 @@
           <span>{{ data.post_date }}</span>
         </div>
       </div>
-      <div class="preview" @click="router.push({ path: '/video/' + data.code })">
+      <div class="preview" @click="mainStore.videoCode = data.code">
         <div class="view"><span>{{ data.watch }}</span>次播放</div>
         <img class="img" v-lazy="data.finish_preview_url">
       </div>

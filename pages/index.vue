@@ -38,6 +38,8 @@
       </main>
     </div>
     <FooterTabbar></FooterTabbar>
+    <!--video detail-->
+    <Video :code="mainStore.videoCode" v-if="mainStore.videoCode != ''"></Video>
   </div>
 </template>
 

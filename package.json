@@ -25,12 +25,14 @@
         "@nuxt/kit": "^3.4.1",
         "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
         "@pinia/nuxt": "^0.4.7",
+        "@videojs-player/vue": "^1.0.0",
         "esbuild": "^0.17.17",
         "nuxt-swiper": "^1.0.1",
         "pinia": "^2.0.32",
         "pull-refresh-vue3": "^0.3.1",
         "swiper": "^9.1.0",
         "v3-infinite-loading": "^1.2.2",
+        "video.js": "^8.0.4",
         "vue-lazyload": "^3.0.0-rc.2"
     }
 }

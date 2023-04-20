@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="video">
     <Transition name="pops" duration="550" appear>
       <div class="pops payMoney" v-if="payMoney === true">
         <div class="pops__overlay">
@@ -403,7 +403,12 @@
 const { onBodyScroll } = usePublic()
 const router = useRouter()
 const route = useRoute()
-const { code } = route.params
+const props = defineProps({
+  code: {
+    type: String,
+    required: true
+  }
+})
 
 const none = ref(false),
   videoDetailtab = ref(0),
