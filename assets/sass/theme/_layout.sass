@@ -18,14 +18,12 @@ html
   color: #fff
   background-color: #111117
   background-size: 100%
-  margin-top: env(safe-area-inset-top)
-  padding-left: env(safe-area-inset-left)
-  padding-right: env(safe-area-inset-right)
 
 body
   width: 100%
-  // max-width: 680px
+  max-width: 680px
   font-size: var(--fontSize)
+  background-color: #111117
   margin: 0 auto
 
 img
@@ -76,13 +74,12 @@ $vips:("1":#bdbddb, "2":#f6eea5, "3":#76748e, "4":#e7a85d)
         &::before
           background-image: url(/_nuxt/assets/img/ic_mem_corwn_#{$value}.png)
 
-#root
-  background-color: #1C1D2E
-
 .wrap
   display: flex
   flex-direction: column
   height: 100%
+  position: relative
+  z-index: 2
 
 .container
   display: flex
@@ -630,7 +627,6 @@ $lists: ('center', 'left', 'right')
       padding-right: 16px
   th
     font-weight: normal
-    font-size: var(--fontSize-s)
     color: #6F6F6F
   td
     // border-bottom: 1px solid rgb(95 101 119 / 10%)

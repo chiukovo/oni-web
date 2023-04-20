@@ -1,0 +1,75 @@
+// ! 代理賺錢
+.sectionAgentContent
+  .agent__title
+    text-align: center
+    font-size: var(--fontSize-m)
+    margin: 40px auto 20px
+  .agent__joinInvitation
+    margin: 0 10px
+  .agent__total
+    .total__list
+      display: flex
+      justify-content: space-between
+      width: 100%
+      margin: 0 auto
+      .item
+        flex: 1
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 8px
+        position: relative
+        + .item
+          &::after,
+          &::before
+            content: ''
+            display: block
+            width: 100%
+            position: absolute
+          &::after
+            height: 9px
+            background-color: #292e41
+            z-index: 1
+            top: 46%
+            right: 50%
+          &::before
+            height: 3px
+            background-color: var(--color-pink)
+            z-index: 3
+            top: 50%
+            right: 50%
+        .title
+          font-size: var(--fontSize-xs)
+          color: #7e87aa
+        .dot
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 20px
+          height: 20px
+          position: relative
+          z-index: 4
+          > img
+            width: 80%
+            position: relative
+            z-index: 4
+          &::before
+            content: ''
+            display: block
+            width: 100%
+            height: 100%
+            background-color: #292e41
+            border-radius: 50%
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 1
+  .agent__details
+    .details__content
+      background-color: #25283c
+      border: 1px solid #434E6A
+      border-radius: 20px
+      padding: 10px
+      margin: 10px
+      .table th
+        color: #7e87aa

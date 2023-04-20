@@ -214,11 +214,13 @@
               <section class="sectionGetMoney">
                 <table class="table">
                   <tr>
-                    <th class="text-left">被邀请者暱称</th>
+                    <th class="text-left">昵称</th>
+                    <th>推广级别</th>
                     <th class="text-right">加入时间</th>
                   </tr>
                   <tr v-for="n in 10">
                     <td>小明{{ n }}</td>
+                    <td class="text-center">全站通卡</td>
                     <td class="text-right">2023-3-30 11:33:22</td>
                   </tr>
                 </table>

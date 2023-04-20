@@ -430,11 +430,65 @@
                     <div class="title">昨日收益</div>
                     <div class="number">68.18</div>
                   </div>
+                  <div class="item">
+                    <div class="title">当月推广人数</div>
+                    <div class="number">15</div>
+                  </div>
                 </div>
               </section>
               <section class="sectionAgentContent">
                 <div class="agent__joinInvitation">
                   <img src="~/assets/img/mem_agentButton.png" alt="查看活动规则" class="joinInvitation">
+                </div>
+                <div class="agent__total">
+                  <div class="agent__title">推广人数统计</div>
+                  <div class="total__list">
+                    <div class="item">
+                      <div class="number">12</div>
+                      <div class="dot">
+                        <img src="~/assets/img/mem_agentDot.svg">
+                      </div>
+                      <div class="title">一级推广</div>
+                    </div>
+                    <div class="item">
+                      <div class="number">3</div>
+                      <div class="dot">
+                        <img src="~/assets/img/mem_agentDot.svg">
+                      </div>
+                      <div class="title">二级推广</div>
+                    </div>
+                    <div class="item">
+                      <div class="number">0</div>
+                      <div class="dot">
+                        <img src="~/assets/img/mem_agentDot.svg">
+                      </div>
+                      <div class="title">三级推广</div>
+                    </div>
+                    <div class="item">
+                      <div class="number">0</div>
+                      <div class="dot">
+                        <img src="~/assets/img/mem_agentDot.svg">
+                      </div>
+                      <div class="title">四级推广</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="agent__details">
+                  <div class="agent__title">业绩明细</div>
+                  <div class="details__content">
+                    <table class="table">
+                      <tr>
+                        <th class="text-left">昵称</th>
+                        <th>推广级别</th>
+                        <th class="text-right">加入时间</th>
+                      </tr>
+                      <tr v-for="n in 10">
+                        <td>小明{{ n }}</td>
+                        <td class="text-center">全站通卡</td>
+                        <td class="text-right">2023-3-30 11:33:22</td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </section>
             </div>
