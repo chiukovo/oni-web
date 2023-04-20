@@ -63,7 +63,7 @@
           font-size: var(--fontSize-s)
           color: #fff
   .mem__list
-    padding: 0 10px 10p
+    padding: 0 10px 10px
     > .title
       color: var(--color-pink)
       padding: 0 20px
@@ -192,20 +192,18 @@
   padding: 20px
   margin: 20px
   position: relative
-  &::before
+  &::after
     content: ''
     display: block
     width: 100%
     height: 100%
     background: url("/_nuxt/assets/img/wallet_cardbg.png") 104% 104%/90% no-repeat
     opacity: 0.05
+    pointer-events: none
     position: absolute
     top: 0
     left: 0
   .balance
-    border-bottom: 1px solid var(--border-color)
-    padding-bottom: 20px
-    margin-bottom: 20px
     position: relative
     .balance__title
       display: flex
@@ -219,6 +217,7 @@
           height: 100%
     .balance__number
       font-size: 2.2rem
+      color: var(--color-pink)
     .btn
       position: absolute
       right: 0
@@ -227,6 +226,9 @@
   .income
     display: flex
     gap: 10px
+    border-top: 1px solid var(--border-color)
+    padding-top: 20px
+    margin-top: 20px
     > .item
       flex: 1
       .title
@@ -235,5 +237,10 @@
       .number
         font-size: var(--fontSize-l)
         padding-top: 4px
-.sectionVIPPower
-  margin: 0 20px
+  + .sectionMemContent
+    margin-top: 20px
+    .mem__list
+      .list .item
+        padding: 16px 20px
+        .title
+          color: #fff
