@@ -1,6 +1,8 @@
 <template>
   <div class="wrap">
-    <div class="container">
+    <!--fadeInRight-->
+    <OpenRight :type="mainStore.openRightType" v-if="mainStore.openRightType"></OpenRight>
+    <div class="container" v-show="mainStore.openRightType == ''">
       <Header></Header>
       <div class="featuredTab" :class="mainStore.hideHeaderFooter ? 'none' : ''">
 
@@ -38,8 +40,6 @@
       </main>
     </div>
     <FooterTabbar></FooterTabbar>
-    <!--video detail-->
-    <Video :code="mainStore.videoCode" v-if="mainStore.videoCode != ''"></Video>
   </div>
 </template>
 

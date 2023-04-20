@@ -27,7 +27,21 @@ export default function() {
         mainStore.contentHeight = mainStore.nowHeight
     }
 
+    const doOpenRight = (params, type) => {
+        mainStore.openRightType = type
+
+        switch (type) {
+            case 'video':
+                mainStore.videoCode = params.code
+
+                break;
+            default:
+                break;
+        }
+    }
+
     return {
-        onBodyScroll
+        onBodyScroll,
+        doOpenRight
     }
 }

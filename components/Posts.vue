@@ -12,7 +12,7 @@
           <span>{{ data.post_date }}</span>
         </div>
       </div>
-      <div class="preview" @click="mainStore.videoCode = data.code">
+      <div class="preview" @click="doOpenRight({ code: data.code }, 'video')">
         <div class="view"><span>{{ data.watch }}</span>次播放</div>
         <img class="img" v-lazy="data.finish_preview_url">
       </div>
@@ -42,6 +42,7 @@
 <script setup>
 import { useMainStore } from '@/stores/main'
 const router = useRouter()
+const { doOpenRight } = usePublic()
 
 const mainStore = useMainStore()
 const props = defineProps({
