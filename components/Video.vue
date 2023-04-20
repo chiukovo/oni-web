@@ -59,72 +59,9 @@
           </div>
           <div class="pops__mask" @click="payMoney = false"></div>
         </div>
-        <div class="pops addTags" v-if="addTags">
-          <div class="pops__overlay">
-            <div class="pops__container">
-              <div class="pops__header">
-                <div class="pops__title pops__title-center">
-                  <div class="title">选择标签</div>
-                </div>
-                <div class="pops__close">
-                  <div class="btn btn__close" @click="addTags = false">
-                    <img src="/_nuxt/assets/img/ic_close.svg">
-                  </div>
-                </div>
-              </div>
-              <div class="pops__body">
-                <div class="content">
-                  <section class="section sectionAddTags">
-                    <div class="top">
-                      <ul class="tag__list">
-                        <li class="list__item">
-                          <div class="btn">
-                            <div class="title">
-                              <div class="tag">全部</div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list__item current">
-                          <div class="btn">
-                            <div class="title">
-                              <div class="tag">標籤標籤標籤標籤標籤標籤標籤標籤標籤標籤</div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list__item" v-for="n in 5">
-                          <div class="btn">
-                            <div class="title">
-                              <div class="tag">標籤{{n}}</div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list__item">
-                          <div class="btn btn__addtag">
-                            <img src="/_nuxt/assets/img/ic_edit.svg">
-                            <span>新增标签</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="bottom">
-                      <a href="/_template/managementTags/" class="btn bnt__ManagementTags">前去标签管理<span class="hasIcon">></span></a>
-                    </div>
-                  </section>
-                </div>
-                <div class="pops__footer">
-                  <div class="button__group">
-                    <button class="btn btn__cancel">取消</button>
-                    <button class="btn btn__checked" @click="addTags = false">确认</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pops__mask" @click="addTags = false"></div>
-        </div>
       </div>
     </Transition>
-    <div class="dialog full " v-if="pageVideoDetail">
+    <div class="dialog full " v-if="pageVideoDetail && detail != ''">
       <div class="dialog__overlaypageVideoDetail">
         <div class="dialog__body">
           <section class="sectionVideoDetail">
@@ -143,7 +80,14 @@
                       <p>開通VIP解鎖完整版<span class="hasIcon">></span></p>
                     </div>
                     <div id="video">
-                      
+                      <video-player
+                        class="video-player vjs-theme-forest"
+                        controls
+                        playsinline
+                        :fluid="true"
+                        :src="detail.finish_video_preview_url"
+                        :poster="detail.finish_preview_url"
+                      />
                     </div>
                   </div>
                 </div>
@@ -157,12 +101,11 @@
                       </li>
                       <li :class="videoDetailtab == '1' ? 'current' : ''">
                         <a href="#" class="btn" @click="videoDetailtab = 1">
-                          <span>评论199999</span>
+                          <span>评论{{ detail.reply }}</span>
                         </a>
                       </li>
                     </ul>
                   </div>
-                  <div class="btn btn__reports">举报</div>
                 </div>
               </div>
             </div>
@@ -173,52 +116,36 @@
                 <div class="item">
                   <div class="info">
                     <div class="avatar">
-                      <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                      <img class="img" v-lazy="'https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg'">
                     </div>
                     <div class="title title-center">
                       <div class="name">
-                        <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+                        <p>偶是誰</p>
                       </div>
-                      <span>88888888关注<i class="dot"></i>2551视频</span>
+                      <span>666关注<i class="dot"></i>2551视频</span>
                     </div>
                     <button class="btn btn__focus">关注</button>
                   </div>
                   <div class="videoInfo">
                     <div class="title">
-                      <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+                      <p>{{ detail.title }}</p>
                     </div>
                     <ul class="tag__list">
-                      <li class="list__item">
+                      <li class="list__item" v-for="tag in detail.tags">
                         <a href="#" class="btn">
                           <div class="title">
-                            <div class="tag">#美腿</div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="list__item">
-                        <a href="#" class="btn">
-                          <div class="title">
-                            <div class="tag">#苗条</div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="list__item">
-                        <a href="#" class="btn">
-                          <div class="title">
-                            <div class="tag">#约砲</div>
+                            <div class="tag">#{{ tag }}</div>
                           </div>
                         </a>
                       </li>
                     </ul>
                     <div class="detail">
-                      <div class="view"><span>102</span>次播放</div>
+                      <div class="view"><span>{{ detail.watch }}</span>次播放</div>
                       <i class="dot"></i>
-                      <div class="love"><span>13</span>个收藏</div>
-                      <i class="dot"></i>
-                      <div class="updated">2023-03-07 19:26:08 发布</div>
+                      <div class="updated">{{ detail.post_date }} 发布</div>
                     </div>
                     <div class="interaction">
-                      <a href="#" class="btn" @click="addTags = true">
+                      <a href="#" class="btn">
                         <i class="icon icon__love-w"></i>
                         <span>收藏</span>
                       </a>
@@ -244,7 +171,7 @@
               </div>
               <div class="featuredVideoPersonal">
                 <div class="list">
-                  <div class="item" v-for="n in 6">
+                  <div class="item" v-for="n in 10">
                     <div class="preview">
                       <div class="time"><span>2:12</span></div>
                       <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
@@ -415,4 +342,7 @@ const none = ref(false),
   payMoney= ref(false),
   pageVideoDetail= ref(true),
   comments= ref(false)
+
+const { data: detail, error } = await getVideoDetail(props.code)
+
 </script>

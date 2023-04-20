@@ -39,7 +39,7 @@
         </Transition>
       </main>
     </div>
-    <FooterTabbar v-if="mainStore.openRightType == ''"></FooterTabbar>
+    <FooterTabbar></FooterTabbar>
   </div>
 </template>
 
