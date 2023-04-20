@@ -61,8 +61,8 @@
         </div>
       </div>
     </Transition>
-    <div class="dialog full " v-if="pageVideoDetail && detail != ''">
-      <div class="dialog__overlaypageVideoDetail">
+    <div class="dialog full pageVideoDetail" v-if="pageVideoDetail && detail != ''">
+      <div class="dialog__overlay">
         <div class="dialog__body">
           <section class="sectionVideoDetail">
             <div class="videoDetail">

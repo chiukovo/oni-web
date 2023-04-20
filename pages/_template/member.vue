@@ -347,43 +347,41 @@
           </div>
           <div class="dialog__body">
             <div class="content" @scroll="scroll">
-              <div class="flex full flex-direction:column">
-                <section class="sectionBalance">
-                  <div class="balance">
-                    <div class="balance__title">
-                      <div class="title">账户余额</div>
-                      <button class="btn btn__reload">
-                        <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
-                      </button>
-                    </div>
-                    <div class="balance__number">155,464.01</div>
-                    <a href="#" class="btn btn__checked">提现</a>
+              <section class="sectionBalance">
+                <div class="balance">
+                  <div class="balance__title">
+                    <div class="title">账户余额</div>
+                    <button class="btn btn__reload">
+                      <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
+                    </button>
                   </div>
-                </section>
-                <section class="sectionMemContent">
-                  <div class="mem__list">
-                    <div class="title">更多服务</div>
-                    <div class="list">
-                      <a href="#" class="item">
-                        <div class="icon icon__mem-list9"></div>
-                        <div class="title">充值会员</div>
-                      </a>
-                      <a href="#" class="item">
-                        <div class="icon icon__mem-list10"></div>
-                        <div class="title">充值币</div>
-                      </a>
-                      <a href="#" class="item hasNext">
-                        <div class="icon icon__mem-list11"></div>
-                        <div class="title">全民赚钱</div>
-                      </a>
-                      <a href="#" class="item hasNext">
-                        <div class="icon icon__mem-list12"></div>
-                        <div class="title">分享无限看</div>
-                      </a>
-                    </div>
+                  <div class="balance__number">155,464.01</div>
+                  <a href="#" class="btn btn__checked">提现</a>
+                </div>
+              </section>
+              <section class="sectionMemContent">
+                <div class="mem__list">
+                  <div class="title">更多服务</div>
+                  <div class="list">
+                    <a href="#" class="item">
+                      <div class="icon icon__mem-list9"></div>
+                      <div class="title">充值会员</div>
+                    </a>
+                    <a href="#" class="item">
+                      <div class="icon icon__mem-list10"></div>
+                      <div class="title">充值币</div>
+                    </a>
+                    <a href="#" class="item hasNext">
+                      <div class="icon icon__mem-list11"></div>
+                      <div class="title">全民赚钱</div>
+                    </a>
+                    <a href="#" class="item hasNext">
+                      <div class="icon icon__mem-list12"></div>
+                      <div class="title">分享无限看</div>
+                    </a>
                   </div>
-                </section>
-              </div>
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -412,53 +410,33 @@
           </div>
           <div class="dialog__body">
             <div class="content" @scroll="scroll">
-              <div class="flex full flex-direction:column">
-                <section class="sectionBalance">
-                  <div class="balance">
-                    <div class="balance__title">
-                      <div class="title">总收益</div>
-                      <button class="btn btn__reload">
-                        <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
-                      </button>
-                    </div>
-                    <div class="balance__number">155,464.01</div>
-                    <a href="#" class="btn btn__checked">提现</a>
+              <section class="sectionBalance">
+                <div class="balance">
+                  <div class="balance__title">
+                    <div class="title">总收益</div>
+                    <button class="btn btn__reload">
+                      <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
+                    </button>
                   </div>
-                  <div class="income">
-                    <div class="item">
-                      <div class="title">今日预计收益</div>
-                      <div class="number">135.00</div>
-                    </div>
-                    <div class="item">
-                      <div class="title">昨日收益</div>
-                      <div class="number">68.18</div>
-                    </div>
+                  <div class="balance__number">155,464.01</div>
+                  <a href="#" class="btn btn__checked">提现</a>
+                </div>
+                <div class="income">
+                  <div class="item">
+                    <div class="title">今日预计收益</div>
+                    <div class="number">135.00</div>
                   </div>
-                </section>
-                <section class="sectionMemContent">
-                  <div class="mem__list">
-                    <div class="title">更多服务</div>
-                    <div class="list">
-                      <a href="#" class="item">
-                        <div class="icon icon__mem-list9"></div>
-                        <div class="title">充值会员</div>
-                      </a>
-                      <a href="#" class="item">
-                        <div class="icon icon__mem-list10"></div>
-                        <div class="title">充值币</div>
-                      </a>
-                      <a href="#" class="item hasNext">
-                        <div class="icon icon__mem-list11"></div>
-                        <div class="title">全民赚钱</div>
-                      </a>
-                      <a href="#" class="item hasNext">
-                        <div class="icon icon__mem-list12"></div>
-                        <div class="title">分享无限看</div>
-                      </a>
-                    </div>
+                  <div class="item">
+                    <div class="title">昨日收益</div>
+                    <div class="number">68.18</div>
                   </div>
-                </section>
-              </div>
+                </div>
+              </section>
+              <section class="sectionAgentContent">
+                <div class="agent__joinInvitation">
+                  <img src="~/assets/img/mem_agentButton.png" alt="查看活动规则" class="joinInvitation">
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -526,7 +504,7 @@
                     <div class="icon icon__mem-toplist2"></div>
                     <div class="title">分享无限看</div>
                   </a>
-                  <a href="#" class="item">
+                  <a href="#" class="item" @click="authorAgent = true">
                     <div class="icon icon__mem-toplist3"></div>
                     <div class="title">代理赚钱</div>
                   </a>
