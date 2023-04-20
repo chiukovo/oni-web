@@ -61,7 +61,7 @@
         </div>
       </div>
     </Transition>
-    <div class="dialog full pageVideoDetail" v-if="pageVideoDetail && detail != ''">
+    <div class="dialog full pageVideoDetail" v-if="pageVideoDetail && videoDetail.detail != ''">
       <div class="dialog__overlay">
         <div class="dialog__body">
           <section class="sectionVideoDetail">
@@ -85,8 +85,8 @@
                         controls
                         playsinline
                         :fluid="true"
-                        :src="detail.finish_video_preview_url"
-                        :poster="detail.finish_preview_url"
+                        :src="videoDetail.detail.finish_video_preview_url"
+                        :poster="videoDetail.detail.finish_preview_url"
                       />
                     </div>
                   </div>
@@ -101,7 +101,7 @@
                       </li>
                       <li :class="videoDetailtab == '1' ? 'current' : ''">
                         <a href="#" class="btn" @click="videoDetailtab = 1">
-                          <span>评论{{ detail.reply }}</span>
+                          <span>评论{{ videoDetail.detail.reply }}</span>
                         </a>
                       </li>
                     </ul>
@@ -110,7 +110,7 @@
               </div>
             </div>
           </section>
-          <div class="content" @scroll="scroll" v-if="videoDetailtab === 0">
+          <div class="content" @scroll="scroll" v-if="videoDetailtab == 0">
             <section class="sectionVideoDetail">
               <div class="videoDetail">
                 <div class="item">
@@ -128,10 +128,10 @@
                   </div>
                   <div class="videoInfo">
                     <div class="title">
-                      <p>{{ detail.title }}</p>
+                      <p>{{ videoDetail.detail.title }}</p>
                     </div>
                     <ul class="tag__list">
-                      <li class="list__item" v-for="tag in detail.tags">
+                      <li class="list__item" v-for="tag in videoDetail.detail.tags">
                         <a href="#" class="btn">
                           <div class="title">
                             <div class="tag">#{{ tag }}</div>
@@ -140,9 +140,9 @@
                       </li>
                     </ul>
                     <div class="detail">
-                      <div class="view"><span>{{ detail.watch }}</span>次播放</div>
+                      <div class="view"><span>{{ videoDetail.detail.watch }}</span>次播放</div>
                       <i class="dot"></i>
-                      <div class="updated">{{ detail.post_date }} 发布</div>
+                      <div class="updated">{{ videoDetail.detail.post_date }} 发布</div>
                     </div>
                     <div class="interaction">
                       <a href="#" class="btn">
@@ -171,27 +171,26 @@
               </div>
               <div class="featuredVideoPersonal">
                 <div class="list">
-                  <div class="item" v-for="n in 10">
+                  <div class="item" v-for="recommend in videoDetail.recommend" @click="clickRecommend(recommend.code)">
                     <div class="preview">
-                      <div class="time"><span>2:12</span></div>
-                      <img class="img" src="https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg">
+                      <img class="img" v-lazy="recommend.finish_preview_url">
                     </div>
                     <div class="info">
                       <div class="title">
-                        <p>露脸女朋友 大一女生爱露脸 直拨镜头 露脸女朋友 露脸女朋友</p>
+                        <p>{{ recommend.title }}</p>
                       </div>
                       <div class="info__bottom">
                         <div class="name">
-                          <p>作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID作者ID</p>
+                          <p>偶是誰</p>
                         </div>
                         <div class="interaction">
                           <a href="#" class="btn">
                             <i class="icon icon__view"></i>
-                            <span>5w</span>
+                            <span>{{ recommend.watch }}</span>
                           </a>
                           <a href="#" class="btn">
                             <i class="icon icon__love"></i>
-                            <span>116</span>
+                            <span>{{ recommend.like }}</span>
                           </a>
                         </div>
                       </div>
@@ -292,7 +291,7 @@
         </div>
         <div class="footerTabbar footerComments" :class="none ? 'none' : ''">
           <Transition name="fadeInUp" appear>
-            <div class="comments" v-if="comments === true">
+            <div class="comments" v-if="comments">
               <div class="form">
                 <div class="form__input">
                   <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
@@ -343,6 +342,21 @@ const none = ref(false),
   pageVideoDetail= ref(true),
   comments= ref(false)
 
-const { data: detail, error } = await getVideoDetail(props.code)
+const videoDetail = reactive({
+  detail: '',
+  recommend: [],
+})
 
+const initVideoDetail = async (code) => {
+  const { data, error } = await getVideoDetail(code)
+  videoDetail.detail = data.value.detail
+  videoDetail.recommend = data.value.recommend
+}
+
+const clickRecommend = (code) => {
+  videoDetail.recommend = []
+  initVideoDetail(code)
+}
+
+initVideoDetail(props.code)
 </script>
