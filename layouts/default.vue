@@ -1,8 +1,14 @@
 <template>
   <div id="root">
+    <Loading v-if="mainStore.pageLoading"></Loading>
     <slot />
   </div>
 </template>
+
+<script setup>
+import { useMainStore } from '@/stores/main'
+const mainStore = useMainStore()
+</script>
 
 <style>
 .style1-enter-active,
