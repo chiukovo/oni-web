@@ -19,7 +19,6 @@
         "vue": "latest"
     },
     "dependencies": {
-        "@esbuild/win32-x64": "^0.17.17",
         "@master/css": "^1.37.8",
         "@master/normal.css": "^2.0.0-beta.84",
         "@nuxt/kit": "^3.4.1",
