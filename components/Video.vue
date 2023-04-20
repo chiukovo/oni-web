@@ -1,7 +1,7 @@
 <template>
   <div class="popsOpen__right">
     <Transition name="pops" duration="550" appear>
-      <div>
+      <div v-if="payMoney || addTags">
         <div class="pops payMoney" v-if="payMoney">
           <div class="pops__overlay">
             <div class="pops__container">
