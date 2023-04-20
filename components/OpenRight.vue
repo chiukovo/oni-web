@@ -1,9 +1,7 @@
 <template>
-  <div class="openRight">
-    <Transition name="fadeInRight" appear>
-      <Video :code="mainStore.videoCode" v-if="mainStore.videoCode != '' && type == 'video'"></Video>
-    </Transition>
-  </div>
+  <Transition name="fadeInRight" appear>
+    <Video :code="mainStore.videoCode" v-if="mainStore.videoCode != '' && type == 'video'"></Video>
+  </Transition>
 </template>
 
 <script setup>

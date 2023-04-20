@@ -1,5 +1,5 @@
 <template>
-  <div class="video">
+  <div class="popsOpen__right">
     <Transition name="pops" duration="550" appear>
       <div>
         <div class="pops payMoney" v-if="payMoney">
