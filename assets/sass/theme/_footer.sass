@@ -2,7 +2,8 @@
   display: flex
   width: 100%
   background: linear-gradient(180deg, #1C1D2E 0%, #1C1D2E 72.89%)
-  padding: 0 0 calc(1.6em + env(safe-area-inset-bottom))
+  padding-bottom: constant(safe-area-inset-bottom)
+  padding-bottom: env(safe-area-inset-bottom)
   .btn
     display: flex
     flex: 1
@@ -188,10 +189,13 @@
 .articleFooterContents
   .pops__container
     height: 50% !important
+    background-color: #111117
 
 .articleFooterBookmarks
   .pops__container
     height: 50% !important
+    background-color: #111117
+
 .sectionFooterBookmark
   .bookmark__list
     .list

@@ -2,7 +2,7 @@
   <div class="wrap">
     <!-- footer_書籤 -->
     <Transition name="pops" duration="550" appear>
-      <div class="pops pops-full pops-bottom articleFooterBookmarks" v-if="articleFooterBookmarks === true">
+      <div class="pops pops-bottom articleFooterBookmarks" v-if="articleFooterBookmarks === true">
         <div class="pops__overlay">
           <div class="pops__container">
             <div class="pops__header">
@@ -47,7 +47,7 @@
     </Transition>
     <!-- footer_目錄 -->
     <Transition name="pops" duration="550" appear>
-      <div class="pops pops-full pops-bottom articleFooterContents" v-if="articleFooterContents === true">
+      <div class="pops pops-bottom articleFooterContents" v-if="articleFooterContents === true">
         <div class="pops__overlay">
           <div class="pops__container">
             <div class="pops__header">

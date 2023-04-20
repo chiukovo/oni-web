@@ -496,6 +496,51 @@
         </div>
       </div>
     </Transition>
+    <!-- 推薦服務: 代理賺錢 → 活動規則 -->
+    <Transition name="pops" duration="550" appear>
+      <div class="pops pops-bottom authorAgentRules" v-if="authorAgentRules === true">
+        <div class="pops__overlay">
+          <div class="pops__container">
+            <div class="pops__header">
+              <div class="pops__title pops__title-center">
+                <div class="title">書籤</div>
+              </div>
+              <div class="pops__close">
+                <div class="btn btn__close" @click="authorAgentRules = false">
+                  <img src="/_nuxt/assets/img/ic_close.svg">
+                </div>
+              </div>
+            </div>
+            <div class="pops__body">
+              <div class="content">
+                <section class="section sectionFooterBookmark">
+                  <div class="bookmark__list">
+                    <ul class="list" :class="sort ? '' : 'list__reverse'">
+                      <li class="item read">
+                        <a href="#">
+                          <p>第1話</p>
+                        </a>
+                        <a href="#" class="btn btn__delet">
+                          刪除
+                        </a>
+                      </li>
+                      <li class="item">
+                        <a href="#">
+                          <p>第2話</p>
+                        </a>
+                        <a href="#" class="btn btn__delet">
+                          刪除
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Transition>
     <!-- ! member center -->
     <div class="container">
       <header class="pageHeader" :class="none ? 'none' : ''">
@@ -663,6 +708,7 @@
         authorChannel: false,
         authorWallet: false,
         authorAgent: true,
+        authorAgentRules: true,
         memExchangeName: false,
         memExchangePhone: false,
         memExchangePassword: false

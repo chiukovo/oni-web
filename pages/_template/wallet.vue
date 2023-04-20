@@ -2,7 +2,7 @@
   <div class="wrap">
     <!-- footer_付款 -->
     <Transition name="pops" duration="550" appear>
-      <div class="pops pops-full pops-bottom footerPayment" v-if="footerPayment === true">
+      <div class="pops pops-bottom footerPayment" v-if="footerPayment === true">
         <div class="pops__overlay">
           <div class="pops__container">
             <div class="pops__header">

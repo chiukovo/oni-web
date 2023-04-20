@@ -8,14 +8,16 @@ $pops-position: ("top": flex-start, "bottom": flex-end)
   width: 100%
   height: 100%
   position: absolute
-  z-index: 10
+  top: 0
+  left: 0
+  z-index: var(--zindex-pops)
   @each $name, $position in $pops-position
     &.pops-#{$name}
       .pops__overlay
         height: 100%
         align-items: $position
         .pops__container
-          height: auto
+          width: 100%
           @if $name == top
             border-top-left-radius: 0
             border-top-right-radius: 0
@@ -33,7 +35,6 @@ $pops-position: ("top": flex-start, "bottom": flex-end)
     justify-content: center
     width: 100%
     overflow: hidden
-    padding-bottom: 20%
   .pops__mask
     width: 100%
     height: 100%
@@ -68,7 +69,7 @@ $pops-position: ("top": flex-start, "bottom": flex-end)
         left: 50%
         transform: translateX(-50%)
       .title
-        @include single_ellipsis
+        // @include single_ellipsis
     .pops__close
       height: 100%
       padding: 24px 10px 20px

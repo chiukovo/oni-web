@@ -2,7 +2,7 @@
   <div class="wrap community__wrap">
     <!-- footer_留言 -->
     <Transition name="pops" duration="550" appear>
-      <div class="pops pops-full pops-bottom footerMessage" v-if="footerMessage === true">
+      <div class="pops pops-bottom footerMessage" v-if="footerMessage === true">
         <div class="pops__overlay">
           <div class="pops__container">
             <div class="pops__header">
