@@ -110,7 +110,7 @@
               </div>
             </div>
           </section>
-          <div class="content" @scroll="scroll" v-if="videoDetailtab == 0">
+          <div ref="detailContent" class="content" @scroll="scroll" v-if="videoDetailtab == 0">
             <section class="sectionVideoDetail">
               <div class="videoDetail">
                 <div class="item">
@@ -324,9 +324,9 @@
 </template>
 
 <script setup>
+import { useMainStore } from '@/stores/main'
+const mainStore = useMainStore()
 const { onBodyScroll, doOpenRight } = usePublic()
-const router = useRouter()
-const route = useRoute()
 const props = defineProps({
   code: {
     type: String,
@@ -340,7 +340,8 @@ const none = ref(false),
   addTags= ref(false),
   payMoney= ref(false),
   pageVideoDetail= ref(true),
-  comments= ref(false)
+  comments= ref(false),
+  detailContent = ref(null)
 
 const videoDetail = reactive({
   detail: '',
@@ -351,9 +352,19 @@ const initVideoDetail = async (code) => {
   const { data, error } = await getVideoDetail(code)
   videoDetail.detail = data.value.detail
   videoDetail.recommend = data.value.recommend
+  videoDetailtab.value = 0
+  
+  if (detailContent.value != null) {
+    detailContent.value.scrollTo(0, 0)
+  }
+
+  setTimeout(() => {
+    mainStore.pageLoading = false
+  }, 500)
 }
 
 const clickRecommend = (code) => {
+  mainStore.pageLoading = true
   videoDetail.recommend = []
   initVideoDetail(code)
 }

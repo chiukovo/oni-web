@@ -1,6 +1,6 @@
 <template>
   <div id="root">
-    <Loading v-if="mainStore.pageLoading"></Loading>
+    <Loading v-show="mainStore.pageLoading"></Loading>
     <slot />
   </div>
 </template>
@@ -8,6 +8,12 @@
 <script setup>
 import { useMainStore } from '@/stores/main'
 const mainStore = useMainStore()
+
+onMounted(() => {
+  setTimeout(() => {
+    mainStore.pageLoading = false
+  }, 500)
+})
 </script>
 
 <style>
