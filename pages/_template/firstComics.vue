@@ -11,7 +11,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="articleFooterBookmarks = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="articleFooterContents = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -69,8 +69,8 @@
                       <span>(週五) 更新至124話</span>
                     </div>
                     <a href="#" class="btn btn__sort" @click="sort = !sort">
-                      <img src="/_nuxt/assets/img/ic_sort_up.svg" alt="正序" v-if="sort === true">
-                      <img src="/_nuxt/assets/img/ic_sort_down.svg" alt="反序" v-else>
+                      <img src="/img/ic_sort_up.svg" alt="正序" v-if="sort === true">
+                      <img src="/img/ic_sort_down.svg" alt="反序" v-else>
                     </a>
                   </div>
                   <div class="contents__list">
@@ -107,7 +107,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="/_template/demo" class="btn btn__back" @click="firstComics = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -177,7 +177,7 @@
                 <div class="detailHeader">
                   <div class="detailback">
                     <a href="#" class="btn btn__back" @click="comicsDetails = false">
-                      <img src="/_nuxt/assets/img/ic_back.svg">
+                      <img src="/img/ic_back.svg">
                     </a>
                   </div>
                   <div class="detailTitle">
@@ -306,7 +306,7 @@
                 </div>
               </section>
               <section class="sectionMoney p:10">
-                <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
+                <img src="/img/not-use/slider.jpg" alt="">
               </section>
               <section class="section sectionComics">
                 <div class="section__title">
@@ -336,8 +336,8 @@
                     <span>(週五) 更新至124話</span>
                   </div>
                   <a href="#" class="btn btn__sort" @click="sort = !sort">
-                    <img src="/_nuxt/assets/img/ic_sort_up.svg" alt="正序" v-if="sort === true">
-                    <img src="/_nuxt/assets/img/ic_sort_down.svg" alt="反序" v-else>
+                    <img src="/img/ic_sort_up.svg" alt="正序" v-if="sort === true">
+                    <img src="/img/ic_sort_down.svg" alt="反序" v-else>
                   </a>
                 </div>
                 <div class="contents__list">
@@ -392,7 +392,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="comicsArticle = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">

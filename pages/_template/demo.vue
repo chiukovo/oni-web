@@ -4,18 +4,18 @@
       <header class="searchHeader" :class="none ? 'none' : ''">
         <div class="searchHeader__everyday">
           <a href="/_template/everyDay" class="btn everyday__btn">
-            <img src="/_nuxt/assets/img/ic_searchHeader_1.svg" alt="每日精选">
+            <img src="/img/ic_searchHeader_1.svg" alt="每日精选">
           </a>
         </div>
         <a href="#" class="searchHeader__search">
           <div class="search__input">
             <span>视频｜创作者</span>
-            <img src="/_nuxt/assets/img/ic_search.svg">
+            <img src="/img/ic_search.svg">
           </div>
         </a>
         <div class="searchHeader__recharge">
           <a href="/_template/shop" class="btn recharge__btn">
-            <img src="/_nuxt/assets/img/ic_searchHeader_2.svg" alt="充值">
+            <img src="/img/ic_searchHeader_2.svg" alt="充值">
           </a>
         </div>
       </header>
@@ -57,7 +57,7 @@
           </ul>
         </div>
         <a href="/_template/discoverMenu" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
-          <img src="/_nuxt/assets/img/ic_menu.svg" alt="更多推荐">
+          <img src="/img/ic_menu.svg" alt="更多推荐">
         </a>
       </div>
       <main class="main">
@@ -112,7 +112,7 @@
           <swiper-slide>
             <div class="content">
               <section class="sectionMoney">
-                <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
+                <img src="/img/not-use/slider.jpg" alt="">
               </section>
               <section class="sectionButton">
                 <div class="featuredPart">
@@ -173,7 +173,7 @@
           <swiper-slide>
             <div class="content">
               <section class="sectionMoney">
-                <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
+                <img src="/img/not-use/slider.jpg" alt="">
               </section>
               <section class="section sectionVideo mt:10">
                 <div class="featuredVideo">

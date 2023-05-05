@@ -11,7 +11,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="footerMessage = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@
                 <div class="comments">
                   <div class="form">
                     <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
+                      <img class="form__icon" src="/img/ic_edit.svg">
                       <input type="text" placeholder="优质评论优先展示">
                     </div>
                     <div class="form__button">
@@ -130,7 +130,7 @@
             <header class="pageHeader" :class="none ? 'none' : ''">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="communityDetails = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -213,7 +213,7 @@
                 </div>
               </section>
               <section class="sectionMoney p:10">
-                <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
+                <img src="/img/not-use/slider.jpg" alt="">
               </section>
               <section class="section sectionVideoPersonal">
                 <div class="section__title">
@@ -259,8 +259,8 @@
                     <span>(週五) 更新至124話</span>
                   </div>
                   <a href="#" class="btn btn__sort" @click="sort = !sort">
-                    <img src="/_nuxt/assets/img/ic_sort_up.svg" alt="正序" v-if="sort === true">
-                    <img src="/_nuxt/assets/img/ic_sort_down.svg" alt="反序" v-else>
+                    <img src="/img/ic_sort_up.svg" alt="正序" v-if="sort === true">
+                    <img src="/img/ic_sort_down.svg" alt="反序" v-else>
                   </a>
                 </div>
                 <div class="contents__list">
@@ -314,7 +314,7 @@
       <header class="pageHeader" :class="none ? 'none' : ''">
         <div class="pageHeader__everyday">
           <a href="/_template/everyDay" class="btn everyday__btn">
-            <img src="/_nuxt/assets/img/ic_searchHeader_1.svg" alt="每日精选">
+            <img src="/img/ic_searchHeader_1.svg" alt="每日精选">
           </a>
         </div>
         <div class="pageHeader__title">
@@ -322,7 +322,7 @@
         </div>
         <div class="pageHeader__right">
           <a href="/_template/shop" class="btn">
-            <img src="/_nuxt/assets/img/ic_searchHeader_2.svg" alt="充值">
+            <img src="/img/ic_searchHeader_2.svg" alt="充值">
           </a>
         </div>
       </header>

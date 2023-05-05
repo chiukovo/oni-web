@@ -10,7 +10,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="payMoney = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
                     <!-- 反之點擊快速按鈕時，金幣金額會移除 -->
                     <div class="form">
                       <div class="form__input">
-                        <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
+                        <img class="form__icon" src="/img/ic_edit.svg">
                         <input type="text" placeholder="想要打赏更多">
                       </div>
                     </div>
@@ -69,7 +69,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="addTags = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@
                       </li>
                       <li class="list__item">
                         <div class="btn btn__addtag">
-                          <img src="/_nuxt/assets/img/ic_edit.svg">
+                          <img src="/img/ic_edit.svg">
                           <span>新增标签</span>
                         </div>
                       </li>
@@ -135,7 +135,7 @@
                     <div class="detailHeader">
                       <div class="detailback">
                         <a href="/_template/demo" class="btn btn__back" @click="pageVideoDetail = false">
-                          <img src="/_nuxt/assets/img/ic_back.svg">
+                          <img src="/img/ic_back.svg">
                         </a>
                       </div>
                     </div>
@@ -236,7 +236,7 @@
                 </div>
               </section>
               <section class="sectionMoney p:10">
-                <img src="/_nuxt/assets/img/not-use/slider.jpg" alt="">
+                <img src="/img/not-use/slider.jpg" alt="">
               </section>
               <section class="section sectionVideoPersonal">
                 <div class="section__title">
@@ -368,7 +368,7 @@
               <div class="comments" v-if="comments === true">
                 <div class="form">
                   <div class="form__input">
-                    <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
+                    <img class="form__icon" src="/img/ic_edit.svg">
                     <input type="text" placeholder="优质评论优先展示">
                   </div>
                   <div class="form__button">
@@ -381,13 +381,13 @@
               <a href="#" class="btn__comments" @click="comments = true">
                 <div class="form">
                   <div class="form__input">
-                    <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
+                    <img class="form__icon" src="/img/ic_edit.svg">
                     <span>优质评论优先展示</span>
                   </div>
                 </div>
               </a>
               <a href="#" class="btn__love" @click="addTags = true">
-                <img src="/_nuxt/assets/img/ic_love_w.svg">
+                <img src="/img/ic_love_w.svg">
               </a>
             </div>
             <a href="/_template/shop" class="btn btn__unlimited">无限看</a>

@@ -8,13 +8,13 @@
             <header class="searchHeader">
               <div class="searchHeader__back">
                 <a href="#" class="btn btn__back" @click="discoverSearch = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div href="#" class="searchHeader__search">
                 <div class="search__input">
                   <input type="text" placeholder="视频｜创作者" value="B站洛里塔">
-                  <img src="/_nuxt/assets/img/ic_clear.svg">
+                  <img src="/img/ic_clear.svg">
                 </div>
                 <div class="search__submit">
                   <a href="#" class="btn btn__submit" @click="searchResults = 1">搜索</a>
@@ -201,7 +201,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="authorMore = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -285,7 +285,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="authorPersonal = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -370,7 +370,7 @@
       <header class="searchHeader">
         <div class="searchHeader__everyday">
           <a href="/_template/everyDay" class="btn everyday__btn" @click="discoverMenu = !discoverMenu">
-            <img src="/_nuxt/assets/img/ic_searchHeader_1.svg" alt="每日精选">
+            <img src="/img/ic_searchHeader_1.svg" alt="每日精选">
           </a>
         </div>
         <div class="searchHeader__titleTab">
@@ -384,7 +384,7 @@
         <a href="#" class="searchHeader__search" @click="discoverSearch = !discoverSearch">
           <div class="search__input">
             <span>搜索</span>
-            <img src="/_nuxt/assets/img/ic_search.svg">
+            <img src="/img/ic_search.svg">
           </div>
         </a>
       </header>

@@ -19,7 +19,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="memExchange = false, toast = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
                 <section class="section sectionForm">
                   <div class="form">
                     <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
+                      <img class="form__icon" src="/img/ic_edit.svg">
                       <input type="text" placeholder="请输入兑换码" value="">
                     </div>
                   </div>
@@ -56,7 +56,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="memExchangePassword = false; toast = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -65,16 +65,16 @@
                 <section class="section sectionForm">
                   <div class="form">
                     <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_lock.svg">
+                      <img class="form__icon" src="/img/ic_lock.svg">
                       <input type="password" placeholder="请输入目前密码">
                     </div>
                     <div class="form__space"></div>
                     <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_lock_new.svg">
+                      <img class="form__icon" src="/img/ic_lock_new.svg">
                       <input type="password" placeholder="请输入新密码">
                     </div>
                     <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_lock_new.svg">
+                      <img class="form__icon" src="/img/ic_lock_new.svg">
                       <input type="password" placeholder="请再次输入新密码">
                     </div>
                   </div>
@@ -102,7 +102,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="memExchangePhone = false; toast = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -111,12 +111,12 @@
                 <section class="section sectionForm">
                   <div class="form">
                     <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_phone.svg">
+                      <img class="form__icon" src="/img/ic_phone.svg">
                       <input type="tel" placeholder="请输入手机号码" value="0912345678" disabled>
                     </div>
                     <div class="form__input">
                       <button class="getSecurityCode btn__tags btn__tags-white">獲得驗證碼</button>
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_security.svg">
+                      <img class="form__icon" src="/img/ic_security.svg">
                       <input type="number" placeholder="驗證碼">
                     </div>
                   </div>
@@ -144,7 +144,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="memExchangeName = false; toast = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@
                 <section class="section sectionForm">
                   <div class="form">
                     <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
+                      <img class="form__icon" src="/img/ic_edit.svg">
                       <input type="text" placeholder="请输入昵称（不超过15字）" value="">
                     </div>
                   </div>
@@ -179,7 +179,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="authorSettings = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -247,7 +247,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="authorChannel = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -264,7 +264,7 @@
                 <div class="channel__list">
                   <div class="title">
                     <div class="icon">
-                      <img src="~/assets/img/ic_channel_1.png" alt="我的频道">
+                      <img src="/img/ic_channel_1.png" alt="我的频道">
                     </div>
                     <span class="primary">我的频道</span>
                     <span class="secondary">长按拖动可排序</span>
@@ -299,7 +299,7 @@
                 <div class="channel__list">
                   <div class="title">
                     <div class="icon">
-                      <img src="~/assets/img/ic_channel_2.png" alt="添加更多頻道">
+                      <img src="/img/ic_channel_2.png" alt="添加更多頻道">
                     </div>
                     <span class="primary">添加更多頻道</span>
                     <span class="secondary">按+可添加频道到首页</span>
@@ -332,7 +332,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="authorWallet = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -340,7 +340,7 @@
               </div>
               <div class="pageHeader__right">
                 <a href="#" class="btn btn-right" @click="shopDetails = true">
-                  <img src="/_nuxt/assets/img/ic_withdrawaly.svg" alt="提现明细">
+                  <img src="/img/ic_withdrawaly.svg" alt="提现明细">
                 </a>
               </div>
             </header>
@@ -352,7 +352,7 @@
                   <div class="balance__title">
                     <div class="title">账户余额</div>
                     <button class="btn btn__reload">
-                      <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
+                      <img src="/img/ic_reload.svg" alt="重新載入">
                     </button>
                   </div>
                   <div class="balance__number">155,464.01</div>
@@ -395,7 +395,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="authorAgent = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -403,7 +403,7 @@
               </div>
               <div class="pageHeader__right">
                 <a href="#" class="btn btn-right">
-                  <img src="/_nuxt/assets/img/ic_getAgent.svg" alt="开始代理">
+                  <img src="/img/ic_getAgent.svg" alt="开始代理">
                 </a>
               </div>
             </header>
@@ -415,7 +415,7 @@
                   <div class="balance__title">
                     <div class="title">总收益</div>
                     <button class="btn btn__reload">
-                      <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
+                      <img src="/img/ic_reload.svg" alt="重新載入">
                     </button>
                   </div>
                   <div class="balance__number">155,464.01</div>
@@ -438,7 +438,7 @@
               </section>
               <section class="sectionAgentContent">
                 <div class="agent__joinInvitation">
-                  <img src="~/assets/img/mem_agentButton.png" alt="查看活动规则" class="joinInvitation">
+                  <img src="/img/mem_agentButton.png" alt="查看活动规则" class="joinInvitation">
                 </div>
                 <div class="agent__total">
                   <div class="agent__title">推广人数统计</div>
@@ -446,28 +446,28 @@
                     <div class="item">
                       <div class="number">12</div>
                       <div class="dot">
-                        <img src="~/assets/img/mem_agentDot.svg">
+                        <img src="/img/mem_agentDot.svg">
                       </div>
                       <div class="title">一级推广</div>
                     </div>
                     <div class="item">
                       <div class="number">3</div>
                       <div class="dot">
-                        <img src="~/assets/img/mem_agentDot.svg">
+                        <img src="/img/mem_agentDot.svg">
                       </div>
                       <div class="title">二级推广</div>
                     </div>
                     <div class="item">
                       <div class="number">0</div>
                       <div class="dot">
-                        <img src="~/assets/img/mem_agentDot.svg">
+                        <img src="/img/mem_agentDot.svg">
                       </div>
                       <div class="title">三级推广</div>
                     </div>
                     <div class="item">
                       <div class="number">0</div>
                       <div class="dot">
-                        <img src="~/assets/img/mem_agentDot.svg">
+                        <img src="/img/mem_agentDot.svg">
                       </div>
                       <div class="title">四级推广</div>
                     </div>
@@ -507,7 +507,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="authorAgentRules = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -590,7 +590,7 @@
             </section>
             <section class="sectionMemContent">
               <div class="mem__joinVIP" v-if="userLogin === false">
-                <img src="~/assets/img/mem_headerButton.png" alt="开通VIP" class="joinVIP">
+                <img src="/img/mem_headerButton.png" alt="开通VIP" class="joinVIP">
               </div>
               <div class="mem__toplist">
                 <div class="title">推荐服务</div>

@@ -16,7 +16,7 @@
           </ul>
         </div>
         <a href="#" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
-          <img src="~/assets/img/ic_menu.svg" alt="更多推荐">
+          <img src="/img/ic_menu.svg" alt="更多推荐">
         </a>
       </div>
       <main class="main" @scroll="onBodyScroll">

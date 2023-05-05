@@ -8,7 +8,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="/_template/demo" class="btn btn__back" @click="firstVideo = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">

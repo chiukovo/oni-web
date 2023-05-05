@@ -14,7 +14,7 @@
                 <section class="section sectionForm">
                   <div class="form">
                     <div class="form__input">
-                      <img class="form__icon" src="/_nuxt/assets/img/ic_edit.svg">
+                      <img class="form__icon" src="/img/ic_edit.svg">
                       <input type="text" placeholder="新增標籤" value="視頻">
                     </div>
                   </div>
@@ -40,7 +40,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="/_template/videoDetail" class="btn btn__back" @click="managementTags = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">

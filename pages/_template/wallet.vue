@@ -11,7 +11,7 @@
               </div>
               <div class="pops__close">
                 <div class="btn btn__close" @click="footerPayment = false">
-                  <img src="/_nuxt/assets/img/ic_close.svg">
+                  <img src="/img/ic_close.svg">
                 </div>
               </div>
             </div>
@@ -27,7 +27,7 @@
                         <label for="r1" class="label">
                           <div class="left">
                             <div class="icon">
-                              <img src="~/assets/img/ic_payment_alipay.png" alt="支付宝">
+                              <img src="/img/ic_payment_alipay.png" alt="支付宝">
                             </div>
                             <div class="title"><span>支付宝</span></div>
                           </div>
@@ -47,7 +47,7 @@
                         <label for="r2" class="label">
                           <div class="left">
                             <div class="icon">
-                              <img src="~/assets/img/ic_payment_weixin.png" alt="微信">
+                              <img src="/img/ic_payment_weixin.png" alt="微信">
                             </div>
                             <div class="title"><span>微信</span></div>
                           </div>
@@ -77,7 +77,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="shopDetails = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -85,7 +85,7 @@
               </div>
               <div class="pageHeader__right">
                 <a href="#" class="btn btn-right" @click="getMoney = true">
-                  <img src="/_nuxt/assets/img/ic_getMoney.svg" alt="马上赚钱">
+                  <img src="/img/ic_getMoney.svg" alt="马上赚钱">
                 </a>
               </div>
             </header>
@@ -134,12 +134,12 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="getMoney = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__right">
                 <a href="#" class="btn btn-right" @click="getMoneyDetails = true">
-                  <img src="/_nuxt/assets/img/ic_getMoneyDetail.svg" alt="推广纪录">
+                  <img src="/img/ic_getMoneyDetail.svg" alt="推广纪录">
                 </a>
               </div>
             </header>
@@ -149,7 +149,7 @@
               <section class="section sectionGetMoney">
                 <div class="getMoney">
                   <div class="getMoney__header">
-                    <img src="/_nuxt/assets/img/getMoney_header.png" alt="邀请好朋友看片赚钱">
+                    <img src="/img/getMoney_header.png" alt="邀请好朋友看片赚钱">
                   </div>
                   <div class="getMoney__body">
                     <div class="qrcode">
@@ -157,7 +157,7 @@
                       <div class="code">F0W8EY</div>
                       <div class="describe">*好友也可在注册时直接填写你的邀请码</div>
                       <div class="qrcode__img">
-                        <img src="/_nuxt/assets/img/not-use/qrcode.png">
+                        <img src="/img/not-use/qrcode.png">
                       </div>
                     </div>
                     <div class="button__group">
@@ -166,9 +166,9 @@
                     </div>
                   </div>
                   <div class="getMoney__footer">
-                    <img src="/_nuxt/assets/img/getMoney_stepHeader1.png" class="img_getMoneystepHeader1">
-                    <img src="/_nuxt/assets/img/getMoney_step.png" class="img_getMoneystep">
-                    <img src="/_nuxt/assets/img/getMoney_stepHeader2.png" class="img_getMoneystepHeader2">
+                    <img src="/img/getMoney_stepHeader1.png" class="img_getMoneystepHeader1">
+                    <img src="/img/getMoney_step.png" class="img_getMoneystep">
+                    <img src="/img/getMoney_stepHeader2.png" class="img_getMoneystepHeader2">
                     <div class="qand">
                       <ul>
                         <li>
@@ -201,7 +201,7 @@
             <header class="pageHeader">
               <div class="pageHeader__back">
                 <a href="#" class="btn btn__back" @click="getMoneyDetails = false">
-                  <img src="/_nuxt/assets/img/ic_back.svg">
+                  <img src="/img/ic_back.svg">
                 </a>
               </div>
               <div class="pageHeader__title">
@@ -232,7 +232,7 @@
       <header class="pageHeader" :class="none ? 'none' : ''">
         <div class="pageHeader__back">
           <a href="/_template/member" class="btn btn__back">
-            <img src="/_nuxt/assets/img/ic_back.svg">
+            <img src="/img/ic_back.svg">
           </a>
         </div>
         <div class="pageHeader__title">
@@ -240,7 +240,7 @@
         </div>
         <div class="pageHeader__right">
           <a href="#" class="btn btn-right" @click="shopDetails = true">
-            <img src="/_nuxt/assets/img/ic_shopDetail.svg" alt="充值明細">
+            <img src="/img/ic_shopDetail.svg" alt="充值明細">
           </a>
         </div>
       </header>
@@ -253,7 +253,7 @@
                   <div class="balance__title">
                     <div class="title">账户余额</div>
                     <button class="btn btn__reload">
-                      <img src="/_nuxt/assets/img/ic_reload.svg" alt="重新載入">
+                      <img src="/img/ic_reload.svg" alt="重新載入">
                     </button>
                   </div>
                   <div class="balance__number">155,464.01</div>

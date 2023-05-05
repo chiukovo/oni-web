@@ -3,7 +3,7 @@
     <div class="item" v-for="data in videoList">
       <div class="info">
         <div class="avatar">
-          <img class="img" v-lazy="'https://api.bcyapp005.com/storage/files/shares/HH/3/f533de42-4806-4108-beec-612bc6e47b5c.jpg'">
+          <img class="img" v-lazy="'/img/default.png'">
         </div>
         <div class="title">
           <div class="name">

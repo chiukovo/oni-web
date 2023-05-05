@@ -4,7 +4,7 @@
       <header class="pageHeader" :class="none ? 'none' : ''">
         <div class="pageHeader__back">
           <a href="#" class="btn btn__back" @click="authorMore = false">
-            <img src="/_nuxt/assets/img/ic_back.svg">
+            <img src="/img/ic_back.svg">
           </a>
         </div>
         <div class="pageHeader__titleTab">
@@ -34,7 +34,7 @@
                         </a>
                       </div>
                       <div class="preview">
-                        <img class="img" src="/_nuxt/assets/img/getMoney_bg.jpg">
+                        <img class="img" src="/img/getMoney_bg.jpg">
                       </div>
                       <div class="info">
                         <div class="avatar">
