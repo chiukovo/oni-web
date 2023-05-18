@@ -4,37 +4,22 @@
     <OpenRight :type="mainStore.openRightType" v-show="mainStore.openRightType"></OpenRight>
     <div class="container">
       <Header></Header>
-      <main class="main" @scroll="onBodyScroll">
-        <section class="sectionMoney">
-          <swiper
-            class="firstMainSwiper"
-            :modules="[SwiperAutoplay, SwiperPagination]"
-            :pagination="{clickable: true}"
-            :autoHeight="true"
-            :autoplay="{
-              delay: 3000
-            }"
-          >
-            <swiper-slide v-for="n in 10">
-              <a href="" target="_blank">
-                <img v-lazy="'/img/not-use/slider.jpg'">
+      <div class="featuredTab" :class="mainStore.hideHeaderFooter ? 'none' : ''">
+
+        <div class="featuredTab__list">
+          <ul class="list">
+            <li :class="featuredTab == n ? 'current' : ''" v-for="(type, n) in titleGroup">
+              <a href="#" class="btn" @click="featuredTabChange(n, type.name)">
+                <span>{{ type.name }}</span>
               </a>
-            </swiper-slide>
-          </swiper>
-        </section>
-        <section class="sectionButton">
-          <div class="featuredPart">
-            <a href="/_template/firstNovel" class="btn">
-              <img :src="'/img/btn_first_1.png'">
-            </a>
-            <a href="/_template/firstVideo" class="btn">
-              <img :src="'/img/btn_first_2.png'">
-            </a>
-            <a href="/_template/firstComics" class="btn">
-              <img :src="'/img/btn_first_3.png'">
-            </a>
-          </div>
-        </section>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="featuredTab__btn" @click="discoverMenu = !discoverMenu">
+          <img src="/img/ic_menu.svg" alt="更多推荐">
+        </a>
+      </div>
+      <main class="main" @scroll="onBodyScroll">
         <Transition appear>
           <swiper
             class="firstMainSwiper"

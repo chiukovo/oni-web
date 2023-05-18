@@ -117,13 +117,13 @@
               <section class="sectionButton">
                 <div class="featuredPart">
                   <a href="/_template/firstNovel" class="btn">
-                    <img :src="'/_nuxt/assets/img/btn_first_1.png'">
+                    <img :src="'/img/btn_first_1.png'">
                   </a>
                   <a href="/_template/firstVideo" class="btn">
-                    <img :src="'/_nuxt/assets/img/btn_first_2.png'">
+                    <img :src="'/img/btn_first_2.png'">
                   </a>
                   <a href="/_template/firstComics" class="btn">
-                    <img :src="'/_nuxt/assets/img/btn_first_3.png'">
+                    <img :src="'/img/btn_first_3.png'">
                   </a>
                 </div>
               </section>

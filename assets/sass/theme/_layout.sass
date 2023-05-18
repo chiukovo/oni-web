@@ -75,7 +75,7 @@ $vips:("1":#bdbddb, "2":#f6eea5, "3":#76748e, "4":#e7a85d)
           border: 1px solid $color
           position: absolute
         &::before
-          background-image: url(/_nuxt/assets/img/ic_mem_corwn_#{$value}.png)
+          background-image: url(/img/ic_mem_corwn_#{$value}.png)
 
 .wrap
   display: flex
@@ -215,7 +215,7 @@ $vips:("1":#bdbddb, "2":#f6eea5, "3":#76748e, "4":#e7a85d)
         vertical-align: middle
         width: 13px
         height: 13px
-        background: url(/_nuxt/assets/img/ic_more.svg) no-repeat
+        background: url(/img/ic_more.svg) no-repeat
         background-size: 100%
         position: relative
         top: -1px
@@ -399,7 +399,7 @@ input[type=radio]
       vertical-align: middle
       width: 16px
       height: 18px
-      background: url(/_nuxt/assets/img/ic_delet.svg) no-repeat center / contain
+      background: url(/img/ic_delet.svg) no-repeat center / contain
       margin-right: 4px
       position: relative
       top: -2px
@@ -411,7 +411,7 @@ input[type=radio]
       vertical-align: middle
       width: 16px
       height: 16px
-      background: url(/_nuxt/assets/img/ic_edit.svg) no-repeat center / contain
+      background: url(/img/ic_edit.svg) no-repeat center / contain
       margin-right: 6px
       position: relative
       top: -2px
@@ -425,7 +425,7 @@ input[type=radio]
       content: ''
       display: inline-block
       vertical-align: middle
-      background: url(/_nuxt/assets/img/ic_reports.svg) no-repeat center / contain
+      background: url(/img/ic_reports.svg) no-repeat center / contain
       width: 12px
       height: 12px
       margin-right: 2px
@@ -536,21 +536,21 @@ i.dot
   $list: ('love', 'message', 'share', 'view', 'great', 'reports')
   @each $icon in $list
     &.icon__#{$icon}
-      background-image: url(/_nuxt/assets/img/ic_#{$icon}.svg)
+      background-image: url(/img/ic_#{$icon}.svg)
   $list: ('love', 'share', 'money', 'message')
   @each $icon in $list
     &.icon__#{$icon}-w
-      background-image: url(/_nuxt/assets/img/ic_#{$icon}_w.svg)
+      background-image: url(/img/ic_#{$icon}_w.svg)
   $list: ('great', 'nogood', 'message')
   @each $icon in $list
     &.icon__#{$icon}-g
-      background-image: url(/_nuxt/assets/img/ic_#{$icon}_g.svg)
+      background-image: url(/img/ic_#{$icon}_g.svg)
 
 .current .icon
   $list: ('love', 'great')
   @each $icon in $list
     &.icon__#{$icon}
-      background-image: url(/_nuxt/assets/img/ic_#{$icon}_h.svg)
+      background-image: url(/img/ic_#{$icon}_h.svg)
 
 
 .icon__level
@@ -559,13 +559,13 @@ i.dot
   background: center / contain no-repeat
   @for $var from 1 through 4
     &.icon__level#{$var}
-      background-image: url(/_nuxt/assets/img/ic_mem_corwn_#{$var}.png)
+      background-image: url(/img/ic_mem_corwn_#{$var}.png)
 
 .icon__vip
   background: center / 50% no-repeat
   @for $var from 1 through 6
     &.icon__vip#{$var}
-      background-image: url(/_nuxt/assets/img/ic_mem_vip_#{$var}.svg)
+      background-image: url(/img/ic_mem_vip_#{$var}.svg)
 
 .icon__coin
   width: 50px
@@ -573,14 +573,14 @@ i.dot
   background: center / contain no-repeat
   @for $var from 1 through 4
     &.icon__coin#{$var}
-      background-image: url(/_nuxt/assets/img/ic_coin_#{$var}.png)
+      background-image: url(/img/ic_coin_#{$var}.png)
 
 @for $var from 1 through 5
   .icon__mem-toplist#{$var}
-    background: url(/_nuxt/assets/img/ic_mem_toplist_#{$var}.png) center / contain no-repeat
+    background: url(/img/ic_mem_toplist_#{$var}.png) center / contain no-repeat
 @for $var from 1 through 12
   .icon__mem-list#{$var}
-    background: url(/_nuxt/assets/img/ic_mem_list_#{$var}.svg) center / contain no-repeat
+    background: url(/img/ic_mem_list_#{$var}.svg) center / contain no-repeat
 
 // ! hr
 .hr

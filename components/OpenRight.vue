@@ -2,6 +2,7 @@
   <Transition name="fadeInRight" appear>
     <Video :code="mainStore.videoCode" v-if="mainStore.videoCode != '' && type == 'video'"></Video>
     <EveryDay v-else-if="type == 'everyDay'"></EveryDay>
+    <Search v-else-if="type == 'search'"></Search>
   </Transition>
 </template>
 

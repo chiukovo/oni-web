@@ -5,9 +5,9 @@
         <img src="/img/ic_searchHeader_1.svg" alt="每日精选">
       </a>
     </div>
-    <a href="#" class="searchHeader__search">
+    <a href="#" class="searchHeader__search" @click.prevent="doOpenRight('', 'search')">
       <div class="search__input">
-        <span>视频｜创作者</span>
+        <span>视频</span>
         <img src="/img/ic_search.svg">
       </div>
     </a>

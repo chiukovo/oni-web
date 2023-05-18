@@ -46,6 +46,24 @@ export const getVideoList = async(params) => {
     }
 }
 
+export const getSearchList = async(t) => {
+    const { data, error } = await useFetch('/api/video/search', {
+        method: 'GET',
+        onRequest({ request, options }) {
+            // Set the request headers
+            options.headers = options.headers || {}
+            options.params = {
+                t: t
+            }
+        },
+    })
+
+    return {
+        data,
+        error
+    }
+}
+
 export const getVideoDetail = async(code) => {
     const { data, error } = await useFetch('/api/video/detail/' + code, {
         method: 'GET',

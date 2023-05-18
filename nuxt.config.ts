@@ -16,12 +16,12 @@ export default defineNuxtConfig({
           { property: 'og:site_name', content: process.env.APP_NAME },
           { property: 'og:title', content: process.env.APP_NAME },
           { property: 'og:description', content: process.env.APP_DESCRIPTION },
-          { property: 'og:image', content: '/_nuxt/assets/img/favicon.png' }
+          { property: 'og:image', content: '/img/favicon.png' }
         ],
         link: [
-          { rel: 'shortcut icon', type: 'image/png', href: '/_nuxt/assets/img/favicon.png' },
-          { rel: 'icon', type: 'image/png', href: '/_nuxt/assets/img/favicon.png' },
-          { rel: 'apple-touch-icon', type: 'image/png', href: '/_nuxt/assets/img/favicon.png' },
+          { rel: 'shortcut icon', type: 'image/png', href: '/img/favicon.png' },
+          { rel: 'icon', type: 'image/png', href: '/img/favicon.png' },
+          { rel: 'apple-touch-icon', type: 'image/png', href: '/img/favicon.png' },
         ],
       },
       // global transition

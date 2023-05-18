@@ -1,8 +1,8 @@
 import { defineNuxtPlugin } from '#app';
 import VueLazyload from 'vue-lazyload';
 
-const errorImage = '/error-image.gif'
-const loadingImage = '/loading.png'
+const errorImage = '/img/error-image.gif'
+const loadingImage = '/img/loading.png'
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(VueLazyload, {

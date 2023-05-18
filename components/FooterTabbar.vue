@@ -1,16 +1,16 @@
 <template>
   <div class="footerTabbar" :class="mainStore.hideHeaderFooter ? 'none' : ''">
-    <NuxtLink class="btn current" to="/_template/demo">
+    <NuxtLink class="btn" :class="route.name == 'index' ? 'current' : ''" to="/">
       <div class="icon icon__1"></div>
       <div class="title">精选</div>
     </NuxtLink>
-    <NuxtLink class="btn" to="/_template/discover">
+    <NuxtLink class="btn" :class="route.name == 'discover' ? 'current' : ''" to="discover">
       <div class="icon icon__2"></div>
       <div class="title">发现</div>
     </NuxtLink>
     <NuxtLink class="btn">
       <div class="icon icon__3"></div>
-      <div class="title">上传</div>
+      <div class="title">应用</div>
     </NuxtLink>
     <NuxtLink class="btn" to="/_template/community">
       <div class="icon icon__4"></div>
@@ -26,4 +26,5 @@
 <script setup>
 import { useMainStore } from '@/stores/main'
 const mainStore = useMainStore()
+const route = useRoute()
 </script>
