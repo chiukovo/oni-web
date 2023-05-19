@@ -7,7 +7,7 @@
     </div>
     <a href="#" class="searchHeader__search" @click.prevent="doOpenRight('', 'search')">
       <div class="search__input">
-        <span>视频</span>
+        <span>找你所爱视频</span>
         <img src="/img/ic_search.svg">
       </div>
     </a>

@@ -78,3 +78,19 @@ export const getVideoDetail = async(code) => {
         error
     }
 }
+
+export const getAvImageList = async(params) => {
+    const { data, error } = await useFetch('/api/avimage/list', {
+        method: 'GET',
+        onRequest({ request, options }) {
+            // Set the request headers
+            options.headers = options.headers || {}
+            options.params = params
+        },
+    })
+
+    return {
+        data,
+        error
+    }
+}

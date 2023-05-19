@@ -24,13 +24,16 @@
         </section>
         <section class="sectionButton">
           <div class="featuredPart">
-            <a href="/_template/firstNovel" class="btn">
+            <a href="#" class="btn" @click.prevent="doOpenRight('', 'everyDay')">
+              <!--精选视频-->
               <img :src="'/img/btn_first_1.png'">
             </a>
-            <a href="/_template/firstVideo" class="btn">
+            <a href="#" class="btn"  @click.prevent="doOpenRight('', 'randomVideo')">
+              <!--站长推荐-->
               <img :src="'/img/btn_first_2.png'">
             </a>
-            <a href="/_template/firstComics" class="btn">
+            <a href="#" class="btn">
+              <!--好站下载-->
               <img :src="'/img/btn_first_3.png'">
             </a>
           </div>
@@ -61,7 +64,7 @@
 <script setup>
 import { useMainStore } from '@/stores/main'
 const mainStore = useMainStore()
-const { onBodyScroll } = usePublic()
+const { onBodyScroll, doOpenRight } = usePublic()
 
 const mainSwiper = ref(null)
 const onSwiper = (swiper) => {

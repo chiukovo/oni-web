@@ -1,6 +1,5 @@
 <template>
   <div class="floating openRight">
-    <!-- 每日精選 -->
     <Transition name="pops" duration="550" appear>
       <div class="dialog full everyDay">
         <div class="dialog__overlay">
@@ -12,7 +11,7 @@
                 </a>
               </div>
               <div class="pageHeader__title">
-                <div class="title">精选视频</div>
+                <div class="title">站长推荐</div>
               </div>
             </header>
           </div>
@@ -68,7 +67,7 @@ const everyDay = ref(true)
 const { doOpenRight } = usePublic()
 
 const parmas = {
-  tabName: 'today',
+  tabName: 'r',
   page: 1
 }
 

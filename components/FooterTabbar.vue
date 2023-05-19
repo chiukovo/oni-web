@@ -12,7 +12,7 @@
       <div class="icon icon__3"></div>
       <div class="title">应用</div>
     </NuxtLink>
-    <NuxtLink class="btn" to="/_template/community">
+    <NuxtLink class="btn"  :class="route.name == 'community' ? 'current' : ''" to="community">
       <div class="icon icon__4"></div>
       <div class="title">社区</div>
     </NuxtLink>

@@ -18,12 +18,12 @@
       </div>
       <div class="interaction">
         <a href="#" class="btn">
-          <i class="icon icon__love"></i>
-          <span>{{ data.like }}</span>
+          <i class="icon icon__view"></i>
+          <span>{{ data.reply }}</span>
         </a>
         <a href="#" class="btn">
-          <i class="icon icon__message"></i>
-          <span>{{ data.reply }}</span>
+          <i class="icon icon__love"></i>
+          <span>{{ data.like }}</span>
         </a>
         <a href="#" class="btn">
           <i class="icon icon__share"></i>
